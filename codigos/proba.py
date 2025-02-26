@@ -11,4 +11,4 @@ else:
     codigo=nombre_cupon[1]
     print(nombre,codigo)
 
-print("Hola")
+print("Funciona")

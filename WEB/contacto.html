@@ -6,29 +6,76 @@
     <encode utf-8>
 </head>
 <body>
+    <!-- ZONA NAV -->
     <header>
-        <img href="">
-        <div class="nav-menu">
-            <!--Zona Menu NAV-->
-            <div id="nav-inicio"><a href="index.html"> <span>Productos</span> </a></div>
-            <div id="nav-nosotros"><a href="nosotros.html"> <span>Contacto</span> </a></div> 
-            <div id="nav-servicios"><a href="servicios.html"> <span>Ayuda</span></a></div> 
-            <div id="nav-contacto"><a href="contacto.html"> <span>Quienes somos</span> </a></div>
+        <div class="header-content"><a href="index.html"><img class="icon"  src="img/logo_magiang.png"></a></div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><input type="text" placeholder="Buscar">
+                    <button>buscar</button></li>
+                </ul>
+                </nav>
+        
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar">
-            <button>Buscar</button>
-        </div>
-        <div class="login-menu">
-           <a href="login.html"><button class="login-button">-</button> </a>
-        </div>
+        <div class="login">
+                <a href="login.html"><img src="img/login_logo.png"></a>
+         </div>
+        
     </header>
-    <h1> Contacto</h1>
+    <h3> Contacto</h3>
+
+    <main>
+        <div class="contacta-txt">
+            <p>¿Necessitas ayuda?</p>
+            <p>Contacta con nuestro equipo siempre que necessites ayuda, estaremos encantados de ayudar</p>
+    
+        </div>
+        <div class="contacta">        
+            <form action="/action_page.php"></form>
+                <div>
+                
+                    <label for="fname">Nombre:</label><br>
+                    <input type="text" id="fname" name="fname" ><br>
+                    <label for="lname">Email:</label><br>
+                    <input type="text" id="lname" name="lname" ><br><br>
+                    <label for="lname">Mensaje:</label><br>
+                    <textarea>Deja aqui tu mensaje...</textarea>
+                    <input class="contactbutton" type="submit" value="Enviar">
+                 </div>
+            </form> 
+            <div>
+                <img  class="imgcontact" src="img/ejemplo_prod.jpg"  width="50%" height="10%">
+               
+            </div>
+            
+        </div>
+    
+    
+    </main>
+    
    
 
-<footer> <p>Copyright Magiang 2025 </p>
-
-
+<!-- Zona FOOTER-->
+<footer>
+    <div>
+        <img class="icon2" src="img/logo_magiang.png" alt="Imagen"> 
+        <a class="footertitlelogo">Magiang</a>
+    
+        <p>©2025</p>
+        <p>Todos los derechos reservados. </p>
+        <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
+        <a>Da el salto a nuevos mundos con Magiang</a>
+        <p>Contáctanos en service@magiang.com o llámanos al +34 233 23 23 23.</p>
+    </div>
+    <div class="footerdivsocial">
+        <p>Síguenos en nuestras redes para estar al tanto de las últimas novedades y</p>
+        <p> recomendaciones cafeteras!</p>
+    </div>
 </footer>
 </body>
 </html>

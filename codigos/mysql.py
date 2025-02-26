@@ -1,5 +1,5 @@
 #import pymysql
-import codigos.cupones as cupones
+import cupones 
 import codigos
 
 nom_host = 'localhost'
@@ -47,19 +47,26 @@ def inserir_codigo():
 
 
 def inserir_cupones():
-
-    
-    contador=0
     nombre_cupon=cupones.usuari()
-    print(nombre_cupon)
+
+    if nombre_cupon is None:
+        prova=cupones.usuari()
+        pass
+    else:
+        nombre=nombre_cupon[0]
+        codigo=nombre_cupon[1]
+        print(nombre,codigo)
     
     realizar_connecion = pymysql.connect(host=nom_host, 
                            user=usuari, 
                            passwd=contrasenya, 
                            database=bd_nom)
     cur = realizar_connecion.cursor()
-    for i in nombre_cupon:
-        cur.execute("")
+    for i in range(len(nombre)):
+        prova.append(nombre[i])
+        prova.append(codigo[i])
+    
+        cur.execute(f"INSERT INTO cupones VALUES ('{nombre[i]}','{codigo[i]}');")
     
     realizar_connecion.commit()
     realizar_connecion.close()

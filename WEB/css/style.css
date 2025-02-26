@@ -2,17 +2,14 @@
         font-family: 'Poppins', sans-serif;
     }
     
-    .header-content {
-        display: flex;
-        align-items: center; /* Alinea verticalmente los elementos */
-    }
+   
     
     h3{
         font-size: 30px;
         font-weight: 600;
         color: #000;
         margin-left: 10%;
-        margin-top: 5%;
+        margin-top: 10%;
         margin-bottom: 10%;
     }
     
@@ -21,8 +18,13 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    
-    
+    /* ESTILOS HEADER NAV */
+
+    .header-content {
+        display: flex;
+        align-items: center; /* Alinea verticalmente los elementos */
+    }
+
     .login{
         display: flex;
         justify-content: right;
@@ -91,6 +93,9 @@
         padding: 20px;
     }
     
+    /* END_ESTILOS HEADER NAV */
+
+    /* ESTILOS PAGINA HOME [LO MAS VENDIDO/OFERTAS/BOTON SABER MAS] */
     .boton-sm{
         background-color: #79ddf8;
         text-decoration: none;
@@ -148,8 +153,9 @@
     }
 
 
+/* END_ ESTILOS PAGINA HOME [LO MAS VENDIDO/OFERTAS/BOTON SABER MAS] */
 
-/*Estilos de Lanzamientos*/
+/* ESTILOS PAGINA_HOME [LANZAMIENTO]*/
 .L_content_group div{
     display: flex;
     margin-left: 20%;
@@ -181,8 +187,9 @@
     margin-left: 5%;
 }
 
+/* END_ESTILOS PAGINA_HOME [LANZAMIENTO]*/
 
-/* Estilo Footer */ 
+/* ESTILOS FOOTER */ 
 
 footer{
     background-color: #000000;
@@ -229,7 +236,7 @@ footer ul{
     font-size: 20px;    
 }
 
-
+/* END_ESTILOS FOOTER */
 
 /*ESTILOS BANNER PRINCIPAL*/
 
@@ -241,3 +248,75 @@ footer ul{
     display: flex;
     justify-content: center;
 }
+
+/*END_ESTILOS BANNER PRINCIPAL*/
+
+/* ESTILOS PAGINA CONTACTO*/
+
+p{
+    color: #000;
+    margin-left: 10%;
+}
+
+
+input[id='lname'],
+input[id='fname']{
+    width: 200%;
+    padding: 5px 2px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(170, 167, 165);
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 2%;
+
+}
+textarea{
+    width: 500%;
+    height: 160px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid rgb(170, 167, 165);
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 16px;
+    resize: none;
+  }
+
+.imgcontacto{
+    margin-left:30%;
+    display:  flex;
+}
+
+.contacta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 40%;
+    margin-bottom: 2%;
+}
+.contacta-txt{
+    margin-bottom: 5%;
+}
+
+.contactbutton{
+    background-color: #79ddf8;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    margin-left: 81%;
+    margin-bottom: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+}
+
+.contactbutton:hover {
+    background-color: #00c8ff;
+    text-decoration: none;
+    color: white;
+}
+/* END_ESTILOS PAGINA CONTACTO*/

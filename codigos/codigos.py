@@ -30,6 +30,7 @@ def ps4():
         codigo.append(aleatorio)
     codigo_texto = ''.join(codigo)
     print(codigo_texto)
+    return codigo_texto
  
 
 def tarjeta_regalo():
@@ -41,6 +42,7 @@ def tarjeta_regalo():
         codigo.append(aleatorio)
     codigo_texto = ''.join(codigo)
     print(codigo_texto)
+    return codigo_texto
 
 def licencia_windows():
     letras=numeros_letras()
@@ -51,6 +53,7 @@ def licencia_windows():
         codigo.append(aleatorio)
     codigo_texto = ''.join(codigo)
     print(codigo_texto)
+    return codigo_texto
 
 def xbox():
     letras=numeros_letras()
@@ -61,6 +64,7 @@ def xbox():
         codigo.append(aleatorio)
     codigo_texto = ''.join(codigo)
     print(codigo_texto)
+    return codigo_texto
 
 def steam_keys():
     letras=numeros_letras()
@@ -71,6 +75,7 @@ def steam_keys():
         codigo.append(aleatorio)
     codigo_texto = ''.join(codigo)
     print(codigo_texto)
+    return codigo_texto
 
 def switch():
     letras=numeros_letras()
@@ -81,6 +86,7 @@ def switch():
         codigo.append(aleatorio)
     codigo_texto = ''.join(codigo)
     print(codigo_texto)
+    return codigo_texto
 
 
 def producto():
@@ -119,6 +125,7 @@ def error():
     producto()
 
 def introduccion_codigo(numero_cod,eleccion):
+    respuestas=[]
     if eleccion==1:
         for i in range (numero_cod):
             ps4()
@@ -138,5 +145,6 @@ def introduccion_codigo(numero_cod,eleccion):
         for i in range (numero_cod):
             steam_keys()
     
+
 
 main()

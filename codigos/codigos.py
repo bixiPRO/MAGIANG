@@ -7,7 +7,6 @@ alfabeto = list(string.ascii_uppercase)
 
 def main():
     nombre_producto, codigos_generados = producto()
-    print(nombre_producto,codigos_generados)
     return nombre_producto,codigos_generados
 
     

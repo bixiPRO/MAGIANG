@@ -278,10 +278,23 @@ textarea{
 /* END_ESTILOS PAGINA CONTACTO*/
 
 /* ESTILOS FOOTER */ 
+.icon2 {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 2%;
+}
 
+.footertitlelogo{
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color:white;
+
+}
 footer{
     background-color: #000000;
-    bottom: 0px;
     width: 205%;
     height: 10%;
     margin-left: 0px;
@@ -289,39 +302,25 @@ footer{
 }
 
 footer div{
+    display: inline ;
+}
+
+footer p{
     position: flex;
     color: #eee;
     background-color: #000000;
     font-size: 12px;
     margin-left: 20px;
-    margin-top: 30px;
+    margin-top: 1;
 }
 
-.footertitlelogo{
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-
-}
-
-.footerdivsocial{
-    margin-left: 20px;
+footer a{
     color: white;
-    background-color: #000000;
-
+    text-decoration: none;
 }
 
-.icon2 {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    margin-top: 10px;
+footer a:hover{
+    color: rgb(129, 202, 250);
+    text-decoration: none;
 }
-
-
-footer ul{
-    list-style-type: none;
-    font-size: 20px;    
-}
-
 /* END_ESTILOS FOOTER */

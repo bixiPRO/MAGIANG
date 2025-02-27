@@ -6,7 +6,9 @@ numeros=['1','2','3','4','5','6','7','8','9','0']
 alfabeto = list(string.ascii_uppercase)
 
 def main():
-    producto()
+    nombre_producto, codigos_generados = producto()
+    return nombre_producto,codigos_generados
+
     
 
 def numeros_letras():
@@ -115,9 +117,9 @@ def producto():
     else:
         numero_cod=int(numero_cod)
         eleccion=int(eleccion)
-        introduccion_codigo(numero_cod,eleccion)
+        respuestas = introduccion_codigo(numero_cod, eleccion)
 
-    return nombre_producto
+    return nombre_producto, respuestas
    
 
 def error():
@@ -143,5 +145,5 @@ def introduccion_codigo(numero_cod,eleccion):
             respuestas.append(switch())
     else:
         for i in range (numero_cod):
-            respuestas.append(steam_keys)
+            respuestas.append(steam_keys())
     return respuestas

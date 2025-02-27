@@ -1,7 +1,6 @@
 import codigos
 
-codigos.main()
+nombre_producto,codigos_generados = codigos.main()
 
-
-
-sdadas
+for codigo in codigos_generados:
+        print(f"INSERT INTO codigos(nombre_producto, codigo) VALUES ('{nombre_producto}', '{codigo}');")

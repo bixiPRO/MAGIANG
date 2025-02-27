@@ -30,18 +30,17 @@ def error():
     opciones() 
 
 def inserir_codigo():
-    productos=codigos.introduccion_codigo()
+    nombre_producto,codigos_generados = codigos.main()
+
     print(nom_host,usuari,contrasenya,bd_nom)
     realizar_connecion = pymysql.connect(host=nom_host, 
                            user=usuari, 
                            passwd=contrasenya, 
                            database=bd_nom)
     cur = realizar_connecion.cursor()
-    cur.execute("SHOW TABLES;")
-    filas = cur.fetchall()
-    print("Tablas en la base de datos:")
-    for tabla in filas:
-        print(tabla)
+    for codigo in codigos_generados:
+        cur.execute(f"INSERT INTO codigos(nombre_producto, codigo) VALUES ('{nombre_producto}', '{codigo}');")
+    
     realizar_connecion.commit()
     realizar_connecion.close()
 

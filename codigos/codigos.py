@@ -145,5 +145,5 @@ def introduccion_codigo(numero_cod,eleccion):
             respuestas.append(switch())
     else:
         for i in range (numero_cod):
-            respuestas.append(steam_keys)
+            respuestas.append(steam_keys())
     return respuestas

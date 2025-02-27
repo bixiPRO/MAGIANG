@@ -30,7 +30,7 @@ def error():
     opciones() 
 
 def inserir_codigo():
-    
+    productos=codigos.introduccion_codigo()
     print(nom_host,usuari,contrasenya,bd_nom)
     realizar_connecion = pymysql.connect(host=nom_host, 
                            user=usuari, 

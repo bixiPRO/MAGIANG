@@ -128,33 +128,20 @@ def introduccion_codigo(numero_cod,eleccion):
     respuestas=[]
     if eleccion==1:
         for i in range (numero_cod):
-            ps4()
             respuestas.append(ps4())
     elif eleccion==2:
         for i in range (numero_cod):
-            tarjeta_regalo()
             respuestas.append(tarjeta_regalo())
     elif eleccion==3:
         for i in range (numero_cod):
-            licencia_windows()
             respuestas.append(licencia_windows())
     elif eleccion==4:
         for i in range (numero_cod):
-            xbox()
             respuestas.append(xbox())
     elif eleccion==5:
         for i in range (numero_cod):
-            switch()
             respuestas.append(switch())
     else:
         for i in range (numero_cod):
-            steam_keys()
             respuestas.append(steam_keys)
-
-
-    nombre_producto=producto()
-    return nombre_producto, respuestas
-    
-
-
-main()
+    return respuestas

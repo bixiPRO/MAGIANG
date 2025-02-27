@@ -9,7 +9,7 @@ bd_nom = 'MAGIANG'
 
 def main():
     opciones()
-
+    
 
 def opciones():
     eleccio = input('''Elige uno de los dos opciones:
@@ -30,7 +30,6 @@ def error():
     opciones() 
 
 def inserir_codigo():
-    productos=codigos.introduccion_codigo()
     print(nom_host,usuari,contrasenya,bd_nom)
     realizar_connecion = pymysql.connect(host=nom_host, 
                            user=usuari, 

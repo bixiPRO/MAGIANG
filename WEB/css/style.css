@@ -19,80 +19,99 @@
     }
     /* ESTILOS HEADER NAV */
 
-    .header-content {
+    header {
+        width: 100%;
+        background: #79ddf8;
+        padding: 15px 0;
         display: flex;
-        align-items: center; /* Alinea verticalmente los elementos */
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
-
-    .login{
+    
+    .header-content img.icon {
+        width: 80px;
+        margin-left: 20px;
+    }
+    
+    nav {
+        flex-grow: 1;
         display: flex;
-        justify-content: right;
-        margin-right: -100%;
-        margin-top: -5%; 
-    
+        justify-content: center;
     }
     
-    .login img{
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        position: relative;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        padding: 12px 18px;
+        border-radius: 20px;
+        transition: background 0.3s ease-in-out;
+    }
+    
+    nav ul li a:hover {
+        background: #6ab5ca;
+    }
+    
+    .login img {
         width: 50px;
         height: 50px;
-        margin-top: -5%; 
-        margin-right: 10%;
-        margin-left: 10%;
-    
+        margin-right: 20px;
     }
     
-    header {
-        text-align: center;
-    }
-    
-    .icon {
-        width: 10%;
-        height: 10%;
-        margin-right: 10%;
-        margin-left: 10%;
-    }
-    
-    header nav{
-        background-color: #79ddf8;
-        border-radius: 30px;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-        margin-top: -6%;
-        margin-left: 50%;
-    }
-    header nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px;
-        margin-bottom: 0px;
-    }
-    .buscar_logo button{
-        width: 10%;
-        height: 10%;
-        margin-left: 10%;
-        margin-right: 10%;
-
-    }
-    header nav li {
-        display: inline;
-        padding: 20px;
-    }
-    
-    header nav a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 20px;
-    }
-    
-    header nav li:hover {
-        background-color: #6ab5ca;
-        border-radius: 30px;
-        padding: 20px;
-    }
     
     /* END_ESTILOS HEADER NAV */
+
+    /* BARRA DE BÚSQUEDA */
+    .search-bar {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 20px;
+        padding: 5px 10px;
+        border: 2px solid #6ab5ca;
+    }
+
+    .search-bar input {
+        border: none;
+        outline: none;
+        padding: 8px;
+        font-size: 16px;
+        width: 150px;
+        border-radius: 20px;
+    }
+
+    .search-bar button {
+        background: #6ab5ca;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .search-bar button:hover {
+        background: #4c94a6;
+    }
+    /* END_BARRA DE BÚSQUEDA */
 
     /* ESTILOS PAGINA HOME [LO MAS VENDIDO/OFERTAS/BOTON SABER MAS] */
     .boton-sm{
@@ -274,6 +293,8 @@ textarea{
     text-decoration: none;
     color: white;
 }
+
+
 /* END_ESTILOS PAGINA CONTACTO*/
 
 
@@ -283,49 +304,56 @@ textarea{
 
 
 /* ESTILOS FOOTER */ 
-.icon2 {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-left: 2%;
+footer {
+    width: 201%;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 15px 15px 0 0;
 }
-
-.footertitlelogo{
-    font-size: 20px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color:white;
-
-}
-footer{
-    background-color: #000000;
-    width: 205%;
-    height: 10%;
-    margin-left: 0px;
-    position: static;
-}
-
-footer div{
-    display: inline ;
-}
-
 footer p{
-    position: flex;
-    color: #eee;
-    background-color: #000000;
-    font-size: 12px;
-    margin-left: 20px;
-    margin-top: 1;
+    color:#ffffff
+}
+
+footer .icon2 {
+    width: 50px;
 }
 
 footer a{
-    color: white;
+    color: #ffffff;
     text-decoration: none;
 }
 
-footer a:hover{
-    color: rgb(129, 202, 250);
-    text-decoration: none;
+footer a:hover {
+    color: #00c8ff;
 }
+
 /* END_ESTILOS FOOTER */
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bnn_principal img {
+        width: 100%;
+    }
+    
+    .LMV_content_group, .L_content_group {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .boton-sm {
+        width: 100%;
+        text-align: center;
+    }
+}

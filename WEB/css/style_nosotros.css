@@ -112,118 +112,54 @@ main {
     padding: 20px 10%;
 }
 
-
-/* ESTILOS SECCIÓN DE OFERTAS */
-.oferta-home {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 30px;
+h4 {
+    color: #6ab5ca;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
     text-align: center;
 }
 
-.oferta-home h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 15px;
+/* ESTILOS TECNICOS */
+.T_content_group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.oferta-home img {
+.T_content-item {
+    background: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    width: 25%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.T_content-item:hover {
+    transform: scale(1.05);
+}
+
+.T_content-item img {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    margin-bottom: 15px;
-}
-
-.boton-sm {
-    background-color: #79ddf8;
-    text-decoration: none;
-    color: white;
-    border-radius: 20px;
-    padding: 15px 25px;
-    display: inline-block;
-    margin-top: 15px;
-    transition: background 0.3s ease;
-}
-
-.boton-sm:hover {
-    background-color: #6ab5ca;
-}
-
-/* END_ ESTILOS SECCIÓN DE OFERTAS */
-
-/* ESTILOS ZONA LO MÁS VENDIDO */
-.LMV_content_group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.LMV_content-item {
-    background: transparent;
-    border-radius: 15px;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.LMV_content-item:hover {
-    transform: scale(1.05);
-}
-
-.LMV_content-item img {
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
     margin-bottom: 10px;
 }
 
-.LMV_content-item p {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #555;
-}
-
-/* END ESTILOS ZONA LO MÁS VENDIDO */
-
-/* ESTILOS ZONA LANZAMIENTOS */
-.L_content_group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.L_content-item {
-    background: transparent;
-    border-radius: 15px;
-    padding: 20px;
-    width: 25%;
+.T_content-item p {
+    font-size: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.L_content-item:hover {
-    transform: scale(1.05);
-}
-
-.L_content-item img {
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 10px;
-}
-
-.L_content-item p {
-    font-size: 18px;
-    margin: 5px 0;
     color: #555;
 }
-/* END_ESTILOS ZONA LANZAMIENTOS */
+
+/* END ESTILOS TECNICOS */
 
 /* ESTILOS FOOTER */
 footer {

@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS MAGIANG;
 CREATE DATABASE MAGIANG;
 USE MAGIANG;
 
-CREATE TABLE cliente(
+CREATE TABLE clientes(
    id INT PRIMARY KEY AUTO_INCREMENT,
    email VARCHAR(255),
    nombre_usuario VARCHAR(50)
@@ -46,5 +46,13 @@ CREATE TABLE reseñas (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_producto INT,
     estrella INT,
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
+)
+
+CREATE TABLE carrito(
+    id_cliente INT,
+    id_producto INT UNIQUE,
+    cantidad INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 )

@@ -31,11 +31,18 @@ CREATE TABLE categorias(
 CREATE TABLE pro_pla(
     id INT PRIMARY KEY,
     id_plataforma INT,
-    FOREIGN KEY (id) REFERENCES productos(id)
+    FOREIGN KEY (id) REFERENCES productos(id),
+    FOREIGN KEY (id_plataforma) REFERENCES plataformas(id)
 )
 
 CREATE TABLE pro_cat(
     id INT PRIMARY KEY,
     id_categoria INT,
+    FOREIGN KEY (id) REFERENCES productos(id),
     FOREIGN KEY (id) REFERENCES categorias(id)
+)
+
+CREATE TABLE reseñas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+
 )

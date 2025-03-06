@@ -3,6 +3,10 @@ CREATE DATABASE MAGIANG;
 USE MAGIANG;
 
 CREATE TABLE cliente(
-   
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   email VARCHAR(255),
+   nombre_usuario VARCHAR(50)
 )ENGINE = InnoDB;
+
+
 

@@ -27,3 +27,15 @@ CREATE TABLE categorias(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255)
 )
+
+CREATE TABLE pro_pla(
+    id INT PRIMARY KEY,
+    id_plataforma INT,
+    FOREIGN KEY (id) REFERENCES productos(id)
+)
+
+CREATE TABLE pro_cat(
+    id INT PRIMARY KEY,
+    id_categoria INT,
+    FOREIGN KEY (id) REFERENCES categorias(id)
+)

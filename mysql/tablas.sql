@@ -8,6 +8,7 @@ CREATE TABLE cliente(
    nombre_usuario VARCHAR(50)
 )ENGINE = InnoDB;
 
+
 CREATE TABLE productos(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) UNIQUE,
@@ -17,3 +18,12 @@ CREATE TABLE productos(
     tipo ENUM('FISICO','DIGITAL')
 )
 
+CREATE TABLE plataformas(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255)
+)
+
+CREATE TABLE categorias(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255)
+)

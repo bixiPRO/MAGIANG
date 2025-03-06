@@ -44,5 +44,7 @@ CREATE TABLE pro_cat(
 
 CREATE TABLE reseñas (
     id INT PRIMARY KEY AUTO_INCREMENT,
-
+    id_producto INT,
+    estrella INT,
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 )

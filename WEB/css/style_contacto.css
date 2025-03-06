@@ -2,6 +2,14 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+h1 a[href] {
+    text-decoration: none;
+    color: black;
+}
+h1 a[href]:hover {
+    color: #6ab5ca;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -165,13 +173,12 @@ h4 {
     color: #555;
 }
 
-.S_content-item p:hover{
-    color: #6ab5ca;
-
-}
-
-.S_content-item a {
+.S_content-item a[href] {
     text-decoration: none;
+    color: black;
+}
+.S_content-item a[href]:hover {
+    color: #6ab5ca;
 }
 
 /* END ESTILOS FOTOS OPCIONES */

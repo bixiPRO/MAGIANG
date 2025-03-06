@@ -58,5 +58,9 @@ CREATE TABLE carrito(
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-CREATE TABLE 
+CREATE TABLE pedidos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+     
+     
+)
 

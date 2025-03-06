@@ -36,7 +36,7 @@ CREATE TABLE pro_pla(
 )
 
 CREATE TABLE pro_cat(
-    id INT PRIMARY KEY,
+    id INT,
     id_categoria INT,
     FOREIGN KEY (id) REFERENCES productos(id),
     FOREIGN KEY (id) REFERENCES categorias(id)

@@ -94,7 +94,7 @@ CREATE TABLE pago (
 
 CREATE TABLE visa_mastercard (
     id_pago INT,
-    num_tarjeta 
+    num_tarjeta VARCHAR(255),
     fecha_cad VARCHAR(10),
     cod_seg INT(3),
     nombre_titular VARCHAR(255),

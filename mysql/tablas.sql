@@ -53,7 +53,7 @@ CREATE TABLE carrito(
     id_cliente INT,
     id_producto INT UNIQUE,
     cantidad INT,
-    precio_final DECIMAL(10,2),
+    precio_total DECIMAL(10,2),
     FOREIGN KEY (id_cliente) REFERENCES clientes(id),
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
@@ -79,6 +79,8 @@ CREATE TABLE cupones (
     codigo VARCHAR(10),
     descuento INT,
     FOREIGN KEY (id_producto) REFERENCES productos(id)
-);S
+);
+
+
 
 

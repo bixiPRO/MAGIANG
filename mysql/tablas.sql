@@ -72,5 +72,13 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id)
 );
 
+CREATE TABLE cupones (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_producto INT,
+    nombre VARCHAR(255),
+    codigo VARCHAR(10),
+    descuento INT,
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
+);S
 
 

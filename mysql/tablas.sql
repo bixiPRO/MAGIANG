@@ -60,7 +60,17 @@ CREATE TABLE carrito(
 
 CREATE TABLE pedidos (
     id INT PRIMARY KEY AUTO_INCREMENT,
-     
-     
-)
+    id_cliente INT,
+    nombre VARCHAR(255),
+    apellidos VARCHAR(255),
+    telefono INT,
+    pais VARCHAR(255),
+    direccion VARCHAR(255),
+    piso_puerta_otro VARCHAR(255),
+    codigo_postal INT(5),
+    ciudad VARCHAR(100),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+
 

@@ -84,7 +84,13 @@ CREATE TABLE carrito(
 );
 
 
-CREATE TABLE 
+CREATE TABLE pago (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_pedido INT,
+    metodo_pago ENUM("VISA/MASTERCARD","PAYPAL","VIZUM"),
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_pedido) REFERENCES pedidos(id)
+);
 
 
 

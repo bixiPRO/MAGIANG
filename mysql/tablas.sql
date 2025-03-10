@@ -92,5 +92,17 @@ CREATE TABLE pago (
     FOREIGN KEY (id_pedido) REFERENCES pedidos(id)
 );
 
+CREATE TABLE visa_mastercard (
+    id_cliente INT,
+    num_tarjeta 
+);
+
+CREATE TABLE paypal (
+    id_cliente INT,
+);
+
+CREATE TABLE bizum (
+    id_cliente INT,
+);
 
 

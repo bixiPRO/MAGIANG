@@ -49,15 +49,6 @@ CREATE TABLE reseñas (
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-CREATE TABLE carrito(
-    id_cliente INT,
-    id_producto INT UNIQUE,
-    cantidad INT,
-    precio_total DECIMAL(10,2),
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
-    FOREIGN KEY (id_producto) REFERENCES productos(id)
-);
-
 CREATE TABLE pedidos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT,
@@ -81,6 +72,19 @@ CREATE TABLE cupones (
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
+CREATE TABLE carrito(
+    id_cliente INT,
+    id_producto INT UNIQUE,
+    id_cupones INT UNIQUE DEFAULT NULL,
+    cantidad INT,
+    precio_total DECIMAL(10,2),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id),
+    FOREIGN KEY (id_cupones) REFERENCES cupones(id)
+);
+
+
+CREATE TABLE 
 
 
 

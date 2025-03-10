@@ -99,10 +99,13 @@ CREATE TABLE visa_mastercard (
 
 CREATE TABLE paypal (
     id_cliente INT,
+    email VARCHAR(255),
+    contrasenya VARCHAR(255)
 );
 
 CREATE TABLE bizum (
     id_cliente INT,
+    telefono INT,
 );
 
 

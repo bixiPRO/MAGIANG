@@ -18,6 +18,12 @@ CREATE TABLE productos(
     tipo ENUM('FISICO','DIGITAL')
 );
 
+CREATE TABLE digital(
+    id_producto INT,
+    codigo VARCHAR(30),
+    FOREIGN KEY (id_producto) REFERENCES productos(id),
+);
+
 CREATE TABLE plataformas(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255)

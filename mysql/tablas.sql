@@ -93,19 +93,25 @@ CREATE TABLE pago (
 );
 
 CREATE TABLE visa_mastercard (
-    id_cliente INT,
+    id_pago INT,
     num_tarjeta 
+    fecha_cad VARCHAR(10),
+    cod_seg INT(3),
+    nombre_titular VARCHAR(255),
+    FOREIGN KEY (id_pago) REFERENCES pago(id)
 );
 
 CREATE TABLE paypal (
-    id_cliente INT,
+    id_pago INT,
     email VARCHAR(255),
-    contrasenya VARCHAR(255)
+    contrasenya VARCHAR(255),
+    FOREIGN KEY (id_pago) REFERENCES pago(id)
 );
 
 CREATE TABLE bizum (
-    id_cliente INT,
+    id_pago INT,
     telefono INT,
+    FOREIGN KEY (id_pago) REFERENCES pago(id)
 );
 
 

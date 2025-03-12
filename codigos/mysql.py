@@ -39,7 +39,11 @@ def inserir_codigo():
                            database=bd_nom)
     cur = realizar_connecion.cursor()
     for codigo in codigos_generados:
-        cur.execute(f"INSERT INTO codigos(nombre_producto, codigo) VALUES ('{nombre_producto}', '{codigo}');")
+        cur.execute(f"INSERT INTO productos(nombre) VALUES ('{nombre_producto}');")
+        cur.execute(f"INSERT INTO digital(codigo) VALUES ('{codigo}');")
+        cur.execute(f"UPDATE digital JOIN productos p SET id_producto=p.id WHERE p.tipo='DIGITAL' and p.nombre='{nombre_producto}';")
+
+
     
     realizar_connecion.commit()
     realizar_connecion.close()

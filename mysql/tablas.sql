@@ -75,7 +75,7 @@ CREATE TABLE cupones (
     id_producto INT,
     nombre VARCHAR(255),
     codigo VARCHAR(10),
-    descuento INT,
+    descuento INT DEFAULT 0,
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 

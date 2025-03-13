@@ -144,6 +144,10 @@ h4 {
     transform: scale(1.05);
 }
 
+.T_content-item:hover p{
+    color: #6ab5ca;
+}
+
 .T_content-item img {
     width: 100%;
     height: auto;

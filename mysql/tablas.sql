@@ -22,7 +22,7 @@ CREATE TABLE digital(
     id_producto INT,
     nombre VARCHAR(255),
     codigo VARCHAR(30),
-    FOREIGN KEY (id_producto) REFERENCES productos(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
 CREATE TABLE plataformas(

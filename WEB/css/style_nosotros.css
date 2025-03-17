@@ -139,6 +139,13 @@ h4 {
     text-align: center;
     transition: transform 0.3s ease-in-out;
 }
+.T_content-item a {
+    text-decoration: none;
+    color: #555;
+}
+.T_content-item a:hover {
+    color: #6ab5ca;
+}
 
 .T_content-item:hover {
     transform: scale(1.05);

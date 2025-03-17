@@ -12,11 +12,16 @@
             <div class="title login">
                 Iniciar Sesión
             </div>
+            <div class="title signup">
+               Registrarse
+            </div>
          </div>
          <div class="form-container">
             <div class="slide-controls">
                <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
                <label for="login" class="slide login">Accede</label>
+               <label for="signup" class="slide signup">Regístrate </label>
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
@@ -31,7 +36,25 @@
                      <div class="btn-layer"></div>
                      <input type="submit" value="Iniciar Session">
                   </div>
+                  <div class="signup-link">
+                     No eres miembro? <a href="">Regístrate ahora</a>
+                     <a href="index.html"> Volver al inicio</a>
+                  </div>
                </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Correo Electrónico" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Contraseña" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirma Contraseña" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Empieza">
+                  </div>
                   <div class="signup-link"><a href="index.html"> Volver al inicio</a></div>
                </form>
             </div>
@@ -41,9 +64,19 @@
          const loginText = document.querySelector(".title-text .login");
          const loginForm = document.querySelector("form.login");
          const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
          loginBtn.onclick = (()=>{
            loginForm.style.marginLeft = "0%";
            loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
          });
       </script>
    </body>

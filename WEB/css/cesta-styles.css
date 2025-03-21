@@ -1,0 +1,265 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 a[href] {
+    text-decoration: none;
+    color: black;
+}
+h1 a[href]:hover {
+    color: #6ab5ca;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ESTILOS HEADER NAV */
+
+header {
+    width: 100%;
+    background: #79ddf8;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content img.icon {
+    width: 80px;
+    margin-left: 20px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 18px;
+    border-radius: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #6ab5ca;
+}
+
+.login img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* END_ESTILOS HEADER NAV */
+
+/* BARRA DE BÚSQUEDA */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 2px solid #6ab5ca;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.search-bar button {
+    background: #6ab5ca;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+    background: #4c94a6;
+}
+
+/* END_BARRA DE BÚSQUEDA */
+
+/* ESTILOS PAGINA SOPORTE */
+
+
+
+/* END_ESTILOS PAGINA SOPORTE */
+
+/* Contenedor principal del contenido */
+main {
+    margin-top: 80px; /* Espacio para el header fijo */
+    padding: 20px 10%;
+}
+
+h4 {
+    color: #6ab5ca;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+/* ESTILOS FOTOS OPCIONES */
+.S_content_group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.S_content-item {
+    background: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    width: 25%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.S_content-item:hover {
+    transform: scale(1.05);
+}
+
+.S_content-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.S_content-item p {
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    color: #555;
+}
+
+.S_content-item a[href] {
+    text-decoration: none;
+    color: black;
+}
+.S_content-item a[href]:hover {
+    color: #6ab5ca;
+}
+
+/* END ESTILOS FOTOS OPCIONES */
+
+/* ESTILOS LISTA PRODUCTOS */
+main ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+main li{
+    background-color: #b2e6f5;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #555;
+    border-radius: 15px;
+    padding: 2%;
+}
+main li a{
+    text-decoration: none;
+    color: black;
+}
+main li:hover {
+    transform: scale(1.05);
+    background-color: #6ab5ca;
+}
+main li:hover a{
+    color: white;
+}
+
+/* END_ESTILOS LISTA PRODUCTOS */
+/* ESTILOS FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 15px 15px 0 0;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer .icon2 {
+    width: 50px;
+}
+/* END_ ESTILOS FOOTER */
+
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bnn_principal img {
+        width: 100%;
+    }
+
+    .LMV_content_group, .L_content_group {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .boton-sm {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+

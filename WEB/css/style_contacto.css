@@ -115,15 +115,9 @@ nav ul li a:hover {
 
 /* END_BARRA DE BÚSQUEDA */
 
-/* ESTILOS PAGINA SOPORTE */
-
-
-
-/* END_ESTILOS PAGINA SOPORTE */
-
-/* Contenedor principal del contenido */
+/* Estilos Main */
 main {
-    margin-top: 80px; /* Espacio para el header fijo */
+    margin-top: 80px; 
     padding: 20px 10%;
 }
 

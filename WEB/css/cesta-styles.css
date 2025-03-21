@@ -2,6 +2,14 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+h1 a[href] {
+    text-decoration: none;
+    color: black;
+}
+h1 a[href]:hover {
+    color: #6ab5ca;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -106,125 +114,101 @@ nav ul li a:hover {
 }
 
 /* END_BARRA DE BÚSQUEDA */
-/* Contenedor principal del contenido [Main] */
+
+/* ESTILOS MAIN */
 main {
     margin-top: 80px; 
     padding: 20px 10%;
 }
 
-
-/* ESTILOS SECCIÓN DE OFERTAS */
-.oferta-home {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 30px;
+h4 {
+    color: #6ab5ca;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
     text-align: center;
 }
 
-.oferta-home h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 15px;
+/* ESTILOS FOTOS OPCIONES */
+.S_content_group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.oferta-home img {
+.S_content-item {
+    background: transparent;
+    border-radius: 15px;
+    padding: 20px;
+    width: 25%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.S_content-item:hover {
+    transform: scale(1.05);
+}
+
+.S_content-item img {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.boton-sm {
-    background-color: #79ddf8;
+.S_content-item p {
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    color: #555;
+}
+
+.S_content-item a[href] {
     text-decoration: none;
-    color: white;
-    border-radius: 20px;
-    padding: 15px 25px;
-    display: inline-block;
-    margin-top: 15px;
-    transition: background 0.3s ease;
+    color: black;
+}
+.S_content-item a[href]:hover {
+    color: #6ab5ca;
 }
 
-.boton-sm:hover {
+/* END ESTILOS FOTOS OPCIONES */
+
+/* ESTILOS LISTA PRODUCTOS */
+main ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+main li{
+    background-color: #b2e6f5;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #555;
+    border-radius: 15px;
+    padding: 2%;
+}
+main li a{
+    text-decoration: none;
+    color: black;
+}
+main li:hover {
+    transform: scale(1.05);
     background-color: #6ab5ca;
 }
-
-/* END_ ESTILOS SECCIÓN DE OFERTAS */
-
-/* ESTILOS ZONA LO MÁS VENDIDO */
-.LMV_content_group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
+main li:hover a{
+    color: white;
 }
 
-.LMV_content-item {
-    background: transparent;
-    border-radius: 15px;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.LMV_content-item:hover {
-    transform: scale(1.05);
-}
-
-.LMV_content-item img {
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 10px;
-}
-
-.LMV_content-item p {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #555;
-}
-
-/* END ESTILOS ZONA LO MÁS VENDIDO */
-
-/* ESTILOS ZONA LANZAMIENTOS */
-.L_content_group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.L_content-item {
-    background: transparent;
-    border-radius: 15px;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.L_content-item:hover {
-    transform: scale(1.05);
-}
-
-.L_content-item img {
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 10px;
-}
-
-.L_content-item p {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #555;
-}
-/* END_ESTILOS ZONA LANZAMIENTOS */
-
+/* END_ESTILOS LISTA PRODUCTOS */
 /* ESTILOS FOOTER */
 footer {
     background: #333;
@@ -271,3 +255,5 @@ footer .icon2 {
         text-align: center;
     }
 }
+
+

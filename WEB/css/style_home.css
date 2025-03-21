@@ -106,9 +106,9 @@ nav ul li a:hover {
 }
 
 /* END_BARRA DE BÚSQUEDA */
-/* Contenedor principal del contenido */
+/* Contenedor principal del contenido [Main] */
 main {
-    margin-top: 80px; /* Espacio para el header fijo */
+    margin-top: 80px; 
     padding: 20px 10%;
 }
 

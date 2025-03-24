@@ -139,6 +139,13 @@ h4 {
     height: 10%;
 }
 
+.prod_info{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5%;
+    margin-top: -25%;
+}
+
 /*END ZONA CONTENIDO_PRODUCTO */
 /* ESTILOS FOOTER */
 footer {

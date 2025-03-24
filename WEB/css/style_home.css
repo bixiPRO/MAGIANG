@@ -187,6 +187,17 @@ main {
     color: #555;
 }
 
+.LMV_content-item a{
+    text-decoration: none;
+    color:black;
+}
+
+.LMV_content-item a:hover{
+    text-decoration: none;
+    color: #79ddf8;
+}
+
+
 /* END ESTILOS ZONA LO MÁS VENDIDO */
 
 /* ESTILOS ZONA LANZAMIENTOS */
@@ -222,6 +233,16 @@ main {
     font-size: 18px;
     margin: 5px 0;
     color: #555;
+}
+
+.L_content-item a{
+    text-decoration: none;
+    color:black;
+}
+
+.L_content-item a:hover{
+    text-decoration: none;
+    color: #79ddf8;
 }
 /* END_ESTILOS ZONA LANZAMIENTOS */
 

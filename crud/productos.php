@@ -1,19 +1,9 @@
 <?php
 
 
-      $filasmax = 20;
-
-    if (isset($_GET['pag']))
-        {
-        $pagina = $_GET['pag'];
-    } else
-        {
-        $pagina = 1;        
-    }   
-    
+   
 // Conexión a la base de datos
 require('connection.php'); 
-
 
 
 

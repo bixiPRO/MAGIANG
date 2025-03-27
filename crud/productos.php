@@ -10,15 +10,7 @@ if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
     $query .= " WHERE categorias = '$filtrar_categoria'";
 }
 $result = $conn->query($query);
-
-
-
-
-
 ?>                  
-
-
-
 
 
 
@@ -76,8 +68,6 @@ $result = $conn->query($query);
     </tbody>                
 </table>                
 
- 
-
 <!-- Formulario de filtrado por Categorias -->
 
 <form method="GET" action="productos.php">
@@ -93,12 +83,6 @@ $result = $conn->query($query);
             </select><br/>
             <input type="submit" value="Filtrar" />
 </form>
-
-
-
-
-
-
 </body>
 </html>
 

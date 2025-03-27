@@ -1,7 +1,19 @@
 <?php
-   
+session_start();   
 // Conexión a la base de datos
 require('connection.php'); 
+
+// Obtener los productos desde la base de datos
+$query = "SELECT * FROM productos";
+if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
+    $filtrar_categoria = $_GET['filtrar_categoria'];
+    $query .= " WHERE categorias = '$filtrar_categoria'";
+}
+$result = $conn->query($query);
+
+
+
+
 
 ?>                  
 

@@ -33,7 +33,7 @@ try {
     $mail->Body    = 'Funciona!!';
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'Mensage enviado';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

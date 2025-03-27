@@ -7,7 +7,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-      <h1> TEXTO DE PRUEBA </h1>
       <div class="wrapper">
          <div class="title-text"> 
             <div class="title login">

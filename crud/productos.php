@@ -1,13 +1,7 @@
 <?php
-
-
    
 // Conexión a la base de datos
 require('connection.php'); 
-
-
-
-
 
 ?>                  
 
@@ -33,7 +27,7 @@ require('connection.php');
 <body>
     
 <!-- Tabla de productos -->
- <table>
+<table>
     <thead>
         <tr>
             <th>Código</th>
@@ -46,9 +40,34 @@ require('connection.php');
         
         </tr>
     </thead>
-</table>                    
+    
+    <tbody>
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row =$result-> fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['Código']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Descripción']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Categoría']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Precio']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Stock']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Formato']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['Acción']) . "</td>";
+                echo "</tr>";
+
+
+
+            }    
+        }               
+        ?>                
+                     
+    </tbody>                
+</table>                
+
  
+
 <!-- Formulario de filtrado por Categorias -->
+
 <form method="GET" action="productos.php">
             <label for="filtrar_categoria">Filtrar por Clase:</label>
             <select name="filtrar_categoria">
@@ -61,7 +80,7 @@ require('connection.php');
                 <option value="Monitores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Monitores') ? 'selected' : '' ?>>Monitores</option>
             </select><br/>
             <input type="submit" value="Filtrar" />
-        </form>
+</form>
 
 
 

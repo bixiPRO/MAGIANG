@@ -8,7 +8,7 @@
    </head>
    <body>
       <div class="wrapper">
-         <div class="title-text">
+         <div class="title-text"> 
             <div class="title login">
                 Iniciar Sesión
             </div>
@@ -17,12 +17,12 @@
             <div class="slide-controls">
                <input type="radio" name="slide" id="login" checked>
                <label for="login" class="slide login">Accede</label>
-               <div class="slider-tab"></div>
+               <div class="slider-tab"></div> 
             </div>
             <div class="form-inner">
                <form action="#" class="login">
                   <div class="field">
-                     <input type="text" placeholder="Correo Electrónico" required>
+                     <input type="text" placeholder="Usuario" required>
                   </div>
                   <div class="field">
                      <input type="password" placeholder="Contraseña" required>

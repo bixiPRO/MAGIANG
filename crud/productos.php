@@ -29,7 +29,7 @@ $result = $conn->query($query);
     <meta charset="UTF-8">
 </head>
 <body>
-    
+<div>    
 <!-- Tabla de productos -->
 <table>
     <thead>
@@ -70,19 +70,21 @@ $result = $conn->query($query);
 
 <!-- Formulario de filtrado por Categorias -->
 
-<form method="GET" action="productos.php">
-            <label for="filtrar_categoria">Filtrar por Clase:</label>
-            <select name="filtrar_categoria">
-                <option value="">Todas</option>
-                <option value="Ratones" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ratones') ? 'selected' : '' ?>>Ratones</option>
-                <option value="Teclados" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Teclados') ? 'selected' : '' ?>>Teclados</option>
-                <option value="Ordenadores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ordenadores') ? 'selected' : '' ?>>Ordenadores</option>
-                <option value="Micrófonos" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Micrófonos') ? 'selected' : '' ?>>Micrófonos</option>
-                <option value="Portátiles" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Portátiles') ? 'selected' : '' ?>>Portátiles</option>
-                <option value="Monitores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Monitores') ? 'selected' : '' ?>>Monitores</option>
-            </select><br/>
-            <input type="submit" value="Filtrar" />
-</form>
+    <form method="GET" action="productos.php">
+        <label for="filtrar_categoria">Filtrar por Clase:</label>
+        <select name="filtrar_categoria">
+            <option value="">Todas</option>
+            <option value="Ratones" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ratones') ? 'selected' : '' ?>>Ratones</option>
+            <option value="Teclados" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Teclados') ? 'selected' : '' ?>>Teclados</option>
+            <option value="Ordenadores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ordenadores') ? 'selected' : '' ?>>Ordenadores</option>
+            <option value="Micrófonos" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Micrófonos') ? 'selected' : '' ?>>Micrófonos</option>
+            <option value="Portátiles" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Portátiles') ? 'selected' : '' ?>>Portátiles</option>
+            <option value="Monitores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Monitores') ? 'selected' : '' ?>>Monitores</option>
+        </select><br/>
+        <input type="submit" value="Filtrar" />
+               
+    </form>
+</div>    
 </body>
 </html>
 

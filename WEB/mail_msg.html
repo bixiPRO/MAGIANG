@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mail Message | Magiang </title>
+        <link rel="stylesheet" href="css/mail_msg_styles.css">
+    </head>
+    <body>
+        <main>
+            <h1 class="title">Magiang Shopping</h1>
+            <h1>Gracias!</h1>
+            <h2>Su compra se ha realizado correctamente</h2>
+            <h3>Su pedido es el siguiente:</h3>
+            <hr>
+            <div class="order-details">
+                <p><a class="bold">Nombre:</a> {{name}}</p>
+                <p><a class="bold">Dirección:</a> {{address}}</p>
+                <p><a class="bold">Teléfono:</a> {{phone}}</p>
+                <p><a class="bold">Email:</a>{{email}}</p>
+                <p><a class="bold">Fecha de compra:</a> {{date}}</p>
+                <p><a class="bold">Total:</a> ${{total}}</p>
+                <p class="bold">Productos:</p>
+                <ul>
+                    {{#each products}}
+                        <li>{{this.name}} - ${{this.price}}</li>
+                    {{/each}}
+                </ul>
+                <hr>
+                <p>Gracias por confiar en nosotros, esperemos que vuelva a solicitar nuestros servicios</p>
+                <p>¿Hay algo mal?, no dude en contactarnos <a  class="mail" href="contacto.html">soporte.magiang@gmail.com</a></p>
+            </div>
+        </main>
+    </body>
+
+</html>

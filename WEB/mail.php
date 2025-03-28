@@ -36,6 +36,20 @@ try {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mail Message | Magiang </title>
+        <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    p {
+      color: #555;
+      font-size: 16px;
+    }
+  </style>
     </head>
     <body>
         <main>

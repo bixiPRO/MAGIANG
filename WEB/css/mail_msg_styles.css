@@ -79,27 +79,11 @@ main ul{
 
 /* DISEÑO RESPONSIVE */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
+    body{
+        padding: 0;
     }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .bnn_principal img {
-        width: 100%;
-    }
-
-    .LMV_content_group, .L_content_group {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .boton-sm {
-        width: 100%;
-        text-align: center;
+    main{
+        padding: 20px 5%;
     }
 }
 

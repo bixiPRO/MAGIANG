@@ -28,6 +28,7 @@ try {
 
 
     //Content
+    $mail->addEmbeddedImage('ruta/a/archivo_de_imajen.jpg', 'image_cid');
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'PROVA';
     $mail->Body    = '<!DOCTYPE html>
@@ -59,6 +60,7 @@ try {
             <h3>Su pedido es el siguiente:</h3>
             <hr>
             <div class="order-details">
+                <img src="cid:image_cid">
                 <p><a class="bold">Nombre:</a> {{name}}</p>
                 <p><a class="bold">Dirección:</a> {{address}}</p>
                 <p><a class="bold">Teléfono:</a> {{phone}}</p>

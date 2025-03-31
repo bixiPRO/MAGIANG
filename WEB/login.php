@@ -34,10 +34,10 @@
             <div class="form-inner">
                <form action="do_login.php" method="POST" class="login">
                   <div class="field">
-                     <input type="text" placeholder="Correo Electrónico" required>
+                     <input type="text" placeholder="Correo Electrónico" name="gmail" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Contraseña" required>
+                     <input type="password" placeholder="Contraseña" name="pwd" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
@@ -50,14 +50,18 @@
                </form>
                <form action="do_register.php" method="POST" class="signup">
                   <div class="field">
-                     <input type="text" placeholder="Correo Electrónico" required>
+                     <input type="text" placeholder="Correo Electrónico" name="gmail" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Contraseña" required>
+                     <input type="password" placeholder="Contraseña" name="pwd1" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirma Contraseña" required>
+                     <input type="password" placeholder="Confirma Contraseña" name="pwd2" required>
                   </div>
+                  <? if($pwd1=$pwd2): ?>
+                     <p> la contrasenya es la misma </p>
+                  <? if($pwd1!=$pwd2): ?>
+                     <p> la contrasenya no es la misma </p>
                   <div class="field btn">
                      <div class="btn-layer"></div>
                      <input type="submit" value="Empieza">

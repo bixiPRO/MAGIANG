@@ -1,0 +1,325 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 a[href] {
+    text-decoration: none;
+    color: black;
+}
+h1 a[href]:hover {
+    color: #6ab5ca;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ESTILOS HEADER NAV */
+
+header {
+    width: 100%;
+    background: #79ddf8;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content img.icon {
+    width: 80px;
+    margin-left: 20px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 18px;
+    border-radius: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #6ab5ca;
+}
+
+.login img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* END_ESTILOS HEADER NAV */
+
+/* BARRA DE BÚSQUEDA */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 2px solid #6ab5ca;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.search-bar button {
+    background: #6ab5ca;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+    background: #4c94a6;
+}
+
+/* END_BARRA DE BÚSQUEDA */
+
+/* ESTILOS MAIN */
+main {
+    margin-top: 80px; 
+    padding: 20px 10%;
+}
+
+h4 {
+    color: #6ab5ca;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+/* ESTILOS LISTA PRODUCTOS */
+main ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+main li{
+    background-color: #b2e6f5;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #555;
+    border-radius: 15px;
+    padding: 2%;
+}
+main li a{
+    text-decoration: none;
+    color: black;
+}
+main li:hover {
+    transform: scale(1.05);
+    background-color: #6ab5ca;
+}
+main li:hover a{
+    color: white;
+}
+
+/* END_ESTILOS LISTA PRODUCTOS */
+
+/* ESTILOS FORMULARIO */
+
+form {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 1%;
+}
+form h2 {
+    color: #6ab5ca;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"] {
+    display: inline;
+    width: 50%;
+    padding: 1%;
+    border-radius: 20px;
+    border: 2px solid #6ab5ca;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="tel"]:focus {
+    border-color: #79ddf8;
+    outline: none;
+}
+checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* ESTILO BOTON_PAGAR */
+.boton-pay {
+    background-color: #79ddf8;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 25px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+    border-color: transparent;
+}
+
+.boton-pay:hover {
+    background-color: #6ab5ca;
+}
+
+/* END_ESTILO BOTON_PAGAR */
+
+/* ESTILOS FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 15px 15px 0 0;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer .icon2 {
+    width: 50px;
+}
+/* END_ ESTILOS FOOTER */
+
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    main {
+        padding: 20px 5%;
+    }
+
+    main ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main li {
+        width: 90%;
+        text-align: center;
+    }
+
+    form {
+        width: 90%;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form input[type="tel"] {
+        width: 100%;
+    }
+    form label {
+        width: 100%;
+        text-align: left;
+    }
+    form input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }    
+
+}
+
+

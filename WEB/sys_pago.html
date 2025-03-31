@@ -2,7 +2,7 @@
 <head>
     <title> Mi Cesta - Magiang </title>
     <favicon href="img/favicon.">
-    <link rel="stylesheet" type="text/css" href="css/cesta-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/sys-pago-styles.css">
     <encode utf-8>
 </head>
 <body>
@@ -30,22 +30,24 @@
          </div>
         
     </header>
-    
+
+    <!--ZONA FORMULARIO PAGO-->
+
 
     <main>
-        <h1> <a>Mi Cesta</a></h1>
-        <div class="contacta-txt">
-            <ul>
-                <li><a href="contacto_pyp.html">Producto 1</a></li>
-                <li><a href="contacto_pyp.html">Producto 2</a></li>
-                <li><a href="contacto_pyp.html">Producto 3</a></li>
-                <li><a href="contacto_pyp.html">Producto 4</a></li>
-            </ul>
-        </div>
-        <div> 
-            <h2>Precio total: 0.00€</h2>
-            <a class="boton-pay" href="datos_pago.html">Pagar</a>
-        </div>
+        <h1> <a>Precio total: 0.00€</a></h1>
+        <h2> <a>Datos de pago:</a></h2>
+        <form action="pago.html" method="post">
+
+            <h1> Proximamente....</h1>
+
+            <checkbox id="terminos" name="terminos" required>
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label>He leído y acepto los <a href="#">términos y condiciones</a></label><br><br>  
+            </checkbox>
+            <button type="submit" class="boton-pay"><a href="sys_pago.html">Pagar</a></button>
+            <div> <a class="boton-pay" href="datos_pago.html">Atras</a></div>
+        </form>
     
     </main>
 

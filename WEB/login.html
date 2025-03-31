@@ -7,6 +7,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
+<?php
+
+session_start();
+
+require('connection.php');
+?>
       <div class="wrapper">
          <div class="title-text">
             <div class="title login">
@@ -26,7 +32,7 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="do_login.php" method="POST" class="login">
                   <div class="field">
                      <input type="text" placeholder="Correo Electrónico" required>
                   </div>

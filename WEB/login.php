@@ -48,7 +48,7 @@
                      <a href="index.html"> Volver al inicio</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form action="do_register.php" method="POST" class="signup">
                   <div class="field">
                      <input type="text" placeholder="Correo Electrónico" required>
                   </div>

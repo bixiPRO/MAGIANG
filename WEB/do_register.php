@@ -1,3 +1,8 @@
+<html>
+<head>
+<title>do register</title>
+</head>
+<body>
 <?php
 session_start();
 require('connection.php');
@@ -26,9 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // verificar que el mail ya existe
-
-    $query = "SELECT id FROM clientes WHERE email = ?";
-    $stmt = $conn->prepare($query);
+    
+    $stmt = $conn->prepare("SELECT id FROM clientes WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -61,3 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 ?>
+
+<a href='index.php'>ir a home</a>
+</body>
+</html>

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // verificar que el mail ya existe
-    
+
     $query = "SELECT id FROM clientes WHERE email = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $email);
@@ -39,10 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+    $username = explode('@', $email)[0];
+    $username = preg_replace('/[^a-zA-Z0-9]/', '', $username);
 
-    $query = "INSERT INTO clientes (email, contrasenya) VALUES (?, ?)";
+
+    $query = "INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("ss", $email, $password1);
+    $stmt->bind_param("sss", $email, $username, $password1);
 } else {
     header("Location: login.php");
     exit();

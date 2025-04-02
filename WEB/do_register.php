@@ -13,6 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+    if ($password1 !== $password2) {
+        $_SESSION['error'] = "Las contraseñas no coinciden";
+        header("Location: login.php");
+        exit();
+    }
+
     $query = "INSERT INTO clientes (email, contrasenya) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ss", $email, $password1);

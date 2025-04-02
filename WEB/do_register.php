@@ -12,5 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: login.php");
         exit();
     }
+
+    $query = "INSERT INTO clientes (email, contrasenya) VALUES (?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ss", $email, $password1);
 }
 ?>

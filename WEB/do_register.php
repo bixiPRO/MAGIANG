@@ -25,6 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+    // verificar que el mail ya existe
+    
+    $query = "SELECT id FROM clientes WHERE email = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $_SESSION['error'] = "Este correo electrónico ya está registrado";
+        header("Location: login.php");
+        exit();
+    }
+
 
     $query = "INSERT INTO clientes (email, contrasenya) VALUES (?, ?)";
     $stmt = $conn->prepare($query);

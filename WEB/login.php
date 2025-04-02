@@ -8,11 +8,9 @@
    </head>
    <body>
    <?php
-
    session_start();
-
    require('connection.php');
-   ?> <br/>
+   ?>
       <div class="wrapper">
          <div class="title-text">
             <div class="title login">
@@ -58,10 +56,13 @@
                   <div class="field">
                      <input type="password" placeholder="Confirma Contraseña" name="pwd2" required>
                   </div>
-                  <? if($pwd1=$pwd2): ?>
-                     <p> la contrasenya es la misma </p>
-                  <? if($pwd1!=$pwd2): ?>
-                     <p> la contrasenya no es la misma </p>
+                  <?php if(isset($_POST['pwd1']) && isset($_POST['pwd2'])): ?>
+                     <?php if($_POST['pwd1'] == $_POST['pwd2']): ?>
+                        <p>La contraseña es la misma</p>
+                     <?php else: ?>
+                        <p>La contraseña no coincide</p>
+                     <?php endif; ?>
+                  <?php endif; ?>
                   <div class="field btn">
                      <div class="btn-layer"></div>
                      <input type="submit" value="Empieza">

@@ -7,10 +7,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-   <?php
-   session_start();
-   require('connection.php');
-   ?>
       <div class="wrapper">
          <div class="title-text">
             <div class="title login">

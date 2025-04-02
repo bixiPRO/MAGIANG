@@ -46,6 +46,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = "INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sss", $email, $username, $password1);
+
+    if ($stmt->execute()) {
+        $_SESSION['success'] = "Registro exitoso. Por favor inicia sesión.";
+        header("Location: login.php");
+        exit();
+    } else {
+        $_SESSION['error'] = "Error al registrar el usuario: " . $conn->error;
+        header("Location: login.php");
+        exit();
+    }
 } else {
     header("Location: login.php");
     exit();

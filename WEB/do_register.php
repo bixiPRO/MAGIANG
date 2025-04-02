@@ -19,8 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+    if (strlen($password1) < 6) {
+        $_SESSION['error'] = "La contraseña debe tener al menos 6 caracteres";
+        header("Location: login.php");
+        exit();
+    }
+
+
     $query = "INSERT INTO clientes (email, contrasenya) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ss", $email, $password1);
+} else {
+    header("Location: login.php");
+    exit();
 }
 ?>

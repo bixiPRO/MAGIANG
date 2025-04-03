@@ -12,7 +12,21 @@ $password1 = $_POST['pwd1'];
 $password2 = $_POST['pwd2'];
 
 if ($password1 !== $password2) {
-    $_SESSION['error'] = "Las contraseñas no coinciden";
+    header("Location: login.php");
+    exit();
+}
+
+if (strlen($password1) < 6) {
+    header("Location: login.php");
+    exit();
+}
+
+$stmt = $conn->prepare("SELECT id FROM clientes WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
     header("Location: login.php");
     exit();
 }
@@ -20,68 +34,19 @@ if ($password1 !== $password2) {
 $username = explode('@', $email)[0];
 $username = preg_replace('/[^a-zA-Z0-9]/', '', $username);
 
+$hash = password_hash($password1,PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare("INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $email, $username, $password2);
+$stmt->bind_param("sss", $email, $username, $hash);
 $stmt->execute();
 
-
-
-/**if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['gmail'];
-    $password1 = $_POST['pwd1'];
-    $password2 = $_POST['pwd2'];
-
-
-    if ($password1 !== $password2) {
-        $_SESSION['error'] = "Las contraseñas no coinciden";
-        header("Location: login.php");
-        exit();
-    }
-
-    if (strlen($password1) < 6) {
-        $_SESSION['error'] = "La contraseña debe tener al menos 6 caracteres";
-        header("Location: login.php");
-        exit();
-    }
-
-    // verificar que el mail ya existe
-    
-    $stmt = $conn->prepare("SELECT id FROM clientes WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $_SESSION['error'] = "Este correo electrónico ya está registrado";
-        header("Location: login.php");
-        exit();
-    }
-
-    $query = "INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?)";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("sss", $email, $username, $password1);
-
-    if ($stmt->execute()) {
-        $_SESSION['success'] = "Registro exitoso. Por favor inicia sesión.";
-        header("Location: login.php");
-        exit();
-    } else {
-        $_SESSION['error'] = "Error al registrar el usuario: " . $conn->error;
-        header("Location: login.php");
-        exit();
-    }
-} else {
-    header("Location: login.php");
-    exit();
-}
- **/   
+  
 $stmt->close();
 $conn->close();
 
-
+echo "Registro creado"
 ?>
 
-<a href='index.php'>ir a home</a>
+<a href='login.php'>inicia seccion ahora</a>
 </body>
 </html>

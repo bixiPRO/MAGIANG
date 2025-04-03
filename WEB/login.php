@@ -39,7 +39,7 @@
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Iniciar Session">
+                     <input type="submit" name=submit value="Iniciar Session">
                   </div>
                   <div class="signup-link">
                      No eres miembro? <a href="">Regístrate ahora</a>

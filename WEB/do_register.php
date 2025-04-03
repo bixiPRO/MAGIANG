@@ -34,9 +34,10 @@ if ($result->num_rows > 0) {
 $username = explode('@', $email)[0];
 $username = preg_replace('/[^a-zA-Z0-9]/', '', $username);
 
+$hash = password_hash($password1,PASSWORD_DEFAULT);
 
 $stmt = $conn->prepare("INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $email, $username, $password2);
+$stmt->bind_param("sss", $email, $username, $hash);
 $stmt->execute();
 
   

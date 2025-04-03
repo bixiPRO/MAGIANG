@@ -50,13 +50,13 @@ $result = $conn->query($query);
         if ($result->num_rows > 0) {
             while ($row =$result-> fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['Código']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Descripción']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Categoría']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Precio']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Stock']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Formato']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Acción']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['codigo']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['descripcion']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['categoria']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['precio']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['stock']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['formato']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['accion']) . "</td>";
                 echo "</tr>";
 
 

@@ -1,9 +1,13 @@
+<?php
+   session_start();
+   require('connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
       <title>Login - Magiang</title>
-      <link rel="stylesheet" href="css/login-style.css">
+      <link rel="stylesheet" href="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
@@ -26,12 +30,12 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="do_login.php" method="POST" class="login">
                   <div class="field">
-                     <input type="text" placeholder="Correo Electrónico" required>
+                     <input type="text" placeholder="Correo Electrónico" name="gmail" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Contraseña" required>
+                     <input type="password" placeholder="Contraseña" name="pwd" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
@@ -42,19 +46,26 @@
                      <a href="index.html"> Volver al inicio</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form action="do_register.php" method="POST" class="signup">
                   <div class="field">
-                     <input type="text" placeholder="Correo Electrónico" required>
+                     <input type="text" placeholder="Correo Electrónico" name="gmail" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Contraseña" required>
+                     <input type="password" placeholder="Contraseña" name="pwd1" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirma Contraseña" required>
+                     <input type="password" placeholder="Confirma Contraseña" name="pwd2" required>
                   </div>
+                  <?php if(isset($_POST['pwd1']) && isset($_POST['pwd2'])): ?>
+                     <?php if($_POST['pwd1'] == $_POST['pwd2']): ?>
+                        <p>La contraseña es la misma</p>
+                     <?php else: ?>
+                        <p>La contraseña no coincide</p>
+                     <?php endif; ?>
+                  <?php endif; ?>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Empieza">
+                     <input type="submit" name=submit value="Empieza"/>
                   </div>
                   <div class="signup-link"><a href="index.html"> Volver al inicio</a></div>
                </form>

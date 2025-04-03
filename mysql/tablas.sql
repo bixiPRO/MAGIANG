@@ -5,7 +5,8 @@ USE MAGIANG;
 CREATE TABLE clientes(
    id INT PRIMARY KEY AUTO_INCREMENT,
    email VARCHAR(255),
-   nombre_usuario VARCHAR(50)
+   nombre_usuario VARCHAR(50),
+   contrasenya VARCHAR(50)
 )ENGINE = InnoDB;
 
 
@@ -15,7 +16,7 @@ CREATE TABLE productos(
     descripcion VARCHAR(255),
     stock INT,
     precio DECIMAL(10,2),
-    tipo_ENUM VARCHAR(255)('FISICO','DIGITAL')
+    tipo ENUM('FISICO','DIGITAL')
 );
 
 CREATE TABLE digital(

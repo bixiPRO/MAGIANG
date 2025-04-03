@@ -131,53 +131,6 @@ h4 {
     text-align: center;
 }
 
-/* ESTILOS FOTOS OPCIONES */
-.S_content_group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.S_content-item {
-    background: transparent;
-    border-radius: 15px;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.S_content-item:hover {
-    transform: scale(1.05);
-}
-
-.S_content-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 10px;
-}
-
-.S_content-item p {
-    font-size: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
-    color: #555;
-}
-
-.S_content-item a[href] {
-    text-decoration: none;
-    color: black;
-}
-.S_content-item a[href]:hover {
-    color: #6ab5ca;
-}
-
-/* END ESTILOS FOTOS OPCIONES */
-
 /* ESTILOS LISTA PRODUCTOS */
 main ul{
     display: flex;
@@ -210,6 +163,75 @@ main li:hover a{
 
 /* END_ESTILOS LISTA PRODUCTOS */
 
+/* ESTILOS FORMULARIO */
+
+form {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 1%;
+}
+form h2 {
+    color: #6ab5ca;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"] {
+    display: inline;
+    width: 50%;
+    padding: 1%;
+    border-radius: 20px;
+    border: 2px solid #6ab5ca;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="tel"]:focus {
+    border-color: #79ddf8;
+    outline: none;
+}
+checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 /* ESTILO BOTON_PAGAR */
 .boton-pay {
     background-color: #79ddf8;
@@ -220,6 +242,7 @@ main li:hover a{
     display: inline-block;
     margin-top: 15px;
     transition: background 0.3s ease;
+    border-color: transparent;
 }
 
 .boton-pay:hover {
@@ -261,18 +284,42 @@ footer .icon2 {
         gap: 10px;
     }
 
-    .bnn_principal img {
-        width: 100%;
+    nav ul li {
+        margin: 0;
     }
 
-    .LMV_content_group, .L_content_group {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    main {
+        padding: 20px 5%;
     }
 
-    .boton-sm {
-        width: 100%;
+    main ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main li {
+        width: 90%;
         text-align: center;
     }
+
+    form {
+        width: 90%;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form input[type="tel"] {
+        width: 100%;
+    }
+    form label {
+        width: 100%;
+        text-align: left;
+    }
+    form input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }    
+
 }
 
 

@@ -65,7 +65,7 @@
                   <?php endif; ?>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Empieza">
+                     <input type="submit" name=submit value="Empieza"/>
                   </div>
                   <div class="signup-link"><a href="index.html"> Volver al inicio</a></div>
                </form>

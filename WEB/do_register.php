@@ -1,22 +1,37 @@
 <html>
 <head>
-<title>do register</title>
+<title>REGISTRO</title>
 </head>
 <body>
 <?php
 session_start();
 require('connection.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$email = $_POST['gmail'];
+$password1 = $_POST['pwd1'];
+$password2 = $_POST['pwd2'];
+
+if ($password1 !== $password2) {
+    $_SESSION['error'] = "Las contraseñas no coinciden";
+    header("Location: login.php");
+    exit();
+}
+
+$username = explode('@', $email)[0];
+$username = preg_replace('/[^a-zA-Z0-9]/', '', $username);
+
+
+$stmt = $conn->prepare("INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $email, $username, $password2);
+$stmt->execute();
+
+
+
+/**if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['gmail'];
     $password1 = $_POST['pwd1'];
     $password2 = $_POST['pwd2'];
 
-    if (empty($email) || empty($password1) || empty($password2)) {
-        $_SESSION['error'] = "Todos los campos son obligatorios";
-        header("Location: login.php");
-        exit();
-    }
 
     if ($password1 !== $password2) {
         $_SESSION['error'] = "Las contraseñas no coinciden";
@@ -43,10 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    $username = explode('@', $email)[0];
-    $username = preg_replace('/[^a-zA-Z0-9]/', '', $username);
-
-
     $query = "INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sss", $email, $username, $password1);
@@ -64,6 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: login.php");
     exit();
 }
+ **/   
+$stmt->close();
+$conn->close();
+
+
 ?>
 
 <a href='index.php'>ir a home</a>

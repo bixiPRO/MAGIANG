@@ -29,6 +29,7 @@ echo $_SESSION['nombre_usuario'];
 
 $stmt->close();
 $conn->close();
+header("Location: index.html");
 ?>
 </body>
 </html>

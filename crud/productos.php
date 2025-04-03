@@ -35,7 +35,7 @@ $result = $conn->query($query);
     <thead>
         <tr>
             <th>Código</th>
-            <th>Descripción</th>
+            <th>Nombre</th>
             <th>Categoría</th>
             <th>Precio</th>
             <th>Stock</th>
@@ -51,7 +51,7 @@ $result = $conn->query($query);
             while ($row =$result-> fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['codigo']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['descripcion']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['categoria']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['precio']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['stock']) . "</td>";

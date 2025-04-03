@@ -16,11 +16,19 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 $fila = $resultado->fetch_assoc();
 
+if (password_verify($password1,$fila['contrasenya'])){
+	echo "login correcto";
+	$_SESSION['gmail']=$email;
+
+}else {
+	echo "login incorrecto";
+}
+
+echo $_SESSION['nombre_usuario'];
+
 
 $stmt->close();
 $conn->close();
-
-echo "Registro creado"
 ?>
 </body>
 </html>

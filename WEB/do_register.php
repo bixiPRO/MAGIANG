@@ -43,7 +43,7 @@ $stmt->execute();
 $stmt->close();
 $conn->close();
 
-
+echo "Registro creado"
 ?>
 
 <a href='index.php'>ir a home</a>

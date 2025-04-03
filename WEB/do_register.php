@@ -46,6 +46,6 @@ $conn->close();
 echo "Registro creado"
 ?>
 
-<a href='index.php'>ir a home</a>
+<a href='login.php'>inicia seccion ahora</a>
 </body>
 </html>

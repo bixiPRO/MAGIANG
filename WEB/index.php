@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    require('connection.php');
+    if (isset($_SESSION['array_productos'])){
+	    $array_prod = $_SESSION['array_productos'];
+    } else {
+	    $array_prod = [];
+    }
+?> 
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -47,34 +56,18 @@
             <!--Zona Lo mas vendido-->
             <div><h3> Lo mas vendido</h3></div>
             <div class="LMV_content_group">
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-                <div class="LMV_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png">Producto: 0.00€</a></p>                            
-                </div>
-              
+                <?php
+                    $query = "SELECT * FROM productos;";
+                    $registros = $conn->query($query);
+                    echo "<ul>";
+                    while ($fila = $registros->fetch_assoc()){
+	                    echo "<li>Nombre: ".$fila['nombre'];
+                    }
+                    echo "</ul>";
+
+                    $registros->close();
+                    $conn->close();
+                ?>
             </div>
         </div>
         

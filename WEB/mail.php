@@ -28,7 +28,7 @@ try {
 
 
     //Content
-    $mail->addEmbeddedImage('ruta/a/archivo_de_imajen.jpg', 'image_cid');
+  #  $mail->addEmbeddedImage('ruta/a/archivo_de_imajen.jpg', 'image_cid');
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'PROVA';
     $mail->Body    = '<!DOCTYPE html>

@@ -35,7 +35,7 @@ $result = $conn->query($query);
     <thead>
         <tr>
             <th>Código</th>
-            <th>Descripción</th>
+            <th>Nombre</th>
             <th>Categoría</th>
             <th>Precio</th>
             <th>Stock</th>
@@ -50,13 +50,13 @@ $result = $conn->query($query);
         if ($result->num_rows > 0) {
             while ($row =$result-> fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['Código']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Descripción']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Categoría']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Precio']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Stock']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Formato']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Acción']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['codigo']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['categoria']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['precio']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['stock']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['formato']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['accion']) . "</td>";
                 echo "</tr>";
 
 
@@ -77,8 +77,8 @@ $result = $conn->query($query);
             <option value="Ratones" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ratones') ? 'selected' : '' ?>>Ratones</option>
             <option value="Teclados" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Teclados') ? 'selected' : '' ?>>Teclados</option>
             <option value="Ordenadores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ordenadores') ? 'selected' : '' ?>>Ordenadores</option>
-            <option value="Micrófonos" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Micrófonos') ? 'selected' : '' ?>>Micrófonos</option>
-            <option value="Portátiles" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Portátiles') ? 'selected' : '' ?>>Portátiles</option>
+            <option value="Microfonos" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Microfonos') ? 'selected' : '' ?>>Micrófonos</option>
+            <option value="Portatiles" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Portatiles') ? 'selected' : '' ?>>Portátiles</option>
             <option value="Monitores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Monitores') ? 'selected' : '' ?>>Monitores</option>
         </select><br/>
         <input type="submit" value="Filtrar" />

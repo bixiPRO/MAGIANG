@@ -56,7 +56,18 @@
             <!--Zona Lo mas vendido-->
             <div><h3> Lo mas vendido</h3></div>
             <div class="LMV_content_group">
-     
+                <?php
+                    $query = "SELECT * FROM productos;";
+                    $registros = $conn->query($query);
+                    echo "<ul>";
+                    while ($fila = $registros->fetch_assoc()){
+	                    echo "<li>Nombre: ".$fila['nombre'];
+                    }
+                    echo "</ul>";
+
+                    $registros->close();
+                    $conn->close();
+                ?>
             </div>
         </div>
         

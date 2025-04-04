@@ -1,13 +1,19 @@
 <?php
    session_start();
    require('connection.php');
+
+   if (isset($_SESSION['array_productos'])){
+      $array_prod = $_SESSION['array_productos'];
+   } else {
+      $array_prod = [];
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
       <title>Login - Magiang</title>
-      <link rel="stylesheet" href="">
+      <link rel="stylesheet" href="css/login-style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>

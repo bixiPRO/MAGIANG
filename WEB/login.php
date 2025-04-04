@@ -1,12 +1,6 @@
 <?php
    session_start();
    require('connection.php');
-
-   if (isset($_SESSION['array_productos'])){
-      $array_prod = $_SESSION['array_productos'];
-   } else {
-      $array_prod = [];
-   }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

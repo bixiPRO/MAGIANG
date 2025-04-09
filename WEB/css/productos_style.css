@@ -116,7 +116,57 @@ nav ul li a:hover {
 /* END_BARRA DE BÚSQUEDA */
 
 
+/* ESTILO FILTRO PRODUCTOS */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #79ddf8;
+    border-radius: 15px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: %;
+    padding-right: 1%;
+
+}
+
+form input{
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+form label {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #333;
+}
+form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-right: 20px;
+}
+form button {
+    background: #6ab5ca;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+form button:hover {
+    background: #4c94a6;
+}
+/* END ESTILO FILTRO PRODUCTOS */
+
 /* Estilos Main */
+
+
+
 main {
     margin-top: 80px;
     padding: 20px 10%;
@@ -179,37 +229,6 @@ h4 {
 
 /* END ESTILOS FOTOS OPCIONES */
 
-/* ESTILOS ENLACES POSTS CONTACTO */
-main ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 40px;
-}
-main li{
-    background-color: #b2e6f5;
-    list-style: none;
-    text-decoration: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #555;
-    border-radius: 15px;
-    padding: 2%;
-}
-main li a{
-    text-decoration: none;
-    color: black;
-}
-main li:hover {
-    transform: scale(1.05);
-    background-color: #6ab5ca;
-}
-main li:hover a{
-    color: white;
-}
-
-/* END_ESTILOS ENLACES POSTS CONTACTO */
 /* ESTILOS FOOTER */
 footer {
     background: #333;

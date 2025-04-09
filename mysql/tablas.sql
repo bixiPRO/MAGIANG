@@ -16,7 +16,8 @@ CREATE TABLE productos(
     descripcion VARCHAR(255),
     stock INT,
     precio DECIMAL(10,2),
-    tipo ENUM('FISICO','DIGITAL')
+    tipo ENUM('FISICO','DIGITAL'),
+    imagen VARCHAR(255)
 );
 
 CREATE TABLE digital(

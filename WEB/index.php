@@ -61,10 +61,13 @@
                     $registros = $conn->query($query);
                     echo "<ul>";
                     while ($fila = $registros->fetch_assoc()){
-	                    echo "<li>Nombre: ".$fila['nombre'];
+                        echo '<div class="L_content-item">';
+                        echo '<p><a href="producto.html"><img src="img/example.png">';
+                        echo "Producto: ".$fila['nombre'];
+                        echo '</a></p>';
+                        echo '</div>';
                     }
                     echo "</ul>";
-
                     $registros->close();
                     $conn->close();
                 ?>

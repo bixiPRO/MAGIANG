@@ -17,7 +17,8 @@ CREATE TABLE productos(
     stock INT,
     precio DECIMAL(10,2),
     tipo ENUM('FISICO','DIGITAL'),
-    imagen VARCHAR(255)
+    imagen VARCHAR(255),
+    introduccio DATE DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE digital(

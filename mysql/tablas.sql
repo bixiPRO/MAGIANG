@@ -22,6 +22,13 @@ CREATE TABLE productos(
     ultima_data TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+CREATE TABLE ventas(
+    id_producto INT,
+    nombre VARCHAR(255),
+    numeros INT DEFAULT 0,
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
+);
+
 CREATE TABLE digital(
     id_producto INT,
     nombre VARCHAR(255),

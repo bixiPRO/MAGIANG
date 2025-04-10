@@ -14,7 +14,7 @@ CREATE TABLE productos(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) UNIQUE,
     descripcion VARCHAR(255),
-    stock INT,
+    stock INT DEFAULT 0,
     precio DECIMAL(10,2),
     tipo ENUM('FISICO','DIGITAL'),
     imagen VARCHAR(255),

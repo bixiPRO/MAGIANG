@@ -57,17 +57,15 @@
             <div><h3> Lo mas vendido</h3></div>
             <div class="LMV_content_group">
                 <?php
-                    $query = "SELECT * FROM productos;";
+                    $query = "SELECT * FROM productos LIMIT 9;";
                     $registros = $conn->query($query);
-                    echo "<ul>";
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';
                         echo '<p><a href="producto.html"><img src="img/example.png">';
                         echo "Producto: ".$fila['nombre'];
                         echo '</a></p>';
                         echo '</div>';
-                    }
-                    echo "</ul>";
+                    }                    
                     $registros->close();
                     $conn->close();
                 ?>

@@ -71,81 +71,27 @@
             <input type="reset" value="Reset" />
       </form>
 
-            
-            <div class="S_content_group">
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
 
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
+      <div class="S_content_group">
+        <?php
+            $query = "SELECT * FROM productos;";
+            $result = $conn->query($query);
 
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="S_content-item">';
+                echo '<a href="producto.php?id=' . $row['id'] . '">';
+                echo '<img src="img/example.png" alt="Producto">';
+                echo '<p>' . htmlspecialchars($row['nombre']) . '</p>';
+                echo '<p>$' . htmlspecialchars($row['precio']) . '</p>';
+                echo '</a>';
+                echo '</div>';
+            }
 
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
+            $result->close();
+            $conn->close();
+        ?>
+      </div>
 
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-                <div class="S_content-item">          
-                    <p><a href="producto.html"><img src="img/example.png"><p>Nombre producto</p><p>Precio</p></a></p>                            
-                </div>
-            </div>
-        </div>
-    
     </main>
 
 <!-- ZONA FOOTER-->

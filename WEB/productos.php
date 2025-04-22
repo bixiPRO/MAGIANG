@@ -1,3 +1,7 @@
+<?php
+    require('connection.php');
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -54,9 +58,7 @@
             <select name="tipo" >
                 <option value="...">...</option> 
                 <option value="0-10">0-10</option>
-                <option value="10-20">10-20</option>
-                <option value="20-30">20-30</option>
-                <option value="30-40">30-40</option>
+                <option value="10-20">10-20</option>html
             </select>
             <label for="lang">Ordenar por</label>
             <select name="tipo" >

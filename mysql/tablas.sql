@@ -14,10 +14,19 @@ CREATE TABLE productos(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) UNIQUE,
     descripcion VARCHAR(255),
-    stock INT,
+    stock INT DEFAULT 0,
     precio DECIMAL(10,2),
     tipo ENUM('FISICO','DIGITAL'),
-    imagen VARCHAR(255)
+    imagen VARCHAR(255),
+    data_introduccio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ultima_data TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE ventas(
+    id_producto INT,
+    nombre VARCHAR(255),
+    numeros INT DEFAULT 0,
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
 CREATE TABLE digital(

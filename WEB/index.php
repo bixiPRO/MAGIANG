@@ -21,7 +21,7 @@
      
     <!-- ZONA NAV -->
     <header>
-        <div class="header-content"><a href="index.html"><img class="icon"  src="img/logo_magiang.png"></a></div>
+        <div class="header-content"><a href="index.php<img class="icon"  src="img/logo_magiang.png"></a></div>
         <div>
             <nav>
                 <ul>
@@ -54,22 +54,19 @@
         </div>
         <div>
             <!--Zona Lo mas vendido-->
-            <div><h3> Lo mas vendido</h3></div>
-            <div class="LMV_content_group">
+            <div><h3> Ultima Modificacion</h3></div>
+            <div class="L_content_group">
                 <?php
-                    $query = "SELECT * FROM productos;";
+                    $query = "SELECT * FROM productos ORDER BY ultima_data DESC LIMIT 9;";
                     $registros = $conn->query($query);
-                    echo "<ul>";
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';
                         echo '<p><a href="producto.html"><img src="img/example.png">';
                         echo "Producto: ".$fila['nombre'];
                         echo '</a></p>';
                         echo '</div>';
-                    }
-                    echo "</ul>";
+                    }                    
                     $registros->close();
-                    $conn->close();
                 ?>
             </div>
         </div>
@@ -78,35 +75,21 @@
             <!--Zona Lanzamientos-->
             <div><h3> Lanzamientos</h3></div>
             <div>
-                <div class="L_content_group">
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                </div> 
+            <div class="L_content_group">
+                <?php
+                    $query = "SELECT * FROM productos ORDER BY data_introduccio DESC;";
+                    $registros = $conn->query($query);
+                    while ($fila = $registros->fetch_assoc()){
+                        echo '<div class="L_content-item">';
+                        echo '<p><a href="producto.html"><img src="img/example.png">';
+                        echo "Producto: ".$fila['nombre'];
+                        echo '</a></p>';
+                        echo '</div>';
+                    }                    
+                    $registros->close();
+                    $conn->close();
+                ?>
+            </div>
             </div> 
         </div>
     </main>

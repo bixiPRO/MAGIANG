@@ -13,11 +13,11 @@
 <body>
      <!-- ZONA NAV -->
     <header>
-        <div class="header-content"><a href="index.html"><img class="icon"  src="img/logo_magiang.png"></a></div>
+        <div class="header-content"><a href="index.php"><img class="icon"  src="img/logo_magiang.png"></a></div>
         <div>
             <nav>
                 <ul>
-                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="productos.php">Productos</a></li>
                     <li><a href="contacto.html">Soporte</a></li>
                     <li><a href="#">Ayuda</a></li>
                     <li><a href="nosotros.html">Sobre nosotros</a></li>
@@ -40,7 +40,7 @@
 
     <main>
         <h1> Productos</h1>
-        <form method="GET" action="productos.php">
+        <form method="post">
             <label for="lang">Tipo:</label>
             <select name="tipo" >
                 <option value="...">...</option>  
@@ -80,7 +80,7 @@
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="S_content-item">';
                 echo '<a href="producto.php?id=' . $row['id'] . '">';
-                echo '<img src="img/example.png" alt="Producto">';
+                echo '<img src="'. htmlspecialchars($row['imagen']) . '"alt="Producto">';
                 echo '<p>' . htmlspecialchars($row['nombre']) . '</p>';
                 echo '<p>$' . htmlspecialchars($row['precio']) . '</p>';
                 echo '</a>';

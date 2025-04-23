@@ -40,7 +40,7 @@
 
     <main>
         <h1> Productos</h1>
-        <form action="#" >
+        <form method="GET" action="productos.php">
             <label for="lang">Tipo:</label>
             <select name="tipo" >
                 <option value="...">...</option>  

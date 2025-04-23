@@ -55,9 +55,29 @@
         <div>
             <!--Zona Lo mas vendido-->
             <div><h3> Lo mas vendido</h3></div>
-            <div class="LMV_content_group">
+            <div class="L_content_group">
                 <?php
-                    $query = "SELECT * FROM productos LIMIT 9;";
+                    $query = "SELECT * FROM productos ORDER BY ultima_data DESC LIMIT 9;";
+                    $registros = $conn->query($query);
+                    while ($fila = $registros->fetch_assoc()){
+                        echo '<div class="L_content-item">';
+                        echo '<p><a href="producto.html"><img src="img/example.png">';
+                        echo "Producto: ".$fila['nombre'];
+                        echo '</a></p>';
+                        echo '</div>';
+                    }                    
+                    $registros->close();
+                ?>
+            </div>
+        </div>
+        
+        <div>
+            <!--Zona Lanzamientos-->
+            <div><h3> Lanzamientos</h3></div>
+            <div>
+            <div class="L_content_group">
+                <?php
+                    $query = "SELECT * FROM productos ORDER BY data_introduccio DESC LIMIT 9;";
                     $registros = $conn->query($query);
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';
@@ -70,41 +90,6 @@
                     $conn->close();
                 ?>
             </div>
-        </div>
-        
-        <div>
-            <!--Zona Lanzamientos-->
-            <div><h3> Lanzamientos</h3></div>
-            <div>
-                <div class="L_content_group">
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                    <div class="L_content-item">          
-                        <p><a href="producto.html"><img src="img/example.png">Producto: 2025</a></p>                           
-                    </div>
-                </div> 
             </div> 
         </div>
     </main>

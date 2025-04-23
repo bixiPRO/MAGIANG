@@ -77,7 +77,7 @@
             <div>
             <div class="L_content_group">
                 <?php
-                    $query = "SELECT * FROM productos ORDER BY data_introduccio;";
+                    $query = "SELECT * FROM productos ORDER BY data_introduccio DESC;";
                     $registros = $conn->query($query);
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';

@@ -59,8 +59,8 @@
             <select name="precio" >
                 <option value="">Selecciona...</option> 
                 <option value="0-10">0-10</option>
-                <option value="10-20">10-20</option>
-                <option value="30-50">30-50</option>
+                <option value="10-25">10-25</option>
+                <option value="25-50">25-50</option>
             </select>
             <label for="ordenar">Ordenar por</label>
             <select name="ordenar" >
@@ -84,6 +84,12 @@
                 if (!empty($_POST['ordenar'])) {
                     $ordenar = $conn->real_escape_string($_POST['ordenar']);
                     $query .= " ORDER BY $ordenar";
+                }
+                if (!empty($_POST['precio'])) {
+                    $precio = explode('-', $_POST['precio']);
+                    $min_price = (int)$precio[0];
+                    $max_price = (int)$precio[1];
+                    $query .= " AND precio BETWEEN $min_price AND $max_price";
                 }
             }
 

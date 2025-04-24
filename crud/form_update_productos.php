@@ -11,7 +11,7 @@ if (isset($_POST['id'])) {
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
-    $campio = $result->fetch_assoc();
+    $producto = $result->fetch_assoc();
     $stmt->close();
 } else {
     header("Location: productos.php");
@@ -28,6 +28,7 @@ if (isset($_POST['id'])) {
     <h1>Modificar Producto</h1>
     <form action="update_producto.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
+        Código: <input type="text" name="codigo" value="<?= htmlspecialchars($producto['codigo']) ?>" required><br/>
         Nombre: <input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required><br/>
         Categoria: 
         <select name="categoria" required>
@@ -38,20 +39,13 @@ if (isset($_POST['id'])) {
             <option value="Portatiles" <?= $producto['categoria'] == 'Portatiles' ? 'selected' : '' ?>>Portatiles</option>
             <option value="Monitores" <?= $producto['categoria'] == 'Monitores' ? 'selected' : '' ?>>Monitores</option>
         </select><br/>
-        Precio: <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" required><br/>
+        Precio: <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" step="0.01" min="0" max="100000" required><br/>
         Stock: <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" required><br/>
-        Formato:
-        <fieldset>
-            <div>
-                <input type="checkbox" id="fisico" name="formato" value="<?= htmlspecialchars($producto['formato']) ?>" required><br/>
-                <label for="coding">Fisico</label>
-            </div>
-            <div>
-                <input type="checkbox" id="digital" name="formato" value="<?= htmlspecialchars($producto['formato']) ?>" required><br/>
-                <label for="music">Digital</label>
-            </div>
-        </fieldset>
- 
+        Formato: 
+        <select name="formato" required>
+            <option value="Fisico" <?= $producto['formato'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
+            <option value="Digital" <?= $producto['formato'] == 'Digital' ? 'selected' : '' ?>>Digital</option>
+        </select><br/>
         <input type="submit" value="Modificar Producto">
     </form>
 </body>

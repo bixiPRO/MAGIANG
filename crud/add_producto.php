@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Portatiles">Portatiles</option>
             <option value="Monitores">Monitores</option>
         </select><br/>
-        Precio:<input type="number" name="precio" placeholder="1.0" step="0.01" min="0" max="100000" />
+        Precio:<input type="number" name="precio" placeholder="1.0" step="0.01" min="0" max="100000" required><br/>
         Stock: <input type="number" name="stock" required><br/>
         Formato: 
         <select name="formato" required>

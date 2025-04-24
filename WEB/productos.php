@@ -73,7 +73,14 @@
 
       <div class="S_content_group">
         <?php
-            $query = "SELECT * FROM productos;";
+            $query = "SELECT * FROM productos WHERE 1=1";
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (!empty($_POST['tipo'])) {
+                    $tipo = $conn->real_escape_string($_POST['tipo']);
+                    $query .= " AND tipo='$tipo'";
+                }
+            }
+
             $result = $conn->query($query);
 
             while ($row = $result->fetch_assoc()) {

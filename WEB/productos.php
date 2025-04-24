@@ -48,20 +48,20 @@
                 <option value="Fisico">Fisico</option>
             </select>
             <label for="lang">Plataforma:</label>
-            <select name="tipo" >
+            <select name="plataforma" >
                 <option value="...">...</option> 
                 <option value="PC">PC</option>
                 <option value="Nintendo">Nintendo</option>
                 <option value="PS4">PS4</option>
             </select>
             <label for="lang">Precio:</label>
-            <select name="tipo" >
+            <select name="precio" >
                 <option value="...">...</option> 
                 <option value="0-10">0-10</option>
                 <option value="10-20">10-20</option>html
             </select>
             <label for="lang">Ordenar por</label>
-            <select name="tipo" >
+            <select name="ordenar" >
                 <option value="...">...</option> 
                 <option value="Nombre">Nombre</option>
                 <option value="Precio">Precio</option>
@@ -70,7 +70,6 @@
             <input type="button" value="Filtrar" />
             <input type="reset" value="Reset" />
       </form>
-
 
       <div class="S_content_group">
         <?php

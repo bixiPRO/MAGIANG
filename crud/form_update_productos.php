@@ -6,7 +6,6 @@ require('connection.php');
 
 if (isset($_POST['id'])) {
     $id = (int) $_POST['id'];
-dsa
     // Obtener los datos del producto
     $stmt = $conn->prepare("SELECT * FROM productos WHERE id = ?");
     $stmt->bind_param("i", $id);

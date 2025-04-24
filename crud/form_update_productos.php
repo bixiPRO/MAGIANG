@@ -4,10 +4,8 @@ session_start();
 
 require('connection.php');
 
-
 if (isset($_POST['id'])) {
     $id = (int) $_POST['id'];
-
     // Obtener los datos del producto
     $stmt = $conn->prepare("SELECT * FROM productos WHERE id = ?");
     $stmt->bind_param("i", $id);
@@ -20,8 +18,6 @@ if (isset($_POST['id'])) {
     exit();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>

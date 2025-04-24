@@ -40,7 +40,7 @@ $result = $conn->query($query);
             <th>Precio</th>
             <th>Stock</th>
             <th>Formato</th>
-            <th>Acción</th>        
+                   
         
         </tr>
     </thead>
@@ -56,7 +56,6 @@ $result = $conn->query($query);
                 echo "<td>" . htmlspecialchars($row['precio']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['stock']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['formato']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['accion']) . "</td>";
                 echo "</tr>";
 
 
@@ -71,7 +70,7 @@ $result = $conn->query($query);
 <!-- Formulario de filtrado por Categorias -->
 
     <form method="GET" action="productos.php">
-        <label for="filtrar_categoria">Filtrar por Clase:</label>
+        <label for="filtrar_categoria">Filtrar por Categoria:</label>
         <select name="filtrar_categoria">
             <option value="">Todas</option>
             <option value="Ratones" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ratones') ? 'selected' : '' ?>>Ratones</option>
@@ -87,4 +86,4 @@ $result = $conn->query($query);
 </div>    
 </body>
 </html>
-
+<?php $conn->close(); ?>

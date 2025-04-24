@@ -25,7 +25,7 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="productos.php">Productos</a></li>
                     <li><a href="contacto.html">Soporte</a></li>
                     <li><a href="#">Ayuda</a></li>
                     <li><a href="nosotros.html">Sobre nosotros</a></li>
@@ -61,7 +61,7 @@
                     $registros = $conn->query($query);
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';
-                        echo '<p><a href="producto.html"><img src="img/example.png">';
+                        echo '<p><a href="producto.php"><img src="'. htmlspecialchars($fila['imagen']) . '">';
                         echo "Producto: ".$fila['nombre'];
                         echo '</a></p>';
                         echo '</div>';
@@ -81,7 +81,7 @@
                     $registros = $conn->query($query);
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';
-                        echo '<p><a href="producto.html"><img src="img/example.png">';
+                        echo '<p><a href="producto.php"><img src="'. htmlspecialchars($fila['imagen']) . '">';
                         echo "Producto: ".$fila['nombre'];
                         echo '</a></p>';
                         echo '</div>';

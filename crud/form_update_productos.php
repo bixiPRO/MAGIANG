@@ -4,7 +4,6 @@ session_start();
 
 require('connection.php');
 
-
 if (isset($_POST['id'])) {
     $id = (int) $_POST['id'];
 

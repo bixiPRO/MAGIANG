@@ -81,6 +81,10 @@
                     $tipo = $conn->real_escape_string($_POST['tipo']);
                     $query .= " AND tipo='$tipo'";
                 }
+                if (!empty($_POST['ordenar'])) {
+                    $ordenar = $conn->real_escape_string($_POST['ordenar']);
+                    $query .= " ORDER BY $ordenar";
+                }
             }
 
             $result = $conn->query($query);

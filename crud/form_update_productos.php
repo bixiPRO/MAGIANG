@@ -18,7 +18,7 @@ if (isset($_POST['id'])) {
     exit();
 }
 ?>
-proba marc
+proba marc2
 
 <!DOCTYPE html>
 <html>

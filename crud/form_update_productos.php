@@ -18,8 +18,6 @@ if (isset($_POST['id'])) {
     exit();
 }
 ?>
-proba marc2
-
 <!DOCTYPE html>
 <html>
 <head>

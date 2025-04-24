@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $accion = $_POST['accion'];
 
     //Insertamos los productos en la base de datos
-    $stmt = $conn->prepare("INSERT INTO productos (codigo, nombre, categoria, precio, stock, formato, accion) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssdiss",$codigo, $nombre, $categoria, $precio, $stock, $formato, $accion);
+    $stmt = $conn->prepare("INSERT INTO productos (codigo, nombre, categoria, precio, stock, formato, accion) VALUES (?, ?, ?, ?, ?, ?,)");
+    $stmt->bind_param("sssdis",$codigo, $nombre, $categoria, $precio, $stock, $formato,);
     $stmt->execute();
     $stmt->close();
 
@@ -44,8 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </select><br/>
         Precio:<input type="number" name="precio" placeholder="1.0" step="0.01" min="0" max="100000" />
         Stock: <input type="number" name="stock" required><br/>
-        Formato: <input type="text" name="formato" required><br/>
+        Formato: 
+        <select name="formato" required>
+            <option value="Fisico">Físico</option>
+            <option value="Digital">Digital</option>
+        </select><br/>
         <input type="submit" value="Añadir Producto">
     </form>
 </body>
+</html>
+
 

@@ -53,9 +53,10 @@
             <div> <a class="boton-sm" href="ofertas.html">Saber mas</a></div>
         </div>
         <div>
-            <!--Zona Lo mas vendido-->
+            <!--Zona dels productes que se han modificado-->
             <div><h3> Ultima Modificacion</h3></div>
             <div class="L_content_group">
+                <!--PHP funcion mostrar productos de ultima Modificación-->
                 <?php
                     $query = "SELECT * FROM productos ORDER BY ultima_data DESC LIMIT 9;";
                     $registros = $conn->query($query);
@@ -76,8 +77,9 @@
             <div><h3> Lanzamientos</h3></div>
             <div>
             <div class="L_content_group">
+                <!--PHP funcion mostrar productos introducidos recientemente-->
                 <?php
-                    $query = "SELECT * FROM productos ORDER BY data_introduccio DESC;";
+                    $query = "SELECT * FROM productos ORDER BY data_introduccio DESC LIMIT 9;";
                     $registros = $conn->query($query);
                     while ($fila = $registros->fetch_assoc()){
                         echo '<div class="L_content-item">';

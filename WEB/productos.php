@@ -40,6 +40,7 @@
 
     <main>
         <h1> Productos</h1>
+        <!-- FILTRE -->
         <form method="POST">
             <label for="tipo">Tipo:</label>
             <select name="tipo" >
@@ -74,6 +75,7 @@
       </form>
 
       <div class="S_content_group">
+        <!-- PHP FUNCIÓN FILTRE -->
         <?php
             $query = "SELECT * FROM productos WHERE 1=1";
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {

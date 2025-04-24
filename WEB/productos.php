@@ -40,38 +40,38 @@
 
     <main>
         <h1> Productos</h1>
-        <form method="post">
+        <form method="POST">
             <label for="tipo">Tipo:</label>
             <select name="tipo" >
                 <option value="">Selecciona...</option>  
                 <option value="Digital">Digital</option>
                 <option value="Fisico">Fisico</option>
             </select>
+
             <label for="plataforma">Plataforma:</label>
             <select name="plataforma" >
-                <option value="...">...</option> 
+                <option value="">...</option> 
                 <option value="PC">PC</option>
                 <option value="Nintendo">Nintendo</option>
                 <option value="PS4">PS4</option>
             </select>
             <label for="precio">Precio:</label>
             <select name="precio" >
-                <option value="...">...</option> 
+                <option value="">...</option> 
                 <option value="0-10">0-10</option>
                 <option value="10-20">10-20</option>html
             </select>
             <label for="ordenar">Ordenar por</label>
             <select name="ordenar" >
-                <option value="...">...</option> 
+                <option value="">...</option> 
                 <option value="Nombre">Nombre</option>
                 <option value="Precio">Precio</option>
                 <option value="Valoracion">Valoracion</option>
             </select>
             <input type="button" value="Filtrar" />
             <input type="reset" value="Reset" />
-      </form>
+        </form>
 
-      <div class="S_content_group">
         <?php
             $query = "SELECT * FROM productos WHERE 1=1";
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -84,6 +84,7 @@
             $result = $conn->query($query);
 
             while ($row = $result->fetch_assoc()) {
+                echo '<div class="S_content_group">';
                 echo '<div class="S_content-item">';
                 echo '<a href="producto.php?id=' . $row['id'] . '">';
                 echo '<img src="'. htmlspecialchars($row['imagen']) . '"alt="Producto">';
@@ -91,12 +92,12 @@
                 echo '<p>$' . htmlspecialchars($row['precio']) . '</p>';
                 echo '</a>';
                 echo '</div>';
+                echo '</div>';
             }
 
             $result->close();
             $conn->close();
         ?>
-      </div>
 
     </main>
 

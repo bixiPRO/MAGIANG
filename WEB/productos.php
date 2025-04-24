@@ -41,26 +41,26 @@
     <main>
         <h1> Productos</h1>
         <form method="post">
-            <label for="lang">Tipo:</label>
+            <label for="tipo">Tipo:</label>
             <select name="tipo" >
-                <option value="...">...</option>  
+                <option value="">Selecciona...</option>  
                 <option value="Digital">Digital</option>
                 <option value="Fisico">Fisico</option>
             </select>
-            <label for="lang">Plataforma:</label>
+            <label for="plataforma">Plataforma:</label>
             <select name="plataforma" >
                 <option value="...">...</option> 
                 <option value="PC">PC</option>
                 <option value="Nintendo">Nintendo</option>
                 <option value="PS4">PS4</option>
             </select>
-            <label for="lang">Precio:</label>
+            <label for="precio">Precio:</label>
             <select name="precio" >
                 <option value="...">...</option> 
                 <option value="0-10">0-10</option>
                 <option value="10-20">10-20</option>html
             </select>
-            <label for="lang">Ordenar por</label>
+            <label for="ordenar">Ordenar por</label>
             <select name="ordenar" >
                 <option value="...">...</option> 
                 <option value="Nombre">Nombre</option>

@@ -41,21 +41,35 @@
     <main>
         <h1> Productos</h1>
         <form method="post">
-            <input type="search" name="buscar">
-            <input type="submit">
-        </form>
-        <?php
-        if($_POST){
-        $query ="SELECT * FROM productos WHERE nombre LIKE '%$buscar%' OR precio LIKE '%$buscar%' OR descripcion LIKE '%$buscar%' OR tipo LIKE '%$buscar%';";
-        $result = $conn->query($query);
-        while($campo = mysqi_fetch_array($result)){
-            echo $campo['nombre'].'<br>';
-            echo $campo['precio'].'<br>';
-            echo $campo['descripcion'].'<br>';
-            echo $campo['tipo'].'<br>';
-        }
-        }
-        ?>
+            <label for="lang">Tipo:</label>
+            <select name="tipo" >
+                <option value="...">...</option>  
+                <option value="Digital">Digital</option>
+                <option value="Fisico">Fisico</option>
+            </select>
+            <label for="lang">Plataforma:</label>
+            <select name="tipo" >
+                <option value="...">...</option> 
+                <option value="PC">PC</option>
+                <option value="Nintendo">Nintendo</option>
+                <option value="PS4">PS4</option>
+            </select>
+            <label for="lang">Precio:</label>
+            <select name="tipo" >
+                <option value="...">...</option> 
+                <option value="0-10">0-10</option>
+                <option value="10-20">10-20</option>html
+            </select>
+            <label for="lang">Ordenar por</label>
+            <select name="tipo" >
+                <option value="...">...</option> 
+                <option value="Nombre">Nombre</option>
+                <option value="Precio">Precio</option>
+                <option value="Valoracion">Valoracion</option>
+            </select>
+            <input type="button" value="Filtrar" />
+            <input type="reset" value="Reset" />
+      </form>
 
 
       <div class="S_content_group">

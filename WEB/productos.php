@@ -93,6 +93,13 @@
                     $max_price = (int)$precio[1];
                     $query .= " AND precio BETWEEN $min_price AND $max_price";
                 }
+                if (!empty($_POST['plataforma'])) {
+                    $plataforma = $conn->real_escape_string($_POST['plataforma']);
+                    $query .= " AND EXISTS (SELECT 1 FROM pro_pla 
+                              JOIN plataformas ON pro_pla.id_plataforma = plataformas.id 
+                              WHERE pro_pla.id = productos.id 
+                              AND plataformas.nombre = '$plataforma')";
+                }
             }
 
             $result = $conn->query($query);

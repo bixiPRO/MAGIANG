@@ -1,5 +1,15 @@
 <?php
-    require('connection.php');
+require('connection.php');
+
+// Obtener id del producto desde la pagina de productos
+$producto_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+// Variables per posar consultes posteriorment 
+$producto = [];
+$plataformas = [];
+$codigo_digital = '';
+
+
 ?>
 <!DOCTYPE html>
 <head>

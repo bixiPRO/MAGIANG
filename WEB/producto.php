@@ -92,11 +92,6 @@ if($producto_id > 0) {
             <h2><a href="productos.php">Productos</a> &gt; <?= htmlspecialchars($producto['nombre']) ?></h2>
             <div>
                 <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="<?= htmlspecialchars($producto['nombre']) ?>">
-                <div class="sub_img">
-                    <!-- Imatges per el producte per mostrar el client -->
-                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                    
-                </div>
             </div>
             <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte (un error)-->
         <?php else: ?>

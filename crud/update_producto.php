@@ -6,7 +6,7 @@ require('connection.php');
 
 if (isset($_POST['id'])) {
     $id = (int) $_POST['id'];
-    $codigo = (int) $_POST['codigo'];
+    $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
     $categoria = $_POST['categoria'];
     $precio = $_POST['precio'];

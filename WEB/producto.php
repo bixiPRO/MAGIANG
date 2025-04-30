@@ -53,7 +53,7 @@ if($producto_id > 0) {
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title> Producto - Magiang </title>
+    <title><?= htmlspecialchars($producto['nombre'] ?? 'Producto') ?> - Magiang </title>
     <favicon href="img/favicon.">
     <link rel="stylesheet" type="text/css" href="css/productostyle.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -64,7 +64,7 @@ if($producto_id > 0) {
     
     <!-- ZONA NAV -->
     <header>
-        <div class="header-content"><a href="index.html"><img class="icon"  src="img/logo_magiang.png"></a></div>
+        <div class="header-content"><a href="index.php"><img class="icon"  src="img/logo_magiang.png"></a></div>
         <div>
             <nav>
                 <ul>
@@ -87,24 +87,26 @@ if($producto_id > 0) {
         
     </header>
     <main>
-        <h2><a href="productos.html">Productos</a>>Producto</h2>
-        <div>
-            <img src="img/ejemplo_prod.jpg">
-            <div class="sub_img">
-                <img src="img/ejemplo_prod.jpg">
-                <img src="img/ejemplo_prod.jpg">
-                <img src="img/ejemplo_prod.jpg"> 
-                <div class="prod_info">
-                    <h2>Producto_Ejemplo</h2>
-                    <h3>Precio: 0.00€</h3>
-                    <p>Descripcion:</p>
-                    <p>Descricion de Producto Ejemplo.</p>
-
-                    <a class="boton-ac" href="#">Añadir a la cesta</a>
-        
+<!-- PHP per el maneig del producte, posar el nom del producte-->
+    <?php if(!empty($producto)): ?>
+            <h2><a href="productos.php">Productos</a> &gt; <?= htmlspecialchars($producto['nombre']) ?></h2>
+            <div>
+                <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="<?= htmlspecialchars($producto['nombre']) ?>">
+                <div class="sub_img">
+                    <!-- Imatges per el producte per mostrar el client -->
+                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
+                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
+                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
+                    
                 </div>
             </div>
-        </div>
+            <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte (un error)-->
+        <?php else: ?>
+            <div class="error">
+                <h2>Producto no encontrado</h2>
+                <p>El producto solicitado no existe o ha sido eliminado.</p>
+            </div>
+        <?php endif; ?>
         
         
     </main>

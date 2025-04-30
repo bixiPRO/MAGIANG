@@ -95,8 +95,6 @@ if($producto_id > 0) {
                 <div class="sub_img">
                     <!-- Imatges per el producte per mostrar el client -->
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
                     
                 </div>
             </div>

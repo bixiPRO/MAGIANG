@@ -9,6 +9,45 @@ $producto = [];
 $plataformas = [];
 $codigo_digital = '';
 
+if($producto_id > 0) {
+    // Consulta del producte assegurant que tingui la mateixa id
+    $stmt = $conn->prepare("SELECT * FROM productos WHERE id = ?");
+    $stmt->bind_param("i", $producto_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if($result->num_rows > 0) {
+        $producto = $result->fetch_assoc();
+        
+        // Obtenir la plataforma en que esta
+        $stmt_plat = $conn->prepare("
+            SELECT p.nombre 
+            FROM pro_pla pp
+            JOIN plataformas p ON pp.id_plataforma = p.id
+            WHERE pp.id = ?
+        ");
+        $stmt_plat->bind_param("i", $producto_id);
+        $stmt_plat->execute();
+        $result_plat = $stmt_plat->get_result();
+        
+        while($row = $result_plat->fetch_assoc()) {
+            $plataformas[] = $row['nombre'];
+        }
+        
+        // Si es digital, obtenir el codi 
+        if($producto['tipo'] === 'DIGITAL') {
+            $stmt_dig = $conn->prepare("SELECT codigo FROM digital WHERE id_producto = ?");
+            $stmt_dig->bind_param("i", $producto_id);
+            $stmt_dig->execute();
+            $result_dig = $stmt_dig->get_result();
+            
+            if($result_dig->num_rows > 0) {
+                $codigo_digital = $result_dig->fetch_assoc()['codigo'];
+            }
+        }
+    }
+    $conn->close();
+}
 
 ?>
 <!DOCTYPE html>

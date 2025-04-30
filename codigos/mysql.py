@@ -65,7 +65,7 @@ def inserir_cupones():
         cur = realizar_connecion.cursor()
         
         for i in range(len(nombre)):
-            cur.execute(f"INSERT INTO cupones(nombre,cupon) VALUES ('{nombre[i]}','{codigo[i]}');")
+            cur.execute(f"INSERT INTO cupones(nombre,codigo) VALUES ('{nombre[i]}','{codigo[i]}');")
         
         realizar_connecion.commit()
         realizar_connecion.close()

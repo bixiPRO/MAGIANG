@@ -97,6 +97,7 @@ if($producto_id > 0) {
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
+                </div>
     <!--posar el nom i el preu per mostrar a l'usuari dins del subimatge per no mezclar les imatges amb el text-->
                     <div class="prod_info">
                         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
@@ -124,7 +125,7 @@ if($producto_id > 0) {
                         
                         <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
                     </div>
-                </div>
+                
             </div>
             <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte (un error)-->
         <?php else: ?>

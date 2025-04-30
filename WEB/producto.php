@@ -68,7 +68,7 @@ if($producto_id > 0) {
         <div>
             <nav>
                 <ul>
-                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="productos.php">Productos</a></li>
                     <li><a href="contacto.html">Soporte</a></li>
                     <li><a href="#">Ayuda</a></li>
                     <li><a href="nosotros.html">Sobre nosotros</a></li>
@@ -82,7 +82,7 @@ if($producto_id > 0) {
         </div>
         <div class="login">
                 <a href="cesta.html"><img src="img/cesta.png"></a>
-                <a href="login.html"><img src="img/login_logo.png"></a>
+                <a href="login.php"><img src="img/login_logo.png"></a>
         </div>
         
     </header>

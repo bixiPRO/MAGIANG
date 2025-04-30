@@ -15,8 +15,8 @@ if (isset($_POST['id'])) {
     
 
     // Actualizar el producto en la base de datos
-    $stmt = $conn->prepare("UPDATE productos SET codigo = ?, nombre = ?, categoria = ?, precio = ?, stock = ?, formato = ? WHERE id = ?");
-    $stmt->bind_param("sssdisi", $codigo, $nombre, $categoria, $precio, $stock, $formato, $id );
+    $stmt = $conn->prepare("UPDATE productos SET nombre = ?, categoria = ?, precio = ?, stock = ?, formato = ?);
+    $stmt->bind_param("ssdis", $nombre, $categoria, $precio, $stock, $formato);
     $stmt->execute();
     $stmt->close();
 }

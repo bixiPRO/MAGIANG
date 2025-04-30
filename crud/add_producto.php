@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 
     //Insertamos los productos en la base de datos
-    $stmt = $conn->prepare("INSERT INTO productos (codigo, nombre, categoria, precio, stock, formato) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssdis",$codigo, $nombre, $categoria, $precio, $stock, $formato);
+    $stmt = $conn->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, tipo) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssdis",$nombre, $categoria, $precio, $stock, $formato);
     $stmt->execute();
     $stmt->close();
 

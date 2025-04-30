@@ -22,6 +22,7 @@ if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

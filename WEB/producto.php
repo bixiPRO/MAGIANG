@@ -101,7 +101,11 @@ if($producto_id > 0) {
                     <div class="prod_info">
                         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
                         <h3>Precio: <?= number_format($producto['precio'], 2) ?>€</h3>
-                </div>
+    <!--Posar la plataforma en que esta-->
+                        <?php if(!empty($plataformas)): ?>
+                            <p>Plataformas: <?= implode(', ', $plataformas) ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
             <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte (un error)-->

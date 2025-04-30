@@ -97,7 +97,11 @@ if($producto_id > 0) {
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                    
+    <!--posar el nom i el preu per mostrar a l'usuari dins del subimatge per no mezclar les imatges amb el text-->
+                    <div class="prod_info">
+                        <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
+                        <h3>Precio: <?= number_format($producto['precio'], 2) ?>€</h3>
+                </div>
                 </div>
             </div>
             <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte (un error)-->

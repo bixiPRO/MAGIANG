@@ -105,6 +105,24 @@ if($producto_id > 0) {
                         <?php if(!empty($plataformas)): ?>
                             <p>Plataformas: <?= implode(', ', $plataformas) ?></p>
                         <?php endif; ?>
+                        <!--Mostrar el usuari en cas de producte es fisic que el enviament sigui disponible i si el producte es digital que el codi estigui incluit en el gmail-->
+                        <?php if($producto['tipo'] === 'DIGITAL'): ?>
+                            <p class="digital-tag">Producto Digital - Código disponible (correo electronico) </p>
+                        <?php else: ?>
+                            <p class="fisico-tag">Producto Físico - Envío disponible</p>
+                        <?php endif; ?>
+                        <!--Poner la descripción del producto-->
+                        <h2>Descripción:</h2>
+                        <p><?= htmlspecialchars($producto['descripcion']) ?></p>
+                        
+                        <!-- Mostrar el codi en cas que sigui digital (prova) -->
+                        <?php if(!empty($codigo_digital)): ?>
+                            <div class="codigo-digital">
+                                <strong>Código:</strong> <?= htmlspecialchars($codigo_digital) ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
                     </div>
                 </div>
             </div>

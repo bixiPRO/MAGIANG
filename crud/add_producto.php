@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
     $formato = $_POST['formato'];
-    $accion = $_POST['accion'];
+    
 
     //Insertamos los productos en la base de datos
-    $stmt = $conn->prepare("INSERT INTO productos (codigo, nombre, categoria, precio, stock, formato, accion) VALUES (?, ?, ?, ?, ?, ?,)");
-    $stmt->bind_param("sssdis",$codigo, $nombre, $categoria, $precio, $stock, $formato,);
+    $stmt = $conn->prepare("INSERT INTO productos (codigo, nombre, categoria, precio, stock, formato) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssdis",$codigo, $nombre, $categoria, $precio, $stock, $formato);
     $stmt->execute();
     $stmt->close();
 

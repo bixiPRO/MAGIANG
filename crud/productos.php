@@ -7,7 +7,7 @@ require('connection.php');
 $query = "SELECT * FROM productos";
 if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
     $filtrar_categoria = $_GET['filtrar_categoria'];
-    $query .= " WHERE categoria = ?";
+    $query .= " WHERE categorias = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $filtrar_categoria);
     $stmt->execute();
@@ -37,12 +37,11 @@ if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
 <table>
     <thead>
         <tr>
-            <th>Código</th>
             <th>Nombre</th>
             <th>Categoría</th>
             <th>Precio</th>
             <th>Stock</th>
-            <th>Formato</th>
+            <th>Tipo</th>
                    
         
         </tr>
@@ -53,12 +52,11 @@ if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
         if ($result->num_rows > 0) {
             while ($row =$result-> fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['codigo']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['categoria']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['descripcion']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['precio']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['stock']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['formato']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
                 echo "</tr>";
 
 

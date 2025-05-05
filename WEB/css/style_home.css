@@ -120,6 +120,7 @@ main {
     border-radius: 15px;
     margin-top: 30px;
     text-align: center;
+    border-color: none;
 }
 
 .oferta-home h3 {
@@ -160,7 +161,6 @@ main {
     padding: 20px;
 }
 .L_content-item {
-    border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
 }

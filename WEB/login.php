@@ -43,7 +43,7 @@
                   </div>
                   <div class="signup-link">
                      No eres miembro? <a href="">Regístrate ahora</a>
-                     <a href="index.php"> Volver al inicio</a>
+                     <a href="home.php"> Volver al inicio</a>
                   </div>
                </form>
                <form action="do_register.php" method="POST" class="signup">
@@ -67,7 +67,7 @@
                      <div class="btn-layer"></div>
                      <input type="submit" name=submit value="Empieza"/>
                   </div>
-                  <div class="signup-link"><a href="index.php"> Volver al inicio</a></div>
+                  <div class="signup-link"><a href="home.php"> Volver al inicio</a></div>
                </form>
             </div>
          </div>

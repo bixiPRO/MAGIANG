@@ -12,12 +12,12 @@ $password1 = $_POST['pwd1'];
 $password2 = $_POST['pwd2'];
 
 if ($password1 !== $password2) {
-    header("Location: login.php");
+    header("Location: home.php");
     exit();
 }
 
 if (strlen($password1) < 6) {
-    header("Location: login.php");
+    header("Location: home.php");
     exit();
 }
 
@@ -27,7 +27,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    header("Location: login.php");
+    header("Location: home.php");
     exit();
 }
 

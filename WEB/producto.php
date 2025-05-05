@@ -92,13 +92,8 @@ if($producto_id > 0) {
             <h2><a href="productos.php">Productos</a> &gt; <?= htmlspecialchars($producto['nombre']) ?></h2>
             <div>
                 <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="<?= htmlspecialchars($producto['nombre']) ?>">
-                <div class="sub_img">
-                    <!-- Imatges per el producte per mostrar el client -->
-                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                    <img src="<?= htmlspecialchars($producto['imagen']) ?>">
-                </div>
-    <!--posar el nom i el preu per mostrar a l'usuari dins del subimatge per no mezclar les imatges amb el text-->
+                
+    <!--posar el nom i el preu per mostrar a l'usuari-->
                     <div class="prod_info">
                         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
                         <h3>Precio: <?= number_format($producto['precio'], 2) ?>€</h3>

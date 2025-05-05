@@ -6,17 +6,16 @@ require('connection.php');
 
 if (isset($_POST['id'])) {
     $id = (int) $_POST['id'];
-    $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
-    $categoria = $_POST['categoria'];
+    $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
-    $formato = $_POST['formato'];
+    $tipo = $_POST['tipo'];
     
 
     // Actualizar el producto en la base de datos
-    $stmt = $conn->prepare("UPDATE productos SET nombre = ?, categoria = ?, precio = ?, stock = ?, formato = ?);
-    $stmt->bind_param("ssdis", $nombre, $categoria, $precio, $stock, $formato);
+    $stmt = $conn->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, tipo = ?");
+    $stmt->bind_param("ssdis", $nombre, $descripcion, $precio, $stock, $tipo);
     $stmt->execute();
     $stmt->close();
 }

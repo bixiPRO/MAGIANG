@@ -92,7 +92,6 @@ if($producto_id > 0) {
             <h2><a href="productos.php">Productos</a> &gt; <?= htmlspecialchars($producto['nombre']) ?></h2>
             <div>
                 <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="<?= htmlspecialchars($producto['nombre']) ?>">
-                
     <!--posar el nom i el preu per mostrar a l'usuari-->
                     <div class="prod_info">
                         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>

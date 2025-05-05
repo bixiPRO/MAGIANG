@@ -4,17 +4,16 @@ session_start();
 require('connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
-    $categoria = $_POST['categoria'];
+    $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
-    $formato = $_POST['formato'];
+    $tipo = $_POST['tipo'];
     
 
     //Insertamos los productos en la base de datos
     $stmt = $conn->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, tipo) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssdis",$nombre, $categoria, $precio, $stock, $formato);
+    $stmt->bind_param("ssdis",$nombre, $descripcion, $precio, $stock, $tipo);
     $stmt->execute();
     $stmt->close();
 
@@ -31,10 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Añadir Producto</h1>
     <form action="add_producto.php" method="POST">
-        Codigo: <input type="text" name="codigo" required><br/>
         Nombre: <input type="text" name="nombre" required><br/>
         Categoria: 
-        <select name="categoria" required>
+        <select name="descripcion" required>
             <option value="Ratones">Ratones</option>
             <option value="Teclados">Teclados</option>
             <option value="Ordenadores">Ordenadores</option>
@@ -45,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Precio:<input type="number" name="precio" placeholder="1.0" step="0.01" min="0" max="100000" required><br/>
         Stock: <input type="number" name="stock" required><br/>
         Formato: 
-        <select name="formato" required>
+        <select name="tipo" required>
             <option value="Fisico">Físico</option>
             <option value="Digital">Digital</option>
         </select><br/>

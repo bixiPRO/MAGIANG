@@ -28,23 +28,22 @@ if (isset($_POST['id'])) {
     <h1>Modificar Producto</h1>
     <form action="update_producto.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
-        Código: <input type="text" name="codigo" value="<?= htmlspecialchars($producto['codigo']) ?>" required><br/>
         Nombre: <input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required><br/>
         Categoria: 
-        <select name="categoria" required>
-            <option value="Ratones" <?= $producto['categoria'] == 'Ratones' ? 'selected' : '' ?>>Ratones</option>
-            <option value="Teclados" <?= $producto['categoria'] == 'Teclados' ? 'selected' : '' ?>>Teclados</option>
-            <option value="Ordenadores" <?= $producto['categoria'] == 'Ordenadores' ? 'selected' : '' ?>>Ordenadores</option>
-            <option value="Microfonos" <?= $producto['categoria'] == 'Microfonos' ? 'selected' : '' ?>>Microfonos</option>
-            <option value="Portatiles" <?= $producto['categoria'] == 'Portatiles' ? 'selected' : '' ?>>Portatiles</option>
-            <option value="Monitores" <?= $producto['categoria'] == 'Monitores' ? 'selected' : '' ?>>Monitores</option>
+        <select name="descripcion" required>
+            <option value="Ratones" <?= $producto['descripcion'] == 'Ratones' ? 'selected' : '' ?>>Ratones</option>
+            <option value="Teclados" <?= $producto['descripcion'] == 'Teclados' ? 'selected' : '' ?>>Teclados</option>
+            <option value="Ordenadores" <?= $producto['descripcion'] == 'Ordenadores' ? 'selected' : '' ?>>Ordenadores</option>
+            <option value="Microfonos" <?= $producto['descripcion'] == 'Microfonos' ? 'selected' : '' ?>>Microfonos</option>
+            <option value="Portatiles" <?= $producto['descripcion'] == 'Portatiles' ? 'selected' : '' ?>>Portatiles</option>
+            <option value="Monitores" <?= $producto['descripcion'] == 'Monitores' ? 'selected' : '' ?>>Monitores</option>
         </select><br/>
         Precio: <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" step="0.01" min="0" max="100000" required><br/>
         Stock: <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" required><br/>
         Formato: 
-        <select name="formato" required>
-            <option value="Fisico" <?= $producto['formato'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
-            <option value="Digital" <?= $producto['formato'] == 'Digital' ? 'selected' : '' ?>>Digital</option>
+        <select name="tipo" required>
+            <option value="Fisico" <?= $producto['tipo'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
+            <option value="Digital" <?= $producto['tipo'] == 'Digital' ? 'selected' : '' ?>>Digital</option>
         </select><br/>
         <input type="submit" value="Modificar Producto">
     </form>

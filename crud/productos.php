@@ -7,7 +7,7 @@ require('connection.php');
 $query = "SELECT * FROM productos";
 if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
     $filtrar_categoria = $_GET['filtrar_categoria'];
-    $query .= " WHERE categorias = ?";
+    $query .= " WHERE categorias = '$filtrar_categoria'";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $filtrar_categoria);
     $stmt->execute();

@@ -1,3 +1,21 @@
+<?php
+session_start();
+require('connection.php');
+
+// Funcion para anadir prodictos a la cesta
+function agregar($producto_id) {
+    if(isset($_SESSION['carrito'][$producto_id])) {
+        // Si el producto ya esta en la cesta pos aumentar la cantidad
+        $_SESSION['carrito'][$producto_id]['cantidad']++;
+    } else {
+        // Si el producto no está en el carrito entonces agregar con cantidad 1
+        $_SESSION['carrito'][$producto_id] = [
+            'cantidad' => 1  // Cantidad inicial es 1
+        ];
+    }
+}
+
+?>
 <!DOCTYPE html>
 <head>
     <title> Mi Cesta - Magiang </title>

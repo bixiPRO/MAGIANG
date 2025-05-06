@@ -132,11 +132,11 @@ if($producto_id > 0) {
                         <form action="producto.php?id=<?= $producto_id ?>" method="post">
                             <p>Stock disponible: <?= $stock ?> unidades</p>
 
-                            <label for="cantidad">Cantidad:</label>
+                            <label for="cantidad"><strong>Cantidad:</strong></label>
                             <input type="number" id="cantidad" name="cantidad" min="1" max="<?= $stock ?>" value="1">
                         
-                            <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
                         </form>
+                        <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
                     </div>
                 
             </div>

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS temp_productos;
 CREATE TABLE temp_productos (
     nombre VARCHAR(255),
     descripcion VARCHAR(255),
@@ -9,8 +10,12 @@ CREATE TABLE temp_productos (
 );
 
 LOAD DATA INFILE '~/Documents/MAGIANG/mysql/productos_informaticos.csv' 
-INTO TEMPORARY TABLE temp_productos
+INTO TABLE temp_productos
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"' 
 LINES TERMINATED BY '\n'
 (nombre, descripcion, tipo, precio, stock, categoria, plataforma);
+
+INSERT INTO productos (nombre, descripcion, tipo, precio, stock)
+SELECT nombre, descripcion, tipo, precio, stock
+FROM temp_productos;

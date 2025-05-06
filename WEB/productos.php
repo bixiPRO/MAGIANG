@@ -53,8 +53,11 @@
             <select name="plataforma" >
                 <option value="">Selecciona...</option> 
                 <option value="PC">PC</option>
-                <option value="Nintendo">Nintendo</option>
-                <option value="PS4">PS4</option>
+                <option value="Apple">Apple</option>
+                <option value="Google Play">Google Play</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Switch">Switch</option>
+                <option value="Playstation">Playstation</option>
             </select>
             <label for="precio">Precio:</label>
             <select name="precio" >

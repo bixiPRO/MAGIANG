@@ -59,12 +59,33 @@
                 <option value="Switch">Switch</option>
                 <option value="Playstation">Playstation</option>
             </select>
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" >
+                <option value="">Selecciona...</option> 
+                <option value="Alfombrilla">Alfombrilla</option>
+                <option value="Android">Android</option>
+                <option value="Apple">Apple</option>
+                <option value="Auriculares">Auriculares</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Micrófonos">Micrófonos</option>
+                <option value="Mobil">Mobil</option>
+                <option value="Monitores">Monitores</option>
+                <option value="Oficina">Oficina</option>
+                <option value="Ordenadores">Ordenadores</option>
+                <option value="Portátiles">Portátiles</option>
+                <option value="Raton">Raton</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Teclado">Teclado</option>
+            </select>
             <label for="precio">Precio:</label>
             <select name="precio" >
                 <option value="">Selecciona...</option> 
-                <option value="0-10">0-10</option>
-                <option value="10-25">10-25</option>
-                <option value="25-50">25-50</option>
+                <option value="0-100">0-100</option>
+                <option value="100-250">100-250</option>
+                <option value="250-500">250-500</option>
+                <option value="500-1000">500-1000</option>
+                <option value="1000-2000">1000-2000</option>
+                <option value="2000-10000">2000-10000</option>
             </select>
             <label for="ordenar">Ordenar por</label>
             <select name="ordenar" >
@@ -103,6 +124,7 @@
                               WHERE pro_pla.id = productos.id 
                               AND plataformas.nombre = '$plataforma')";
                 }
+                
             }
 
             $result = $conn->query($query);

@@ -139,11 +139,16 @@ h4 {
     height: 10%;
 }
 
-.prod_info{
+.prod_info {
     display: inline-block;
-    vertical-align: top;
-    margin-left: 5%;
-    margin-top: -25%;
+    max-width: 80%; 
+    margin: 50px auto; 
+    padding: 20px;
+    border: 0px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
 .prod_info h4 {

@@ -19,3 +19,14 @@ LINES TERMINATED BY '\n'
 INSERT INTO productos (nombre, descripcion, tipo, precio, stock)
 SELECT nombre, descripcion, tipo, precio, stock
 FROM temp_productos;
+
+INSERT INTO plataformas (nombre)
+SELECT DISTINCT plataforma
+FROM temp_productos
+WHERE plataforma IS NOT NULL;
+ 
+INSERT INTO categorias (nombre)
+SELECT DISTINCT categoria
+FROM temp_productos
+WHERE categoria IS NOT NULL;
+

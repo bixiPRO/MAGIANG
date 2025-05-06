@@ -47,17 +47,17 @@ CREATE TABLE categorias(
 );
 
 CREATE TABLE pro_pla(
-    id INT PRIMARY KEY,
-    id_plataforma INT,
+    id INT DEFAULT NULL,
+    id_plataforma INT DEFAULT NULL,
     FOREIGN KEY (id) REFERENCES productos(id),
     FOREIGN KEY (id_plataforma) REFERENCES plataformas(id)
 );
 
 CREATE TABLE pro_cat(
-    id INT,
-    id_categoria INT,
+    id INT DEFAULT NULL,
+    id_categoria INT DEFAULT NULL,
     FOREIGN KEY (id) REFERENCES productos(id),
-    FOREIGN KEY (id) REFERENCES categorias(id)
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id)
 );
 
 CREATE TABLE reseñas (

@@ -28,25 +28,28 @@ SELECT nombre, descripcion, TRIM(tipo), precio, stock
 FROM temp_productos;
 
 INSERT INTO plataformas (nombre)
-SELECT DISTINCT plataforma
+SELECT DISTINCT TRIM(plataforma)
 FROM temp_productos
-WHERE plataforma IS NOT NULL;
+WHERE plataforma IS NOT NULL AND TRIM(plataforma) != '';
  
 INSERT INTO categorias (nombre)
-SELECT DISTINCT categoria
+SELECT DISTINCT TRIM(categoria)
 FROM temp_productos
-WHERE categoria IS NOT NULL;
-
+WHERE categoria IS NOT NULL AND TRIM(categoria) != '';
 
 INSERT INTO pro_pla (id, id_plataforma)
 SELECT p.id, pl.id
-FROM productos p
-JOIN plataformas pl ON p.plataforma = pl.nombre;
+FROM temp_productos t
+JOIN productos p ON t.nombre = p.nombre
+JOIN plataformas pl ON t.plataforma = pl.nombre
+WHERE t.plataforma IS NOT NULL;
 
 INSERT INTO pro_cat (id, id_categoria)
 SELECT p.id, c.id
-FROM productos p
-JOIN categorias c ON p.categoria = c.nombre;
+FROM temp_productos t
+JOIN productos p ON t.nombre = p.nombre
+JOIN categorias c ON t.categoria = c.nombre
+WHERE t.categoria IS NOT NULL;
 
 DROP TABLE temp_productos;
 

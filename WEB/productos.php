@@ -124,7 +124,13 @@
                               WHERE pro_pla.id = productos.id 
                               AND plataformas.nombre = '$plataforma')";
                 }
-                
+                if (!empty($_POST['categoria'])) {
+                    $plataforma = $conn->real_escape_string($_POST['categoria']);
+                    $query .= " AND EXISTS (SELECT 1 FROM pro_cat 
+                              JOIN categorias ON pro_cat.id_categoria = categorias.id 
+                              WHERE pro_cat.id = productos.id 
+                              AND categorias.nombre = '$categoria')";
+                }
             }
 
             $result = $conn->query($query);

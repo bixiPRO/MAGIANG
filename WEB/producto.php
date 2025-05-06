@@ -8,6 +8,7 @@ $producto_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $producto = [];
 $plataformas = [];
 $codigo_digital = '';
+$stock = 0;
 
 if($producto_id > 0) {
     // Consulta del producte assegurant que tingui la mateixa id
@@ -45,6 +46,16 @@ if($producto_id > 0) {
                 $codigo_digital = $result_dig->fetch_assoc()['codigo'];
             }
         }
+        // Obtenir el stock del producte per mostrar el usuari
+        $stmt_stock = $conn->prepare("SELECT stock FROM productos WHERE id = ?");
+        $stmt_stock->bind_param("i", $producto_id);
+        $stmt_stock->execute();
+        $result_stock = $stmt_stock->get_result();
+        
+        if ($result_stock->num_rows > 0) {
+            $stock = $result_stock->fetch_assoc()['stock'];
+        }
+
     }
     $conn->close();
 }

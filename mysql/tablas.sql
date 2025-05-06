@@ -38,12 +38,12 @@ CREATE TABLE digital(
 
 CREATE TABLE plataformas(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(255)
+    nombre VARCHAR(255) UNIQUE
 );
 
 CREATE TABLE categorias(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(255)
+    nombre VARCHAR(255) UNIQUE
 );
 
 CREATE TABLE pro_pla(

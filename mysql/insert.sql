@@ -6,8 +6,3 @@ INSERT INTO categorias (nombre) VALUES
 ('Micrófonos'), ('Mobil'), ('Apple'), ('Android'), 
 ('Tablet'), ('Monitores'), ('Portátiles'), ('Ordenadores'),
 ('Gaming'), ('Oficina');
-
-INSERT INTO pago (id_pedido, metodo_pago) VALUES
-(1, 'VISA/MASTERCARD'),
-(2, 'PAYPAL'),
-(3, 'VIZUM');

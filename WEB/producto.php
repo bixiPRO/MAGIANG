@@ -127,8 +127,16 @@ if($producto_id > 0) {
                                 <strong>Código:</strong> <?= htmlspecialchars($codigo_digital) ?>
                             </div>
                         <?php endif; ?>
+
+                        <!-- Formulario para seleccionar la cantidad -->
+                        <form action="producto.php?id=<?= $producto_id ?>" method="post">
+                            <p>Stock disponible: <?= $stock ?> unidades</p>
+
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" max="<?= $stock ?>" value="1">
                         
-                        <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
+                            <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
+                        </form>
                     </div>
                 
             </div>

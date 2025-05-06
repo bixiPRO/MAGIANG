@@ -9,7 +9,8 @@ CREATE TABLE temp_productos (
     plataforma VARCHAR(255)
 );
 
-LOAD DATA INFILE '~/Documents/MAGIANG/mysql/productos_informaticos.csv' 
+"Mover el arxivo sudo cp .csv a /tmp para poder hacer load data sino te pide permisos, si das los permisos se borra la relacion del fichero con el .git y no podras hacer commits /home/admimvm/Documents/MAGIANG/mysql/productos_informaticos.csv /tmp/"
+LOAD DATA INFILE '/tmp/productos_informaticos.csv' 
 INTO TABLE temp_productos
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"' 
@@ -29,4 +30,17 @@ INSERT INTO categorias (nombre)
 SELECT DISTINCT categoria
 FROM temp_productos
 WHERE categoria IS NOT NULL;
+
+
+INSERT INTO pro_pla (id, id_plataforma)
+SELECT p.id, pl.id
+FROM productos p
+JOIN plataformas pl ON p.plataforma = pl.nombre;
+
+INSERT INTO pro_cat (id, id_categoria)
+SELECT p.id, c.id
+FROM productos p
+JOIN categorias c ON p.categoria = c.nombre;
+
+DROP TABLE temp_productos;
 

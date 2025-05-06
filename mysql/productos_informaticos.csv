@@ -1,0 +1,71 @@
+nombre,descripcion,tipo,precio,stock,categoria,plataforma
+Logitech MX Keys,Teclado inalámbrico retroiluminado para productividad,FISICO,99.99,76,Teclado,
+Razer DeathAdder V2,Ratón ergonómico con sensor óptico de 20K DPI,FISICO,69.99,13,Raton,
+HyperX Cloud II,Auriculares con sonido envolvente 7.1,FISICO,89.99,64,Auriculares,
+SteelSeries QcK,Alfombrilla de ratón con superficie de microtejido,FISICO,14.99,84,Alfombrilla,
+Blue Yeti,Micrófono USB de calidad profesional para grabación,FISICO,129.99,100,Micrófonos,
+iPhone 14,Smartphone de última generación con chip A15,FISICO,999.99,47,Mobil,
+iPad Air,Tableta Apple con chip M1 y pantalla Liquid Retina,FISICO,649.99,79,Tablet,
+Samsung Galaxy S23,Smartphone Android con cámara profesional,FISICO,849.99,79,Android,
+Dell XPS 13,Portátil ultraligero con pantalla InfinityEdge,FISICO,1099.99,95,Portátiles,
+LG UltraGear 27GL850,Monitor gaming 27'' con 144Hz y 1ms,FISICO,429.99,84,Monitores,
+Corsair K95 RGB,Teclado mecánico con retroiluminación RGB,FISICO,199.99,60,Teclado,
+Logitech G502 HERO,Ratón gaming con sensor de alta precisión,FISICO,59.99,68,Raton,
+Sennheiser HD 599,Auriculares abiertos con sonido natural,FISICO,149.99,80,Auriculares,
+Razer Goliathus,Alfombrilla texturizada para control óptimo,FISICO,24.99,56,Alfombrilla,
+Elgato Wave:3,Micrófono digital con mezclador de audio,FISICO,159.99,33,Micrófonos,
+Google Pixel 7,Teléfono Android con IA avanzada de cámara,FISICO,699.99,35,Android,
+MacBook Air M2,Portátil Apple con chip M2 y diseño silencioso,FISICO,1199.99,48,Apple,
+Lenovo Legion 5,Portátil gaming con GPU NVIDIA RTX,FISICO,1299.99,10,Gaming,
+HP EliteBook 840,Portátil empresarial con seguridad avanzada,FISICO,1149.99,20,Oficina,
+AOC 24G2,Monitor económico de 144Hz para gamers,FISICO,199.99,41,Monitores,
+SteelSeries Apex Pro,Teclado mecánico con interruptores ajustables,FISICO,189.99,50,Teclado,
+ASUS ROG Gladius II,Ratón RGB con diseño ergonómico,FISICO,79.99,14,Raton,
+Bose QuietComfort 35 II,Auriculares con cancelación de ruido,FISICO,299.99,64,Auriculares,
+MSI Optix MAG272CQR,Monitor curvo de 27'' WQHD 165Hz,FISICO,379.99,40,Monitores,
+HyperX QuadCast,Micrófono con iluminación RGB y filtros antipop,FISICO,139.99,41,Micrófonos,
+iPad Mini,Tableta compacta con chip A15 Bionic,FISICO,549.99,86,Tablet,
+Realme 11 Pro+,Móvil Android con cámara 200MP y carga rápida,FISICO,499.99,94,Android,
+Alienware Aurora R13,Ordenador gaming de alto rendimiento,FISICO,1899.99,40,Ordenadores,
+HP Pavilion,Ordenador de sobremesa para oficina,FISICO,749.99,27,Ordenadores,
+Xiaomi Pad 6,Tableta con pantalla 2.8K y Dolby Vision,FISICO,389.99,53,Tablet,
+Acer Predator Helios 300,Portátil gaming con pantalla 144Hz,FISICO,1399.99,62,Gaming,
+Logitech MK540,Combo de teclado y ratón inalámbrico,FISICO,59.99,94,Oficina,
+BenQ EX2780Q,Monitor QHD con altavoces integrados,FISICO,329.99,84,Monitores,
+Razer Blade 15,Portátil gaming con diseño de aluminio,FISICO,2199.99,14,Gaming,
+HP 24mh,Monitor económico IPS con altavoces,FISICO,129.99,19,Oficina,
+Minecraft,Juego de construcción y aventura en mundo abierto,DIGITAL,61.02,2,,Xbox
+Fortnite,Battle Royale multijugador gratuito,DIGITAL,16.13,7,,Apple
+Among Us,Juego de deducción social multijugador,DIGITAL,15.6,23,,Google Play
+Stardew Valley,Simulador de granja y vida rural,DIGITAL,16.89,4,,PC
+Celeste,Plataformas con narrativa emocional y desafiante,DIGITAL,28.41,4,,Apple
+The Witcher 3,Juego de rol épico con historia profunda,DIGITAL,12.52,65,,Xbox
+Cyberpunk 2077,Futurista RPG en mundo abierto,DIGITAL,64.87,32,,Switch
+Hollow Knight,Metroidvania con arte dibujado a mano,DIGITAL,49.58,23,,Switch
+DOOM Eternal,Shooter en primera persona rápido y brutal,DIGITAL,49.77,54,,Playstation
+Overwatch 2,Shooter por equipos basado en héroes,DIGITAL,27.7,34,,Google Play
+Hades,Roguelike basado en la mitología griega,DIGITAL,24.87,23,,Playstation
+Red Dead Redemption 2,Western de mundo abierto,DIGITAL,48.78,43,,Playstation
+Cuphead,Juego de plataformas estilo años 30,DIGITAL,11.84,65,,Apple
+God of War,Aventura de acción mitológica,DIGITAL,46.11,34,,Apple
+Resident Evil Village,Survival horror atmosférico,DIGITAL,40.45,45,,Playstation
+The Legend of Zelda: BOTW,Aventura en mundo abierto innovadora,DIGITAL,32.62,32,,Apple
+Mario Kart 8 Deluxe,Carreras con personajes de Nintendo,DIGITAL,59.7,7,,Playstation
+Fire Emblem: Three Houses,RPG táctico con narrativa ramificada,DIGITAL,43.97,32,,PC
+Final Fantasy VII Remake,Remake del clásico RPG japonés,DIGITAL,33.41,45,,Apple
+Persona 5 Royal,RPG japonés con combate por turnos,DIGITAL,20.41,5,,Switch
+Monster Hunter Rise,Caza de monstruos cooperativa,DIGITAL,14.4,43,,PC
+Splatoon 3,Shooter multijugador con tinta,DIGITAL,68.02,7,,Apple
+Metroid Dread,Acción y exploración en 2D,DIGITAL,46.45,4,,Switch
+Assassin's Creed Valhalla,Exploración vikinga en mundo abierto,DIGITAL,68.52,54,,Switch
+Genshin Impact,Aventura RPG con estilo anime,DIGITAL,44.49,3,,Apple
+Rocket League,Fútbol con coches acrobáticos,DIGITAL,50.97,76,,Xbox
+Call of Duty: Warzone,Battle Royale de disparos realistas,DIGITAL,39.12,67,,Switch
+FIFA 24,Simulación de fútbol con licencias oficiales,DIGITAL,42.14,54,,Xbox
+NBA 2K24,Simulación de baloncesto de última generación,DIGITAL,52.54,43,,PC
+Apex Legends,Shooter de escuadrones gratuito,DIGITAL,15.17,13,,Xbox
+Baldur's Gate 3,RPG basado en D&D de gran profundidad,DIGITAL,44.11,65,,Apple
+Diablo IV,Acción RPG con exploración y botín,DIGITAL,18.15,34,,Xbox
+Valorant,Shooter táctico por equipos,DIGITAL,55.75,87,,Playstation
+Terraria,Sandbox de construcción y supervivencia,DIGITAL,35.27,54,,PC
+Dead Cells,Roguelike de acción rápida,DIGITAL,43.16,56,,Google Play

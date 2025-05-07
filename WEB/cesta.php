@@ -10,12 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['anadir'])) {
 }
 
 // Funcion para anadir prodictos a la cesta
-function agregar($producto_id) {
+function agregar($producto_id, $cantidad = 1) {
     if(isset($_SESSION['carrito'][$producto_id])) {
-        $_SESSION['carrito'][$producto_id]['cantidad']++;
+        $_SESSION['carrito'][$producto_id]['cantidad']+= $cantidad;
     } else {
         $_SESSION['carrito'][$producto_id] = [
-            'cantidad' => 1
+            'cantidad' => $cantidad
         ];
     }
 }
@@ -66,7 +66,7 @@ foreach($carrito_productos as $productos) {
     $id_productos = $productos['id'];
     $precio = $productos['precio'];
     $cantidad = $_SESSION['carrito'][$id_productos]['cantidad'];
-    $precio_total += $precio * $cuantitat;
+    $precio_total += $precio * $cantidad;
 }
 
 ?>

@@ -54,6 +54,15 @@ if(isset($_GET['accion']) && $_GET['accion'] == 'eliminar' && isset($_GET['id'])
     eliminar($id_productos);
 }
 
+// Obtener los productos en la cesta
+$carrito_productos = getCarrito();
+$precio_total = 0;
+foreach($carrito_productos as $productos) {
+    $id_productos = $productos['id'];
+    $precio = $productos['precio'];
+    $cuantitat = $_SESSION['carrito'][$id_productos]['cuantitat'];
+    $precio_total += $precio * $cuantitat;
+}
 
 ?>
 <!DOCTYPE html>

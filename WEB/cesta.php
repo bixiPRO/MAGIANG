@@ -5,12 +5,10 @@ require('connection.php');
 // Funcion para anadir prodictos a la cesta
 function agregar($producto_id) {
     if(isset($_SESSION['carrito'][$producto_id])) {
-        // Si el producto ya esta en la cesta pos aumentar la cantidad
         $_SESSION['carrito'][$producto_id]['cantidad']++;
     } else {
-        // Si el producto no está en el carrito entonces agregar con cantidad 1
         $_SESSION['carrito'][$producto_id] = [
-            'cantidad' => 1  // Cantidad inicial es 1
+            'cantidad' => 1
         ];
     }
 }
@@ -60,7 +58,7 @@ $precio_total = 0;
 foreach($carrito_productos as $productos) {
     $id_productos = $productos['id'];
     $precio = $productos['precio'];
-    $cuantitat = $_SESSION['carrito'][$id_productos]['cuantitat'];
+    $cuantitat = $_SESSION['carrito'][$id_productos]['cantidad'];
     $precio_total += $precio * $cuantitat;
 }
 
@@ -109,7 +107,7 @@ foreach($carrito_productos as $productos) {
                         <li>
                             <a href="contacto_pyp.html"><?= htmlspecialchars($productos['nombre']) ?></a>
                             - <?= number_format($productos['precio'], 2) ?>€ 
-                            - Cantidad: <?= $_SESSION['carrito'][$productos['id']]['cuantitat'] ?>
+                            - Cantidad: <?= $_SESSION['carrito'][$productos['id']]['cantidad'] ?>
                             <a href="cesta.php?action=eliminar&id=<?= $productos['id'] ?>">Eliminar</a>
                         </li>
                     <?php endforeach; ?>

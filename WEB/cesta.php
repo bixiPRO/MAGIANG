@@ -2,6 +2,13 @@
 session_start();
 require('connection.php');
 
+// Para extrer datos de POST del formulario (cantidad)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['anadir'])) {
+    $id = intval($_POST['id']);
+    $cantidad = intval($_POST['cantidad']);
+    agregar($id, $cantidad);
+}
+
 // Funcion para anadir prodictos a la cesta
 function agregar($producto_id) {
     if(isset($_SESSION['carrito'][$producto_id])) {

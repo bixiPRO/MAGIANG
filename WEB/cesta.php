@@ -82,14 +82,13 @@ function getCarrito() {
         <h1> <a>Mi Cesta</a></h1>
         <div class="contacta-txt">
             <ul>
-                <li><a href="contacto_pyp.html">Producto 1</a></li>
-                <li><a href="contacto_pyp.html">Producto 2</a></li>
-                <li><a href="contacto_pyp.html">Producto 3</a></li>
-                <li><a href="contacto_pyp.html">Producto 4</a></li>
+                <?php 
+                
+                ?>
             </ul>
         </div>
         <div> 
-            <h2>Precio total: 0.00€</h2>
+            <?php ?>
             <a class="boton-pay" href="datos_pago.html">Pagar</a>
         </div>
     

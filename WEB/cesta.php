@@ -124,7 +124,7 @@ foreach($carrito_productos as $productos) {
             <?php endif; ?>
         </div>
         <div> 
-            <?php echo "<p>Total a pagar: " . number_format($precio_total, 2) . "€</p>"; ?>
+            <?php echo "<strong><h2>Total a pagar: " . number_format($precio_total, 2) . "€</h2></strong>"; ?>
             <a class="boton-pay" href="datos_pago.html">Pagar</a>
         </div>
     

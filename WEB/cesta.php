@@ -21,6 +21,13 @@ function eliminar($producto_id) {
         unset($_SESSION['carrito'][$producto_id]);
     }
 }
+
+// Función para obtener los productos en la cesta
+function getCarrito() {
+    global $conn;
+    $carrito_productos = [];
+}
+
 ?>
 <!DOCTYPE html>
 <head>

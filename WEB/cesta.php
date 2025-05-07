@@ -26,7 +26,22 @@ function eliminar($producto_id) {
 function getCarrito() {
     global $conn;
     $carrito_productos = [];
+
+    if(isset($_SESSION['carrito'])) {
+        $id_productos = array_keys($_SESSION['carrito']);
+        $ids = implode(",", $id_productos);
+        
+        $query = "SELECT * FROM productos WHERE id IN ($ids)";
+        $result = $conn->query($query);
+        
+        while($row = $result->fetch_assoc()) {
+            $carrito_productos[] = $row;
+        }
+    }
+
+    return $carrito_productos;
 }
+
 
 ?>
 <!DOCTYPE html>

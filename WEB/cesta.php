@@ -58,7 +58,7 @@ $precio_total = 0;
 foreach($carrito_productos as $productos) {
     $id_productos = $productos['id'];
     $precio = $productos['precio'];
-    $cuantitat = $_SESSION['carrito'][$id_productos]['cantidad'];
+    $cantidad = $_SESSION['carrito'][$id_productos]['cantidad'];
     $precio_total += $precio * $cuantitat;
 }
 
@@ -90,7 +90,7 @@ foreach($carrito_productos as $productos) {
         
         </div>
         <div class="login">
-                <a href="cesta.html"><img src="img/cesta.png"></a>
+                <a href="cesta.php"><img src="img/cesta.png"></a>
                 <a href="login.php"><img src="img/login_logo.png"></a>
          </div>
         
@@ -108,7 +108,7 @@ foreach($carrito_productos as $productos) {
                             <a href="contacto_pyp.html"><?= htmlspecialchars($productos['nombre']) ?></a>
                             - <?= number_format($productos['precio'], 2) ?>€ 
                             - Cantidad: <?= $_SESSION['carrito'][$productos['id']]['cantidad'] ?>
-                            <a href="cesta.php?action=eliminar&id=<?= $productos['id'] ?>">Eliminar</a>
+                            <a href="cesta.php?accion=eliminar&id=<?= $productos['id'] ?>">Eliminar</a>
                         </li>
                     <?php endforeach; ?>
                 </ul>

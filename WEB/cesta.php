@@ -15,6 +15,12 @@ function agregar($producto_id) {
     }
 }
 
+// Función para eliminar los productos
+function eliminar($producto_id) {
+    if(isset($_SESSION['carrito'][$producto_id])) {
+        unset($_SESSION['carrito'][$producto_id]);
+    }
+}
 ?>
 <!DOCTYPE html>
 <head>

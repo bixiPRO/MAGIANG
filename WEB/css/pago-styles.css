@@ -131,7 +131,6 @@ h4 {
     text-align: center;
 }
 
-/* ESTILOS LISTA PRODUCTOS */
 main ul{
     display: flex;
     flex-direction: column;
@@ -161,6 +160,10 @@ main li:hover a{
     color: white;
 }
 
+div{
+    display: flex;
+    
+}
 /* END_ESTILOS LISTA PRODUCTOS */
 
 /* ESTILOS FORMULARIO */

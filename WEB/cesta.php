@@ -42,6 +42,18 @@ function getCarrito() {
     return $carrito_productos;
 }
 
+// Agregar producto a la cesta si clica el boton anadir
+if(isset($_GET['accion']) && $_GET['accion'] == 'anadir' && isset($_GET['id'])) {
+    $id_productos = intval($_GET['id']);
+    agregar($id_productos);
+}
+
+// Eliminar producto de la cesta si clica boton eliminar
+if(isset($_GET['accion']) && $_GET['accion'] == 'eliminar' && isset($_GET['id'])) {
+    $id_productos = intval($_GET['id']);
+    eliminar($id_productos);
+}
+
 
 ?>
 <!DOCTYPE html>

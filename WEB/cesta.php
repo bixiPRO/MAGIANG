@@ -109,8 +109,8 @@ foreach($carrito_productos as $productos) {
                         <li>
                             <a href="contacto_pyp.html"><?= htmlspecialchars($productos['nombre']) ?></a>
                             - <?= number_format($productos['precio'], 2) ?>€ 
-                            - Cantidad: <?= $_SESSION['carrito'][$item['id']]['cuantitat'] ?>
-                            <a href="cesta.php?action=remove&id=<?= $item['id'] ?>">Eliminar</a>
+                            - Cantidad: <?= $_SESSION['carrito'][$productos['id']]['cuantitat'] ?>
+                            <a href="cesta.php?action=eliminar&id=<?= $productos['id'] ?>">Eliminar</a>
                         </li>
                     <?php endforeach; ?>
                 </ul>

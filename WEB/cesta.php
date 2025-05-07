@@ -101,12 +101,22 @@ foreach($carrito_productos as $productos) {
 
     <main>
         <h1> <a>Mi Cesta</a></h1>
+        <!-- Mostrar productos en la cesta -->
         <div class="contacta-txt">
-            <ul>
-                <?php 
-                
-                ?>
-            </ul>
+            <?php if(count($carrito_productos) > 0): ?>
+                <ul>
+                    <?php foreach($carrito_productos as $productos): ?>
+                        <li>
+                            <a href="contacto_pyp.html"><?= htmlspecialchars($productos['nombre']) ?></a>
+                            - <?= number_format($productos['precio'], 2) ?>€ 
+                            - Cantidad: <?= $_SESSION['carrito'][$item['id']]['cuantitat'] ?>
+                            <a href="cesta.php?action=remove&id=<?= $item['id'] ?>">Eliminar</a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>No hay productos en tu cesta.</p>
+            <?php endif; ?>
         </div>
         <div> 
             <?php ?>

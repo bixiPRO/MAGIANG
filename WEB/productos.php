@@ -107,16 +107,6 @@
                     $tipo = $conn->real_escape_string($_POST['tipo']);
                     $query .= " AND tipo='$tipo'";
                 }
-                if (!empty($_POST['ordenar'])) {
-                    $ordenar = $conn->real_escape_string($_POST['ordenar']);
-                    $query .= " ORDER BY $ordenar";
-                }
-                if (!empty($_POST['precio'])) {
-                    $precio = explode('-', $_POST['precio']);
-                    $min_price = (int)$precio[0];
-                    $max_price = (int)$precio[1];
-                    $query .= " AND precio BETWEEN $min_price AND $max_price";
-                }
                 if (!empty($_POST['plataforma'])) {
                     $plataforma = $conn->real_escape_string($_POST['plataforma']);
                     $query .= " AND EXISTS (SELECT 1 FROM pro_pla 
@@ -130,6 +120,16 @@
                                   JOIN categorias ON pro_cat.id_categoria = categorias.id 
                                   WHERE pro_cat.id = productos.id 
                                   AND categorias.nombre = '$categoria')";
+                }
+                if (!empty($_POST['precio'])) {
+                    $precio = explode('-', $_POST['precio']);
+                    $min_price = (int)$precio[0];
+                    $max_price = (int)$precio[1];
+                    $query .= " AND precio BETWEEN $min_price AND $max_price";
+                }
+                if (!empty($_POST['ordenar'])) {
+                    $ordenar = $conn->real_escape_string($_POST['ordenar']);
+                    $query .= " ORDER BY $ordenar";
                 }
             }
 

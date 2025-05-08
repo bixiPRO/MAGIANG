@@ -90,6 +90,7 @@ CREATE TABLE cupones (
     FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
+/* 
 CREATE TABLE carrito(
     id_cliente INT,
     id_producto INT UNIQUE,
@@ -100,7 +101,7 @@ CREATE TABLE carrito(
     FOREIGN KEY (id_producto) REFERENCES productos(id),
     FOREIGN KEY (id_cupones) REFERENCES cupones(id)
 );
-
+*/  
 
 CREATE TABLE pago (
     id INT PRIMARY KEY AUTO_INCREMENT,

@@ -2,17 +2,71 @@
 session_start();
 require('connection.php');
 
+// Para extrer datos de POST del formulario (cantidad)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['anadir'])) {
+    $id = intval($_POST['id']);
+    $cantidad = intval($_POST['cantidad']);
+    agregar($id, $cantidad);
+}
+
 // Funcion para anadir prodictos a la cesta
-function agregar($producto_id) {
+function agregar($producto_id, $cantidad = 1) {
     if(isset($_SESSION['carrito'][$producto_id])) {
-        // Si el producto ya esta en la cesta pos aumentar la cantidad
-        $_SESSION['carrito'][$producto_id]['cantidad']++;
+        $_SESSION['carrito'][$producto_id]['cantidad']+= $cantidad;
     } else {
-        // Si el producto no está en el carrito entonces agregar con cantidad 1
         $_SESSION['carrito'][$producto_id] = [
-            'cantidad' => 1  // Cantidad inicial es 1
+            'cantidad' => $cantidad
         ];
     }
+}
+
+// Función para eliminar los productos
+function eliminar($producto_id) {
+    if(isset($_SESSION['carrito'][$producto_id])) {
+        unset($_SESSION['carrito'][$producto_id]);
+    }
+}
+
+// Función para obtener los productos en la cesta
+function getCarrito() {
+    global $conn;
+    $carrito_productos = [];
+
+    if(isset($_SESSION['carrito'])) {
+        $id_productos = array_keys($_SESSION['carrito']);
+        $ids = implode(",", $id_productos);
+        
+        $query = "SELECT * FROM productos WHERE id IN ($ids)";
+        $result = $conn->query($query);
+        
+        while($row = $result->fetch_assoc()) {
+            $carrito_productos[] = $row;
+        }
+    }
+
+    return $carrito_productos;
+}
+
+// Agregar producto a la cesta si clica el boton anadir
+if(isset($_GET['accion']) && $_GET['accion'] == 'anadir' && isset($_GET['id'])) {
+    $id_productos = intval($_GET['id']);
+    agregar($id_productos);
+}
+
+// Eliminar producto de la cesta si clica boton eliminar
+if(isset($_GET['accion']) && $_GET['accion'] == 'eliminar' && isset($_GET['id'])) {
+    $id_productos = intval($_GET['id']);
+    eliminar($id_productos);
+}
+
+// Obtener los productos en la cesta
+$carrito_productos = getCarrito();
+$precio_total = 0;
+foreach($carrito_productos as $productos) {
+    $id_productos = $productos['id'];
+    $precio = $productos['precio'];
+    $cantidad = $_SESSION['carrito'][$id_productos]['cantidad'];
+    $precio_total += $precio * $cantidad;
 }
 
 ?>
@@ -43,7 +97,7 @@ function agregar($producto_id) {
         
         </div>
         <div class="login">
-                <a href="cesta.html"><img src="img/cesta.png"></a>
+                <a href="cesta.php"><img src="img/cesta.png"></a>
                 <a href="login.php"><img src="img/login_logo.png"></a>
          </div>
         
@@ -52,17 +106,26 @@ function agregar($producto_id) {
 
     <main>
         <h1> <a>Mi Cesta</a></h1>
+        <!-- Mostrar productos en la cesta -->
         <div class="contacta-txt">
-            <ul>
-                <li><a href="contacto_pyp.html">Producto 1</a></li>
-                <li><a href="contacto_pyp.html">Producto 2</a></li>
-                <li><a href="contacto_pyp.html">Producto 3</a></li>
-                <li><a href="contacto_pyp.html">Producto 4</a></li>
-            </ul>
+            <?php if(count($carrito_productos) > 0): ?>
+                <ul>
+                    <?php foreach($carrito_productos as $productos): ?>
+                        <li>
+                            <a href="contacto_pyp.html"><?= htmlspecialchars($productos['nombre']) ?></a>
+                            - <?= number_format($productos['precio'], 2) ?>€ 
+                            - Cantidad: <?= $_SESSION['carrito'][$productos['id']]['cantidad'] ?>
+                            <a href="cesta.php?accion=eliminar&id=<?= $productos['id'] ?>">Eliminar</a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>No hay productos en tu cesta.</p>
+            <?php endif; ?>
         </div>
         <div> 
-            <h2>Precio total: 0.00€</h2>
-            <a class="boton-pay" href="datos_pago.html">Pagar</a>
+            <?php echo "<strong><h2>Total a pagar: " . number_format($precio_total, 2) . "€</h2></strong>"; ?>
+            <a class="boton-pay" href="pago.php">Pagar</a>
         </div>
     
     </main>

@@ -129,14 +129,12 @@ if($producto_id > 0) {
                         <?php endif; ?>
 
                         <!-- Formulario para seleccionar la cantidad -->
-                        <form action="producto.php?id=<?= $producto_id ?>" method="post">
-                            <p>Stock disponible: <?= $stock ?> unidades</p>
-
-                            <label for="cantidad"><strong>Cantidad:</strong></label>
+                        <form action="cesta.php" method="post">
+                            <input type="hidden" name="id" value="<?= $producto_id ?>">
+                            <label for="cantidad">Cantidad:</label>
                             <input type="number" id="cantidad" name="cantidad" min="1" max="<?= $stock ?>" value="1">
-                        
+                            <input type="submit" name="anadir" value="Añadir a la cesta">
                         </form>
-                        <a class="boton-ac" href="cesta.php?action=add&id=<?= $producto_id ?>">Añadir a la cesta</a>
                     </div>
                 
             </div>

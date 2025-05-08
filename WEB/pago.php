@@ -36,45 +36,35 @@
 
 
     <main>
-        <h1> <a>Precio total: 0.00€</a></h1>
         <h2> <a>Datos de pedido:</a></h2>
-        <form action="pago.html" method="post">
+        <form action="seleccion_pago.php" method="post">
             <h3>Datos de Facturación:</h3>
-            <div>
-                <label>Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required><br><br>
-                
-                <label>Apellidos:</label>
-                <input type="text" id="apellidos" name="apellidos" required><br><br>
-                
-                <label>Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required><br><br>
-                
-                <label>Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required><br><br>
-                
-                <label>Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-
-            </div>
             
-            <h3>Datos de Pago:</h3>
-            <div>
-                <label>Numero de Tarjeta:</label>
-                <input type="num" id="num_t" name="num_t" required><br><br>
-                <label>Fecha de caducidad:</label>
-                <input type="date" id="date_cad" name="date_cad" required><br><br>
-                <label>CVC:</label>
-                <input type="num" id="CVC" name="CVC" required><br><br>
-                <label>Nombre:</label>
-                <input type="email" id="CVC" name="CVC" required><br><br>
-            </div>
-            <checkbox id="terminos" name="terminos" required>
-                <input type="checkbox" id="terminos" name="terminos" required>
-                <label>He leído y acepto los <a href="#">términos y condiciones</a></label><br><br>  
-            </checkbox>
-            <button type="button" class="boton-pay"><a href="sys_pago.html">Pagar</a></button>
-            <div> <a class="boton-pay" href="cesta.html">Volver a la cesta</a></div>
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+                
+            <label>Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required><br><br>
+            
+            <label>Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+
+            <label>País:</label>
+            <input type="text" id="pais" name="pais" required><br><br>
+
+            <label>Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required><br><br>
+
+            <label>Codigo postal:</label>
+            <input type="number" id="codigo_postal" name="codigo_postal" required><br><br>
+                
+            <label>Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required><br><br>
+                
+            <label>Piso, puerta u otro:</label>
+            <input type="text" id="puerta" name="puerta" required><br><br>
+            
+            <a class="boton-pay" href="capcha.php">Continuar con el pago</a>
         </form>
     
     </main>

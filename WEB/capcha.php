@@ -8,13 +8,19 @@
 </head>
 
 <body>
+    <form action="seleccion_pago.php" method="post">
+        <h3>CAPCHA: </h3>
+        <h5>Introduce el mail que has registrado de tu cuenta para la comprovación</h5> </br></br>
+        <label>Correo electronico:</label>
+        <input type="email" id="email" name="email" required><br><br>
+    </form>
 
     <footer>
         <div>
             <img class="icon2" src="img/logo_magiang.png" alt="Imagen"> 
             <a class="footertitlelogo">Magiang</a>
         </div>
-    
+
         <p>©2025</p>
         <p>Todos los derechos reservados. </p>
         <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>

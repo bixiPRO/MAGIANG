@@ -11,8 +11,8 @@
     $codigo_postal = $_POST['codigo_postal'];
     $direccion = $_POST['direccion'];
     $puerta = $_POST['puerta'];
+    $email = $_POST['email']
 
-    $id_cliente = $_POST[]
 
 
 

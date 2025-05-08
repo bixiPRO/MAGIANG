@@ -64,7 +64,7 @@
             <label>Piso, puerta u otro:</label>
             <input type="text" id="puerta" name="puerta" required><br><br>
             
-            <input type="submit" value="Continuar con el pago">
+            <input type="submit" value="Continuar con el pago" href="capcha.php">
         </form>
     
     </main>

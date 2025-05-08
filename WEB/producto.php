@@ -92,7 +92,7 @@ if($producto_id > 0) {
         
         </div>
         <div class="login">
-                <a href="cesta.html"><img src="img/cesta.png"></a>
+                <a href="cesta.php"><img src="img/cesta.png"></a>
                 <a href="login.php"><img src="img/login_logo.png"></a>
         </div>
         

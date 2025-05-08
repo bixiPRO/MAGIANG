@@ -62,17 +62,7 @@
             <input type="text" id="direccion" name="direccion" required><br><br>
                 
             <label>Piso, puerta u otro:</label>
-            <input type="text" id="puerta" name="puerta" required><br><br><br>
-
-            <strong><p> CAPCHA </p></strong>
-            <p> Introdueix tu email en que has registrado</p>
-            <label>email:</label>
-            <input type="text" id="email" name="email" required><br><br>
-            <?php 
-            session_start();
-            require('connection.php');
-            
-            ?>
+            <input type="text" id="puerta" name="puerta" required><br><br>
             
             <input type="submit" value="Continuar con el pago">
         </form>

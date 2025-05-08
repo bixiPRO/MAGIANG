@@ -1,3 +1,4 @@
+
 <?php 
     session_start();
     require('connection.php');
@@ -11,7 +12,9 @@
     $direccion = $_POST['direccion'];
     $puerta = $_POST['puerta'];
 
-    
+    $id_cliente = $_POST[]
+
+
 
     $stmt = $conn->prepare("INSERT INTO pedidos ( id_cliente ,nombre, apellidos, telefono, pais, ciudad, codigo_postal, direccion, piso_puerta_otro) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssssss", $email, $username, $hash);

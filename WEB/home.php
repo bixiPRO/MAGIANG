@@ -29,10 +29,6 @@
                     <li><a href="contacto.html">Soporte</a></li>
                     <li><a href="sede.html">Sede</a></li>
                     <li><a href="nosotros.html">Sobre nosotros</a></li>
-                    <div class="search-bar">
-                    <li ><input type="text" placeholder="Buscar">
-                    <button>Buscar</button></li>
-                    </div>
                 </ul>
                 </nav>
         

@@ -15,7 +15,7 @@ body {
 
 header {
     width: 100%;
-    background: #79ddf8;
+    background: #298dff;
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #6ab5ca;
+    background: #298dff;
 }
 
 .login img {
@@ -79,7 +79,7 @@ nav ul li a:hover {
     background: white;
     border-radius: 20px;
     padding: 5px 10px;
-    border: 2px solid #6ab5ca;
+    border: 2px solid #298dff;
 }
 
 .search-bar input {
@@ -92,7 +92,7 @@ nav ul li a:hover {
 }
 
 .search-bar button {
-    background: #6ab5ca;
+    background: #298dff;
     border: none;
     color: white;
     padding: 8px 12px;
@@ -117,7 +117,7 @@ main a{
 }
 
 main a:hover{
-    color: #79ddf8;
+    color: #298dff;
 }
 
 h2{
@@ -125,7 +125,7 @@ h2{
 }
 
 h4 {
-    color: #6ab5ca;
+    color: #298dff;
     font-size: 20px;
     margin-top: 5%;
     margin-left: 10%;
@@ -157,7 +157,7 @@ h4 {
 }
 
 .boton-ac {
-    background-color: #79ddf8;
+    background-color: #298dff;
     text-decoration: none;
     color: white;
     border-radius: 20px;
@@ -168,7 +168,7 @@ h4 {
 }
 
 .boton-ac:hover {
-    background-color: #6ab5ca;
+    background-color: #298dff;
     color: aliceblue;
 }
 

@@ -10,10 +10,10 @@ html,body{
   height: 100%;
   width: 100%;
   place-items: center;
-  background: -webkit-linear-gradient(left, #6ddcf0, #6ab5ca);
+  background: -webkit-linear-gradient(left, #6ddcf0, #298dff);
 }
 ::selection{
-  background: #6ab5ca;
+  background: #298dff;
   color: #fff;
 }
 .wrapper{
@@ -68,7 +68,7 @@ html,body{
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left, #0069f1, #6ab5ca);
+  background: -webkit-linear-gradient(left, #0069f1, #298dff);
   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
 input[type="radio"]{
@@ -121,7 +121,7 @@ input[type="radio"]{
   transition: all 0.3s ease;
 }
 .form-inner form .field input:focus{
-  border-color: #6ab5ca;
+  border-color: #298dff;
 }
 .form-inner form .field input::placeholder{
   color: #999;
@@ -139,7 +139,7 @@ form .field input:focus::placeholder{
 }
 .form-inner form .pass-link a,
 .form-inner form .signup-link a{
-  color: #6ab5ca;
+  color: #298dff;
   text-decoration: none;
 }
 .form-inner form .pass-link a:hover,

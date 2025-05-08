@@ -7,7 +7,7 @@ h1 a[href] {
     color: black;
 }
 h1 a[href]:hover {
-    color: #6ab5ca;
+    color: #298dff;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 header {
     width: 100%;
-    background: #79ddf8;
+    background: #298dff;
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #6ab5ca;
+    background: #298dff;
 }
 
 .login img {
@@ -87,7 +87,7 @@ nav ul li a:hover {
     background: white;
     border-radius: 20px;
     padding: 5px 10px;
-    border: 2px solid #6ab5ca;
+    border: 2px solid #298dff;
 }
 
 .search-bar input {
@@ -100,7 +100,7 @@ nav ul li a:hover {
 }
 
 .search-bar button {
-    background: #6ab5ca;
+    background: #298dff;
     border: none;
     color: white;
     padding: 8px 12px;
@@ -122,7 +122,7 @@ main {
 }
 
 h4 {
-    color: #6ab5ca;
+    color: #298dff;
     font-size: 20px;
     margin-top: 5%;
     margin-left: 10%;
@@ -155,7 +155,7 @@ main li a{
 }
 main li:hover {
     transform: scale(1.05);
-    background-color: #6ab5ca;
+    background-color: #298dff;
 }
 main li:hover a{
     color: white;
@@ -178,7 +178,7 @@ form {
     margin-top: 1%;
 }
 form h2 {
-    color: #6ab5ca;
+    color: #298dff;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
@@ -205,7 +205,7 @@ form input[type="tel"] {
     width: 50%;
     padding: 1%;
     border-radius: 20px;
-    border: 2px solid #6ab5ca;
+    border: 2px solid #298dff;
     margin-bottom: 15px;
     font-size: 16px;
 }
@@ -214,7 +214,7 @@ form input[type="text"]:focus,
 form input[type="email"]:focus,
 form input[type="number"]:focus,
 form input[type="tel"]:focus {
-    border-color: #79ddf8;
+    border-color: #298dff;
     outline: none;
 }
 checkbox {
@@ -234,7 +234,7 @@ input[type="checkbox"]{
 
 /* ESTILO BOTON_PAGAR */
 .boton-pay {
-    background-color: #79ddf8;
+    background-color: #298dff;
     text-decoration: none;
     color: white;
     border-radius: 20px;
@@ -246,7 +246,7 @@ input[type="checkbox"]{
 }
 
 .boton-pay:hover {
-    background-color: #6ab5ca;
+    background-color: #298dff;
 }
 
 /* END_ESTILO BOTON_PAGAR */

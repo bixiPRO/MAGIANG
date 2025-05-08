@@ -15,7 +15,7 @@ body {
 
 header {
     width: 100%;
-    background: #79ddf8;
+    background: #298dff;
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #6ab5ca;
+    background: #298dff;
 }
 
 .login img {
@@ -71,41 +71,6 @@ nav ul li a:hover {
 }
 
 /* END_ESTILOS HEADER NAV */
-
-/* BARRA DE BÚSQUEDA */
-.search-bar {
-    display: flex;
-    align-items: center;
-    background: white;
-    border-radius: 20px;
-    padding: 5px 10px;
-    border: 2px solid #6ab5ca;
-}
-
-.search-bar input {
-    border: none;
-    outline: none;
-    padding: 8px;
-    font-size: 16px;
-    width: 150px;
-    border-radius: 20px;
-}
-
-.search-bar button {
-    background: #6ab5ca;
-    border: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.search-bar button:hover {
-    background: #4c94a6;
-}
-
-/* END_BARRA DE BÚSQUEDA */
 /* Contenedor principal del contenido [Main] */
 main {
     margin-top: 80px; 
@@ -137,7 +102,7 @@ main {
 }
 
 .boton-sm {
-    background-color: #79ddf8;
+    background-color: #298dff;
     text-decoration: none;
     color: white;
     border-radius: 20px;
@@ -148,7 +113,7 @@ main {
 }
 
 .boton-sm:hover {
-    background-color: #6ab5ca;
+    background-color: #298dff;
 }
 
 /* END_ ESTILOS SECCIÓN DE OFERTAS */
@@ -190,7 +155,7 @@ main {
 
 .LMV_content-item a:hover{
     text-decoration: none;
-    color: #79ddf8;
+    color: #298dff;
 }
 
 
@@ -238,7 +203,7 @@ main {
 
 .L_content-item a:hover{
     text-decoration: none;
-    color: #79ddf8;
+    color: #298dff;
 }
 /* END_ESTILOS ZONA LANZAMIENTOS */
 

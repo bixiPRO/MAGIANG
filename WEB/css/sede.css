@@ -7,7 +7,7 @@ h1 a[href] {
     color: black;
 }
 h1 a[href]:hover {
-    color: #6ab5ca;
+    color: #298dff;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 header {
     width: 100%;
-    background: #79ddf8;
+    background: #298dff;
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #6ab5ca;
+    background: #298dff;
 }
 
 .login img {
@@ -87,7 +87,7 @@ nav ul li a:hover {
     background: white;
     border-radius: 20px;
     padding: 5px 10px;
-    border: 2px solid #6ab5ca;
+    border: 2px solid #298dff;
 }
 
 .search-bar input {
@@ -100,7 +100,7 @@ nav ul li a:hover {
 }
 
 .search-bar button {
-    background: #6ab5ca;
+    background: #298dff;
     border: none;
     color: white;
     padding: 8px 12px;
@@ -126,7 +126,7 @@ main h1{
 }
 
 h4 {
-    color: #6ab5ca;
+    color: #298dff;
     font-size: 20px;
     margin-top: 5%;
     margin-left: 10%;
@@ -142,7 +142,7 @@ main ul{
     margin-top: 40px;
 }
 main li{
-    background-color: #b2e6f5;
+    background-color: #298dff;
     list-style: none;
     text-decoration: none;
     margin-top: 10px;
@@ -158,7 +158,7 @@ main li a{
 }
 main li:hover {
     transform: scale(1.05);
-    background-color: #6ab5ca;
+    background-color: #298dff;
 }
 main li:hover a{
     color: white;

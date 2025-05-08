@@ -13,6 +13,7 @@
         <h5>Introduce el mail que has registrado de tu cuenta para la comprovación</h5> </br></br>
         <label>Correo electronico:</label>
         <input type="email" id="email" name="email" required><br><br>
+        <a class="boton-pay" href="seleccion_pago.php">Continuar con el pago</a>
     </form>
 
     <footer>

@@ -11,14 +11,22 @@
     $codigo_postal = $_POST['codigo_postal'];
     $direccion = $_POST['direccion'];
     $puerta = $_POST['puerta'];
-    $email = $_POST['email']
 
+    $email = $_POST['email'];
 
-
-
-    $stmt = $conn->prepare("INSERT INTO pedidos ( id_cliente ,nombre, apellidos, telefono, pais, ciudad, codigo_postal, direccion, piso_puerta_otro) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssss", $email, $username, $hash);
+    $stmt = $conn->prepare("SELECT email FROM clientes WHERE email = ?");
+    $stmt->bind_param("s", $email);
     $stmt->execute();
+    $result = $stmt->get_result();
+    $fila = $resultado->fetch_assoc();
+
+    if ($email==$fila['email']){
+        echo "email correcto";
+    }else {
+        echo "email incorrecto, porfavor vuelve a poner el correo correcto";
+        header("Location: capcha.php");
+    }
+    
 
   
     $stmt->close();

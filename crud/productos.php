@@ -1,20 +1,7 @@
-<?php
-session_start();   
+<?php 
 // Conexión a la base de datos
 require('connection.php'); 
 
-// Obtener los productos desde la base de datos
-$query = "SELECT * FROM productos";
-if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
-    $filtrar_categoria = $_GET['filtrar_categoria'];
-    $query .= " WHERE categorias = '$filtrar_categoria'";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $filtrar_categoria);
-    $stmt->execute();
-    $result = $stmt->get_result();
-} else {
-    $result = $conn->query($query);
-}
 ?>                  
 
 
@@ -32,59 +19,120 @@ if (isset($_GET['filtrar_categoria']) && !empty($_GET['filtrar_categoria'])) {
     <meta charset="UTF-8">
 </head>
 <body>
-<div>    
-<!-- Tabla de productos -->
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Tipo</th>
-                   
-        
-        </tr>
-    </thead>
+
     
-    <tbody>
+    <main>
+        <h1> Productos</h1>
+        <!-- FILTRE -->
+        <form method="POST">
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" >
+                <option value="">Selecciona...</option>  
+                <option value="DIGITAL">Digital</option>
+                <option value="FISICO">Fisico</option>
+            </select>
+
+            <label for="plataforma">Plataforma:</label>
+            <select name="plataforma" >
+                <option value="">Selecciona...</option> 
+                <option value="PC">PC</option>
+                <option value="Apple">Apple</option>
+                <option value="Google Play">Google Play</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Switch">Switch</option>
+                <option value="Playstation">Playstation</option>
+            </select>
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" >
+                <option value="">Selecciona...</option> 
+                <option value="Alfombrilla">Alfombrilla</option>
+                <option value="Android">Android</option>
+                <option value="Apple">Apple</option>
+                <option value="Auriculares">Auriculares</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Micrófonos">Micrófonos</option>
+                <option value="Mobil">Mobil</option>
+                <option value="Monitores">Monitores</option>
+                <option value="Oficina">Oficina</option>
+                <option value="Ordenadores">Ordenadores</option>
+                <option value="Portátiles">Portátiles</option>
+                <option value="Raton">Raton</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Teclado">Teclado</option>
+            </select>
+            <label for="precio">Precio:</label>
+            <select name="precio" >
+                <option value="">Selecciona...</option> 
+                <option value="0-100">0-100</option>
+                <option value="100-250">100-250</option>
+                <option value="250-500">250-500</option>
+                <option value="500-1000">500-1000</option>
+                <option value="1000-2000">1000-2000</option>
+                <option value="2000-10000">2000-10000</option>
+            </select>
+            <label for="ordenar">Ordenar por</label>
+            <select name="ordenar" >
+                <option value="">Selecciona...</option> 
+                <option value="Nombre">Nombre</option>
+                <option value="Precio">Precio</option>
+                <option value="Valoracion">Valoracion</option>
+            </select>
+            <input type="submit" value="Filtrar" />
+            <input type="reset" value="Reset" />
+      </form>
+
+      <div class="S_content_group">
+        <!-- PHP FUNCIÓN FILTRE -->
         <?php
-        if ($result->num_rows > 0) {
-            while ($row =$result-> fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['descripcion']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['precio']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['stock']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['tipo']) . "</td>";
-                echo "</tr>";
+            $query = "SELECT * FROM productos WHERE 1=1";
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (!empty($_POST['tipo'])) {
+                    $tipo = $conn->real_escape_string($_POST['tipo']);
+                    $query .= " AND tipo='$tipo'";
+                }
+                if (!empty($_POST['ordenar'])) {
+                    $ordenar = $conn->real_escape_string($_POST['ordenar']);
+                    $query .= " ORDER BY $ordenar";
+                }
+                if (!empty($_POST['precio'])) {
+                    $precio = explode('-', $_POST['precio']);
+                    $min_price = (int)$precio[0];
+                    $max_price = (int)$precio[1];
+                    $query .= " AND precio BETWEEN $min_price AND $max_price";
+                }
+                if (!empty($_POST['plataforma'])) {
+                    $plataforma = $conn->real_escape_string($_POST['plataforma']);
+                    $query .= " AND EXISTS (SELECT 1 FROM pro_pla 
+                              JOIN plataformas ON pro_pla.id_plataforma = plataformas.id 
+                              WHERE pro_pla.id = productos.id 
+                              AND plataformas.nombre = '$plataforma')";
+                }
+                if (!empty($_POST['categoria'])) {
+                    $categoria = $conn->real_escape_string($_POST['categoria']);
+                    $query .= " AND EXISTS (SELECT 1 FROM pro_cat 
+                                  JOIN categorias ON pro_cat.id_categoria = categorias.id 
+                                  WHERE pro_cat.id = productos.id 
+                                  AND categorias.nombre = '$categoria')";
+                }
+            }
 
+            $result = $conn->query($query);
 
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="S_content-item">';
+                echo '<a href="producto.php?id=' . $row['id'] . '">';
+                echo '<p>' . htmlspecialchars($row['nombre']) . '</p>';
+                echo '<p>$' . htmlspecialchars($row['precio']) . '</p>';
+                echo '</a>';
+                echo '</div>';
+            }
 
-            }    
-        }               
-        ?>                
-                     
-    </tbody>                
-</table>                
+            $result->close();
+            $conn->close();
+        ?>
+      </div>
 
-<!-- Formulario de filtrado por Categorias -->
-
-    <form method="GET" action="productos.php">
-        <label for="filtrar_categoria">Filtrar por Categoria:</label>
-        <select name="filtrar_categoria">
-            <option value="">Todas</option>
-            <option value="Ratones" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ratones') ? 'selected' : '' ?>>Ratones</option>
-            <option value="Teclados" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Teclados') ? 'selected' : '' ?>>Teclados</option>
-            <option value="Ordenadores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Ordenadores') ? 'selected' : '' ?>>Ordenadores</option>
-            <option value="Microfonos" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Microfonos') ? 'selected' : '' ?>>Micrófonos</option>
-            <option value="Portatiles" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Portatiles') ? 'selected' : '' ?>>Portátiles</option>
-            <option value="Monitores" <?= (isset($_GET['filtrar_categoria']) && $_GET['filtrar_categoria'] == 'Monitores') ? 'selected' : '' ?>>Monitores</option>
-        </select><br/>
-        <input type="submit" value="Filtrar" />
-               
-    </form>
-</div>    
-</body>
+    </main>
+</table>
 </html>
-<?php $conn->close(); ?>
+

@@ -12,20 +12,11 @@
     $direccion = $_POST['direccion'];
     $puerta = $_POST['puerta'];
 
-    $email = $_POST['email'];
 
-    $stmt = $conn->prepare("SELECT email FROM clientes WHERE email = ?");
-    $stmt->bind_param("s", $email);
+    $stmt = $conn->prepare("INSERT INTO pedidos (id_cliente, nombre, apellidos, telefono, pais, direccion, piso_puerta_otro, codigo_postal, ciudad) VALUES (?, ?, ?)");
+    $stmt->bind_param("sssssssss", $id_cliente, $nombre, $apellidos, $telefono, $pais, $direccion, $puerta, $codigo_postal, $ciudad);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $fila = $resultado->fetch_assoc();
 
-    if ($email==$fila['email']){
-        echo "email correcto";
-    }else {
-        echo "email incorrecto, porfavor vuelve a poner el correo correcto";
-        header("Location: capcha.php");
-    }
     
 
   
@@ -34,3 +25,21 @@
 
     echo "Formulario registrado"
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciona Método de Pago</title>
+</head>
+<body>
+
+<h1>Selecciona tu método de pago</h1>
+
+<ul>
+    <li><a href="pago_visa.php">Visa / Mastercard</a></li>
+    <li><a href="pago_paypal.php">PayPal</a></li>
+    <li><a href="pago_bizum.php">Bizum</a></li>
+</ul>
+
+</body>
+</html>

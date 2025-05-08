@@ -45,16 +45,24 @@
                 
             <label>Apellidos:</label>
             <input type="text" id="apellidos" name="apellidos" required><br><br>
+            
+            <label>Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+
+            <label>País:</label>
+            <input type="text" id="pais" name="pais" required><br><br>
+
+            <label>Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required><br><br>
+
+            <label>Codigo postal:</label>
+            <input type="number" id="codigo_postal" name="codigo_postal" required><br><br>
                 
             <label>Dirección:</label>
             <input type="text" id="direccion" name="direccion" required><br><br>
                 
-            <label>Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required><br><br>
-                
-            <label>Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
+            <label>Piso, puerta u otro:</label>
+            <input type="text" id="puerta" name="puerta" required><br><br>
             
             <input type="submit" value="Continuar con el pago">
         </form>

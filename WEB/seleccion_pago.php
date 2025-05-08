@@ -8,5 +8,13 @@
     $telefono = $_POST['telefono'];
     $email = $_POST['email'];
 
+    $stmt = $conn->prepare("INSERT INTO clientes (email, nombre_usuario, contrasenya) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $email, $username, $hash);
+    $stmt->execute();
 
+  
+    $stmt->close();
+    $conn->close();
+
+    echo "Registro creado"
 ?>

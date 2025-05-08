@@ -11,6 +11,7 @@
     $codigo_postal = $_POST['codigo_postal'];
     $direccion = $_POST['direccion'];
     $puerta = $_POST['puerta'];
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
 </head>
 
 <body>
-    <form action="seleccion_pago.php" method="post">
+    <form method="post">
         <h3>CAPCHA: </h3>
         <h5>Introduce el mail que has registrado de tu cuenta para la comprovación</h5> </br></br>
         <label>Correo electronico:</label>
@@ -48,12 +49,11 @@
 <?php
     $email = $_POST['email']
 
-
-
-
-    $stmt = $conn->prepare("INSERT INTO pedidos ( id_cliente ,nombre, apellidos, telefono, pais, ciudad, codigo_postal, direccion, piso_puerta_otro) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssss", $email, $username, $hash);
+    $stmt = $conn->prepare("SELECT id FROM clientes WHERE email = ?");
+    $stmt->bind_param("s", $email);
     $stmt->execute();
+    $result = $stmt->get_result();
+    
 
   
     $stmt->close();

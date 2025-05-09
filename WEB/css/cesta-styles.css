@@ -56,9 +56,9 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    position: relative;
+    position: relative; 
 }
-
+ 
 nav ul li a {
     text-decoration: none;
     color: white;

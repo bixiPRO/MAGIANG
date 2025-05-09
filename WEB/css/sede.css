@@ -115,10 +115,14 @@ nav ul li a:hover {
 
 /* END_BARRA DE BÚSQUEDA */
 
-/* Estilos Main */
+/* ESTILOS MAIN */
 main {
     margin-top: 80px; 
     padding: 20px 10%;
+}
+
+main h1{
+    margin-bottom: 5%;
 }
 
 h4 {
@@ -131,54 +135,6 @@ h4 {
     text-align: center;
 }
 
-/* ESTILOS FOTOS OPCIONES */
-.S_content_group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.S_content-item {
-    background: transparent;
-    border-radius: 15px;
-    padding: 20px;
-    width: 25%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.S_content-item:hover {
-    transform: scale(1.05);
-}
-
-.S_content-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 10px;
-}
-
-.S_content-item p {
-    font-size: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
-    color: #555;
-}
-
-.S_content-item a[href] {
-    text-decoration: none;
-    color: black;
-}
-.S_content-item a[href]:hover {
-    color: #298dff;
-}
-
-/* END ESTILOS FOTOS OPCIONES */
-
-/* ESTILOS ENLACES POSTS CONTACTO */
 main ul{
     display: flex;
     flex-direction: column;
@@ -206,9 +162,27 @@ main li:hover {
 }
 main li:hover a{
     color: white;
+
 }
 
-/* END_ESTILOS ENLACES POSTS CONTACTO */
+main div{
+    margin: 5%;
+}
+main div a{
+    font-weight: bold;
+}
+/* END_ESTILOS LISTA PRODUCTOS */
+
+/*ESTILOS UBICACION */
+iframe {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0;
+    width: 100%;
+    height: 500px;
+  }
+/*END_ESTILOS UBICACION */
+
 /* ESTILOS FOOTER */
 footer {
     background: #333;
@@ -230,6 +204,7 @@ footer .icon2 {
 /* END_ ESTILOS FOOTER */
 
 
+
 /* DISEÑO RESPONSIVE */
 @media (max-width: 768px) {
     header {
@@ -242,18 +217,42 @@ footer .icon2 {
         gap: 10px;
     }
 
-    .bnn_principal img {
-        width: 100%;
+    nav ul li {
+        margin: 0;
     }
 
-    .LMV_content_group, .L_content_group {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    main {
+        padding: 20px 5%;
     }
 
-    .boton-sm {
-        width: 100%;
+    main ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main li {
+        width: 90%;
         text-align: center;
     }
+
+    form {
+        width: 90%;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form input[type="tel"] {
+        width: 100%;
+    }
+    form label {
+        width: 100%;
+        text-align: left;
+    }
+    form input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }    
+
 }
 
 

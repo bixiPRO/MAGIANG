@@ -7,7 +7,7 @@ h1 a[href] {
     color: black;
 }
 h1 a[href]:hover {
-    color: #6ab5ca;
+    color: #298dff;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 header {
     width: 100%;
-    background: #79ddf8;
+    background: #298dff;
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -56,9 +56,9 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    position: relative;
+    position: relative; 
 }
-
+ 
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -69,7 +69,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #6ab5ca;
+    background: #083a72; 
 }
 
 .login img {
@@ -87,7 +87,7 @@ nav ul li a:hover {
     background: white;
     border-radius: 20px;
     padding: 5px 10px;
-    border: 2px solid #6ab5ca;
+    border: 2px solid #298dff;
 }
 
 .search-bar input {
@@ -100,7 +100,7 @@ nav ul li a:hover {
 }
 
 .search-bar button {
-    background: #6ab5ca;
+    background: #298dff;
     border: none;
     color: white;
     padding: 8px 12px;
@@ -122,7 +122,7 @@ main {
 }
 
 h4 {
-    color: #6ab5ca;
+    color: #298dff;
     font-size: 20px;
     margin-top: 5%;
     margin-left: 10%;
@@ -173,7 +173,7 @@ h4 {
     color: black;
 }
 .S_content-item a[href]:hover {
-    color: #6ab5ca;
+    color: #298dff;
 }
 
 /* END ESTILOS FOTOS OPCIONES */
@@ -202,7 +202,7 @@ main li a{
 }
 main li:hover {
     transform: scale(1.05);
-    background-color: #6ab5ca;
+    background-color: #298dff;
 }
 main li:hover a{
     color: white;
@@ -212,7 +212,7 @@ main li:hover a{
 
 /* ESTILO BOTON_PAGAR */
 .boton-pay {
-    background-color: #79ddf8;
+    background-color: #298dff;
     text-decoration: none;
     color: white;
     border-radius: 20px;
@@ -223,7 +223,7 @@ main li:hover a{
 }
 
 .boton-pay:hover {
-    background-color: #6ab5ca;
+    background-color: #298dff;
 }
 
 /* END_ESTILO BOTON_PAGAR */

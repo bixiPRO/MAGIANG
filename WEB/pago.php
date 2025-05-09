@@ -33,7 +33,7 @@
 
     <main>
         <h2> <a>Datos de pedido:</a></h2>
-        <form action="seleccion_pago.php" method="post">
+        <form action="seleccion_pago.php" method="POST">
             <h3>Datos de Facturación:</h3>
             
             <label>Nombre:</label>
@@ -43,7 +43,7 @@
             <input type="text" id="apellidos" name="apellidos" required><br><br>
             
             <label>Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required><br><br>
+            <input type="number" id="telefono" name="telefono" required><br><br>
 
             <label>País:</label>
             <input type="text" id="pais" name="pais" required><br><br>
@@ -60,7 +60,7 @@
             <label>Piso, puerta u otro:</label>
             <input type="text" id="puerta" name="puerta" required><br><br>
             
-            <a class="boton-pay" href="capcha.php">Continuar con el pago</a>
+            <a class="boton-pay" href="seleccion_pago.php">Continuar con el pago</a>
         </form>
     
     </main>

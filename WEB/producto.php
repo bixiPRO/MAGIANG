@@ -102,6 +102,7 @@ if($producto_id > 0) {
                     <div class="prod_info">
                     <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="<?= htmlspecialchars($producto['nombre']) ?>">
                         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
+                        <hr>
                         <h3>Precio: <?= number_format($producto['precio'], 2) ?>€</h3>
     <!--Posar la plataforma en que esta-->
                         <?php if(!empty($plataformas)): ?>
@@ -115,6 +116,7 @@ if($producto_id > 0) {
                         <?php endif; ?>
                         <!--Poner la descripción del producto-->
                         <h2>Descripción:</h2>
+                        <hr>
                         <p><?= htmlspecialchars($producto['descripcion']) ?></p>
                         
                         <!-- Mostrar el codi en cas que sigui digital (prova) -->
@@ -129,6 +131,9 @@ if($producto_id > 0) {
                             <input type="hidden" name="id" value="<?= $producto_id ?>">
                             <label for="cantidad">Cantidad:</label>
                             <input type="number" id="cantidad" name="cantidad" min="1" max="<?= $stock ?>" value="1">
+                            <br>
+                            <br>
+                            <br>
                             <input type="submit" name="anadir" value="Añadir a la cesta">
                         </form>
                     </div>

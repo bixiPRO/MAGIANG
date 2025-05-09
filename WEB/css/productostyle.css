@@ -109,7 +109,10 @@ nav ul li a:hover {
 /* ZONA CONTENIDO PRINCIPAL */
 main {
     margin-top: 5%;
-    padding: 20px 10%;
+    padding-top: 2%;
+    padding-left:  10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
 }
 
 main a{
@@ -119,6 +122,12 @@ main a{
 main a:hover{
     color: #298dff;
 }
+
+main div{
+    margin-top: 1%;
+    margin-left: 35%;
+}
+
 
 h2{
     margin-bottom: 2%;

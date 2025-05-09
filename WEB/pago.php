@@ -33,7 +33,7 @@
 
     <main>
         <h2> <a>Datos de pedido:</a></h2>
-        <form action="seleccion_pago.php" method="post">
+        <form action="seleccion_pago.php" method="POST">
             <h3>Datos de Facturación:</h3>
             
             <label>Nombre:</label>

@@ -12,6 +12,7 @@
 
     $id_cliente = $_SESSION['id_cliente'];
 
+    $_SERVER["REQUEST_METHOD"] == "POST";
     // La seccio per coger la información del formulario de la pagina pago.php
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
@@ -22,6 +23,7 @@
     $direccion = $_POST['direccion'];
     $puerta = $_POST['puerta'];
 
+    echo "$id_cliente, $nombre, $apellidos, $telefono, $pais, $direccion, $puerta, $codigo_postal, $ciudad";
 
     $stmt = $conn->prepare("INSERT INTO pedidos (id_cliente, nombre, apellidos, telefono, pais, direccion, piso_puerta_otro, codigo_postal, ciudad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
     $stmt->bind_param("issssssss", $id_cliente, $nombre, $apellidos, $telefono, $pais, $direccion, $puerta, $codigo_postal, $ciudad);

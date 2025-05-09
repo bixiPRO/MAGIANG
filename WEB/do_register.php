@@ -26,6 +26,9 @@ $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$id_cliente = $stmt->insert_id;
+$_SESSION['id_cliente'] = $id_cliente;
+
 if ($result->num_rows > 0) {
     header("Location: home.php");
     exit();
@@ -40,7 +43,6 @@ $stmt = $conn->prepare("INSERT INTO clientes (email, nombre_usuario, contrasenya
 $stmt->bind_param("sss", $email, $username, $hash);
 $stmt->execute();
 
-  
 $stmt->close();
 $conn->close();
 

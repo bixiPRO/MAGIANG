@@ -2,6 +2,16 @@
 <?php 
     session_start();
     require('connection.php');
+
+    if (!isset($_SESSION['id_cliente'])) {
+        // Mostrar mensaje error si hay algun error con el login
+        $_SESSION['error_pago'] = "Debes iniciar sesión para continuar con el pago";
+        header("Location: login.php");
+        exit();
+    }
+
+    $id_cliente = $_SESSION['id_cliente'];
+
     // La seccio per coger la información del formulario de la pagina pago.php
     $nombre = $_POST['nombre'];
     $apellidos = $_POST['apellidos'];
@@ -13,11 +23,11 @@
     $puerta = $_POST['puerta'];
 
 
-    $stmt = $conn->prepare("INSERT INTO pedidos (id_cliente, nombre, apellidos, telefono, pais, direccion, piso_puerta_otro, codigo_postal, ciudad) VALUES (?, ?, ?)");
-    $stmt->bind_param("sssssssss", $id_cliente, $nombre, $apellidos, $telefono, $pais, $direccion, $puerta, $codigo_postal, $ciudad);
+    $stmt = $conn->prepare("INSERT INTO pedidos (id_cliente, nombre, apellidos, telefono, pais, direccion, piso_puerta_otro, codigo_postal, ciudad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
+    $stmt->bind_param("issssssss", $id_cliente, $nombre, $apellidos, $telefono, $pais, $direccion, $puerta, $codigo_postal, $ciudad);
     $stmt->execute();
 
-    
+    /*$_SESSION['id_pedido'] = $stmt->insert_id; */
 
   
     $stmt->close();

@@ -69,7 +69,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #298dff;
+    background: #083a72;
 }
 
 .login img {
@@ -126,7 +126,7 @@ form {
     border-radius: 15px;
     padding-top: 2%;
     padding-bottom: 2%;
-    padding-left: %;
+    padding-left: 1%;
     padding-right: 1%;
 
 }

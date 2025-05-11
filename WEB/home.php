@@ -21,7 +21,7 @@
      
     <!-- ZONA NAV -->
     <header>
-        <div class="header-content"><a href="home.php<img class="icon"  src="img/logo_magiang.png"></a></div>
+    <div class="header-content"><a href="home.php"><img class="icon"  src="img/logo_magiang.png"></a></div>
         <div>
             <nav>
                 <ul>

@@ -90,6 +90,7 @@
                 <option value="Precio">Precio</option>
                 <option value="Valoracion">Valoracion</option>
             </select>
+            <input name="buscar" type="text" placeholder="Buscar">
             <input type="submit" value="Filtrar" />
             <input type="reset" value="Reset" />
       </form>
@@ -123,10 +124,17 @@
                     $max_price = (int)$precio[1];
                     $query .= " AND precio BETWEEN $min_price AND $max_price";
                 }
+
+                if (!empty($_POST['buscar'])) {
+                    $buscar = $conn->real_escape_string($_POST['buscar']);
+                    $query .= " AND (nombre LIKE '%$buscar%' OR descripcion LIKE '%$buscar%')";
+                }
+
                 if (!empty($_POST['ordenar'])) {
                     $ordenar = $conn->real_escape_string($_POST['ordenar']);
                     $query .= " ORDER BY $ordenar";
                 }
+                
             }
 
             $result = $conn->query($query);

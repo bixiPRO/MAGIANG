@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PAGO BIZUM</title>
+    <link rel="stylesheet" type="text/css" href="css/pago-styles.css">
 </head>
 <body>
 <header>
@@ -33,8 +34,21 @@
             <input type="number" id="telefono" name="telefono" required><br><br>
             <a class="boton-pay" href="mail.php">Pagar</a>
         </form>
-    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
+    
+    <footer>
+        <div>
+            <img class="icon2" src="img/logo_magiang.png" alt="Imagen"> 
+            <a class="footertitlelogo">Magiang</a>
+        </div>
+    
+        <p>©2025</p>
+        <p>Todos los derechos reservados. </p>
+        <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
+        <p>Da el salto a nuevos mundos con Magiang</p>
+        <p>¡Contáctanos en desde el apartado de <a href="contacto.html">Contacto</a> en nuestra web!</p>
+    </footer>
 
 </body>
 </html>

@@ -26,15 +26,28 @@
         
     </header>
     <main>
-        <h2> <a>Pago Visa</a></h2>
+        <h2> <a>Pago Visa</a></h2> <br>
+        <br>
         <form method="POST">
-            
+           
             <label>Pon tu numero de telefono:</label>
             <input type="number" id="telefono" name="telefono" required><br><br>
             <a class="boton-pay" href="mail.php">Pagar</a>
         </form>
     
     </main>
+    <footer>
+        <div>
+            <img class="icon2" src="img/logo_magiang.png" alt="Imagen"> 
+            <a class="footertitlelogo">Magiang</a>
+        </div>
+    
+        <p>©2025</p>
+        <p>Todos los derechos reservados. </p>
+        <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
+        <p>Da el salto a nuevos mundos con Magiang</p>
+        <p>¡Contáctanos en desde el apartado de <a href="contacto.html">Contacto</a> en nuestra web!</p>
+    </footer>
 
 </body>
 </html>

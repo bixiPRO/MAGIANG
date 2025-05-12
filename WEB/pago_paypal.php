@@ -2,12 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <title>PAGO PAYPAL</title>
-=======
-    <title>PAGO BIZUM</title>
-    <link rel="stylesheet" type="text/css" href="css/pago-styles.css">
->>>>>>> 17aa3e487621684fb18698d955aa7c6b91dffd06
 </head>
 <body>
 <header>
@@ -31,13 +26,8 @@
     </header>
 
     <main>
-<<<<<<< HEAD
         <h2> <a>PAGO PAYPAL</a></h2>
         <form action=pago_paypal.php method="POST">
-=======
-        <h2> <a>PAGO Paypal</a></h2>
-        <form method="POST">
->>>>>>> 17aa3e487621684fb18698d955aa7c6b91dffd06
             
             <label>Pon tu correo electronico:</label>
             <input type="email" id="email" name="email" required><br><br>

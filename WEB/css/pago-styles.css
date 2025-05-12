@@ -203,7 +203,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="number"],
-form input[type="tel"] {
+form input[type="tel"],select {
     display: inline;
     width: 50%;
     padding: 1%;

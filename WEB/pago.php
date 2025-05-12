@@ -59,6 +59,14 @@
                 
             <label>Piso, puerta u otro:</label>
             <input type="text" id="puerta" name="puerta" required><br><br>
+
+            <label> Metodo de pago:</label>
+            <select required>
+                <option> ...</option>
+                <option>Visa/MasterCard</option>
+                <option>PayPal</option>
+                <option>Bizum</option>
+            </select>
             
             <button class="boton-pay" type="submit">Continuar con el pago</button>
         </form>

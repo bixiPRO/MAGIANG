@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>PAGO PAYPAL</title>
+    <link rel="stylesheet" type="text/css" href="css/pago-styles.css">
 </head>
 <body>
-<header>
+    <header>
         <div class="header-content"><a href="home.php"><img class="icon"  src="img/logo_magiang.png"></a></div>
         <div>
             <nav>

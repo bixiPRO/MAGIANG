@@ -41,6 +41,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Selecciona Método de Pago</title>
+    <link rel="stylesheet" type="text/css" href="css/pago-styles.css">
 </head>
 <body>
 

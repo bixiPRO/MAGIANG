@@ -44,9 +44,14 @@
         <!-- Zona  de contenido pagina home -->
         <div class="oferta-home">
             <!-- Apartado Ofertas-->
+<<<<<<< HEAD
             <div><h3> Ofertas </h3></div>
             <div><img  src="/img/banner_home.png"></div>
             <div> <a class="boton-sm" href="ofertas.html">Saber mas</a></div>
+=======
+            <div><img  src="https://img.freepik.com/psd-gratis/plantilla-banner-web-viernes-negro-super-venta_120329-3858.jpg"></div>
+            <div> <a class="boton-sm" href="productos.php">Explorar</a></div>
+>>>>>>> 023b63b94632f5c27a097e9657caae60dc2751ce
         </div>
         <div>
             <!--Zona dels productes que se han modificado-->

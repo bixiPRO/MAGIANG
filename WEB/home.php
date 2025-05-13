@@ -45,7 +45,7 @@
         <div class="oferta-home">
             <!-- Apartado Ofertas-->
             <div><h3> Ofertas </h3></div>
-            <div><img  src="https://img.freepik.com/psd-gratis/plantilla-banner-web-viernes-negro-super-venta_120329-3858.jpg"></div>
+            <div><img  src="/img/banner_home.png"></div>
             <div> <a class="boton-sm" href="ofertas.html">Saber mas</a></div>
         </div>
         <div>

@@ -23,7 +23,7 @@ CREATE TABLE productos(
 );
 
 CREATE TABLE ventas(
-    id_producto INT,
+    id_producto INT UNIQUE,
     nombre VARCHAR(255),
     numeros INT DEFAULT 0,
     FOREIGN KEY (id_producto) REFERENCES productos(id)

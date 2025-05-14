@@ -23,6 +23,7 @@ if (password_verify($password1,$fila['contrasenya'])){
 
 }else {
 	echo "login incorrecto";
+	header("Location: login.php");
 }
 
 echo $_SESSION['nombre_usuario'];

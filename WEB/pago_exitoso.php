@@ -67,7 +67,8 @@ if (!empty($_SESSION['carrito'])) {
 </head>
 <body>
     <h1> EL PAGO SE HA REALIZADO CON ÉXITO</h1>
-    <h2> 
+    <p>Gracias por tu compra. Hemos registrado tu pedido correctamente.</p>
+    <a href="productos.php">← Volver a comprar</a>
 
 </body>
 

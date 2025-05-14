@@ -88,7 +88,6 @@
                 <option value="">Selecciona...</option> 
                 <option value="Nombre">Nombre</option>
                 <option value="Precio">Precio</option>
-                <option value="Valoracion">Valoracion</option>
             </select>
             <input name="buscar" type="text" placeholder="Buscar">
             <input type="submit" value="Filtrar" />

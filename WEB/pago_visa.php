@@ -29,10 +29,19 @@
         <h2> <a>Pago Visa</a></h2> <br>
         <br>
         <form method="POST">
-           
-            <label>Pon tu numero de telefono:</label>
-            <input type="number" id="telefono" name="telefono" required><br><br>
-            <a class="boton-pay" href="mail.php">Pagar</a>
+            <label>Numero de tarjeta:</label><br>
+            <input type="text" name="num_tarjeta" required><br><br>
+
+            <label>Fecha de caducidad (MM/AA):</label><br>
+            <input type="text" name="fecha_cad" required><br><br>
+
+            <label>Codigo de seguridad:</label><br>
+            <input type="number" name="cod_seg" required><br><br>
+
+            <label>Nombre del titular:</label><br>
+            <input type="text" name="nombre_titular" required><br><br>
+
+            <button class="boton-pay" type="submit">Pagar</button>
         </form>
     
     </main>

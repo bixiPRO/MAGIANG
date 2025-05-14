@@ -121,7 +121,9 @@ foreach($carrito_productos as $productos) {
         </div>
         <div> 
             <?php echo "<strong><h2>Total a pagar: " . number_format($precio_total, 2) . "€</h2></strong>"; ?>
-            <a class="boton-pay" href="pago.php">Pagar</a>
+            <form action="pago.php" method="post">
+                <input type="submit" name="pagar" value="Pagar" class="boton-pay">
+            </form>
         </div>
     
     </main>

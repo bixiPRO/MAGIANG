@@ -1,3 +1,46 @@
+<?php
+session_start();
+require('connection.php');
+
+//sino hay id del cliente se tiene que loguearse y le redireciona el login.php
+if (!isset($_SESSION['id_cliente'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$id_cliente = $_SESSION['id_cliente'];
+
+
+// Insertar cada producto del carrito
+if (!empty($_SESSION['carrito'])) {
+    foreach ($_SESSION['carrito'] as $producto_id => $item) {
+        $cantidad = $item['cantidad'];
+
+        // Obtener precio actual
+        $stmt = $conn->prepare("SELECT precio FROM productos WHERE id = ?");
+        $stmt->bind_param("i", $producto_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($row = $result->fetch_assoc()) {
+            $precio_unitario = $row['precio'];
+            $precio_total = $precio_unitario * $cantidad;
+
+            // Insertar en la tabla carrito una fila por producto
+            $insert = $conn->prepare("INSERT INTO carrito (id_cliente, id_producto, cantidad, precio_total)
+                                      VALUES (?, ?, ?, ?)
+                                      ON DUPLICATE KEY UPDATE 
+                                        cantidad = VALUES(cantidad),
+                                        precio_total = VALUES(precio_total)");
+            $insert->bind_param("iiid", $id_cliente, $producto_id, $cantidad, $precio_total);
+            $insert->execute();
+        }
+
+        $stmt->close();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">

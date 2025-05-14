@@ -93,7 +93,7 @@ CREATE TABLE cupones (
 
 CREATE TABLE carrito(
     id_cliente INT,
-    id_producto INT UNIQUE,
+    id_producto INT,
     id_cupones INT UNIQUE DEFAULT NULL,
     cantidad INT,
     precio_total DECIMAL(10,2),

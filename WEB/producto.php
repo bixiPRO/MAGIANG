@@ -139,7 +139,7 @@ if($producto_id > 0) {
                     </div>
                 
             </div>
-            <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte (un error)-->
+            <!-- Sino cumpleix la primera condició posar un else perque no s'ha trobat el producte-->
         <?php else: ?>
             <div class="error">
                 <h2>Producto no encontrado</h2>

@@ -79,7 +79,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Confirmación de pedido - Magiang';
+    $mail->Subject = 'PEDIDO - MAGIANG';
     $mail->Body    = "
     <!DOCTYPE html>
     <html>

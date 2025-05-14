@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+require('connection.php');
+
+$id_pedido = $_GET['id_pedido'];
+
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;

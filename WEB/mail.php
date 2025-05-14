@@ -5,6 +5,14 @@ require('connection.php');
 
 $id_pedido = $_GET['id_pedido'];
 
+$sqlPedido = "SELECT p.*, c.email, c.nombre_usuario 
+              FROM pedidos p
+              JOIN clientes c ON p.id_cliente = c.id
+              WHERE p.id = ?";
+$stmt = $conn->prepare($sqlPedido);
+$stmt->bind_param("i", $id_pedido);
+$stmt->execute();
+$result = $stmt->get_result();
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function

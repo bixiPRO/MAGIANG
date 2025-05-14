@@ -28,7 +28,7 @@
 
     <main>
         <h2> <a>PAGO PAYPAL</a></h2>
-        <form action=pago_paypal.php method="POST">
+        <form method="POST">
             
             <label>Pon tu correo electronico:</label>
             <input type="email" id="email" name="email" required><br><br>
@@ -36,7 +36,7 @@
             <label>Contrasenya:</label>
             <input type="password" id="contrasenya" name="contrasenya" required><br><br>
 
-            <<button class="boton-pay" type="submit">Pagar</button>
+            <button class="boton-pay" type="submit">Pagar</button>
         </form>
     
     </main>
@@ -64,13 +64,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hash = password_hash($password1,PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("");
-    $stmt->bind_param("sss", $email, $username, $hash);
-    $stmt->execute();
+    $metodo = "PAYPAL";
+    $stmtPago = $conn->prepare("INSERT INTO pago (id_pedido, metodo_pago) VALUES (?, ?)");
+    $stmtPago->bind_param("is", $id_pedido, $metodo);
+    $stmtPago->execute();
 
-    $stmt->close();
+    $id_pago = $stmtPago->insert_id;
+    $stmtPago->close();
+
+    $stmtPaypal = $conn->prepare("INSERT INTO paypal (id_pago, email, contrasenya) VALUES (?, ?, ?)");
+    $stmtPaypal->bind_param("iss", $id_pago, $email, $hash);
+    $stmtPaypal->execute();
+    $stmtPaypal->close();
+
+
+    
     $conn->close();
 
     echo "Pago finalizado";
+
+    header("Location: mail.php");
+    exit();
 }
 ?>

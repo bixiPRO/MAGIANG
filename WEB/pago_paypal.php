@@ -36,7 +36,7 @@
             <label>Contrasenya:</label>
             <input type="password" id="contrasenya" name="contrasenya" required><br><br>
 
-            <a class="boton-pay" href="mail.php">Pagar</a>
+            <<button class="boton-pay" type="submit">Pagar</button>
         </form>
     
     </main>
@@ -48,22 +48,27 @@
 session_start();
 require('connection.php');
 
-$id_cliente = $_SESSION['id_cliente'];
-$password1 = $_POST['contrasenya'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_SESSION['id_pedido'])) {
+        die("Error: No hay un pedido activo.");
+    }
 
-if (strlen($password1) < 6) {
-    header("Location: pago_paypal.php");
-    exit();
+
+
+    if (strlen($password1) < 6) {
+        header("Location: pago_paypal.php");
+        exit();
+    }
+
+    $hash = password_hash($password1,PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("");
+    $stmt->bind_param("sss", $email, $username, $hash);
+    $stmt->execute();
+
+    $stmt->close();
+    $conn->close();
+
+    echo "Pago finalizado";
 }
-
-$hash = password_hash($password1,PASSWORD_DEFAULT);
-
-$stmt = $conn->prepare("");
-$stmt->bind_param("sss", $email, $username, $hash);
-$stmt->execute();
-
-$stmt->close();
-$conn->close();
-
-echo "Pago finalizado";
 ?>

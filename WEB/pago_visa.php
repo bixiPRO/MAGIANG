@@ -69,5 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION['id_pedido'])) {
         die("Error: No hay un pedido activo.");
     }
+    $id_pedido = $_SESSION['id_pedido'];
+    $metodo = "VISA";
+    /**Datos del formulario para las tarjetas */
+    $num_tarjeta = $_POST['num_tarjeta'] ?? null;
+    $fecha_cad = $_POST['fecha_cad'] ?? null;
+    $cod_seg = $_POST['cod_seg'] ?? null;
+    $nombre_titular = $_POST['nombre_titular'] ?? null;
 }
+
 ?>

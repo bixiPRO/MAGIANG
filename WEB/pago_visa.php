@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // Redirigir a página mail.php
-    hheader("Location: mail.php?id_pedido=$id_pedido");
+    header("Location: mail.php?id_pedido=$id_pedido");
     exit();
 }
 

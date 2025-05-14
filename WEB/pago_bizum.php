@@ -94,10 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     //ejecutar en segundo plano
-    exec("php /var/www/MAGIANG/WEB/mail.php \"id_pedido=$id_pedido\" > /dev/null 2>&1 &");
+    //exec("php /var/www/MAGIANG/WEB/mail.php \"id_pedido=$id_pedido\" > /dev/null 2>&1 &");
 
     // Redirigir a mail.php
-    //header("Location: mail.php?id_pedido=$id_pedido");
+    header("Location: mail.php?id_pedido=$id_pedido");
 
     header("Location: pago_exito.php");
     exit();

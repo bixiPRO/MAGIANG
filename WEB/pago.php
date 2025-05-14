@@ -39,6 +39,30 @@ if (!empty($_SESSION['carrito'])) {
         $stmt->close();
     }
 }
+
+// llamar a la base de datos y extrer datos de formulario pago.php, asi el usuario no tendra que ponerlo de nuevo una vez puesta
+$datos = [
+    'nombre' => '',
+    'apellidos' => '',
+    'telefono' => '',
+    'pais' => '',
+    'ciudad' => '',
+    'codigo_postal' => '',
+    'direccion' => '',
+    'piso_puerta_otro' => ''
+];
+
+$stmt = $conn->prepare("SELECT nombre, apellidos, telefono, pais, ciudad, codigo_postal, direccion, piso_puerta_otro 
+                        FROM pedidos 
+                        WHERE id_cliente = ? 
+                        ORDER BY id DESC LIMIT 1");
+$stmt->bind_param("i", $id_cliente);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($row = $result->fetch_assoc()) {
+    $datos = $row;
+}
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -80,28 +104,28 @@ if (!empty($_SESSION['carrito'])) {
             <h3>Datos de Facturación:</h3>
             
             <label>Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
+            <input type="text" id="nombre" name="nombre" value="<?= htmlspecialchars($datos['nombre']) ?>"><br><br>
                 
             <label>Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" required><br><br>
+            <input type="text" id="apellidos" name="apellidos" value="<?= htmlspecialchars($datos['apellidos']) ?>"><br><br>
             
             <label>Teléfono:</label>
-            <input type="number" id="telefono" name="telefono" required><br><br>
+            <input type="number" id="telefono" name="telefono" value="<?= htmlspecialchars($datos['telefono']) ?>"><br><br>
 
             <label>País:</label>
-            <input type="text" id="pais" name="pais" required><br><br>
+            <input type="text" id="pais" name="pais" value="<?= htmlspecialchars($datos['pais']) ?>"><br><br>
 
             <label>Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad" required><br><br>
+            <input type="text" id="ciudad" name="ciudad" value="<?= htmlspecialchars($datos['ciudad']) ?>"><br><br>
 
             <label>Codigo postal:</label>
-            <input type="number" id="codigo_postal" name="codigo_postal" required><br><br>
+            <input type="number" id="codigo_postal" name="codigo_postal" value="<?= htmlspecialchars($datos['codigo_postal']) ?>"><br><br>
                 
             <label>Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required><br><br>
+            <input type="text" id="direccion" name="direccion" value="<?= htmlspecialchars($datos['direccion']) ?>"><br><br>
                 
             <label>Piso, puerta u otro:</label>
-            <input type="text" id="puerta" name="puerta" required><br><br>
+            <input type="text" id="puerta" name="puerta" value="<?= htmlspecialchars($datos['piso_puerta_otro']) ?>"><br><br>
             
             <button class="boton-pay" type="submit">Continuar con el pago</button>
         </form>

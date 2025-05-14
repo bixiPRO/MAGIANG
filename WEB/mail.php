@@ -36,7 +36,7 @@ $direccion = htmlspecialchars($pedido['direccion'] . ', ' . $pedido['piso_puerta
 $usuario = htmlspecialchars($pedido['nombre_usuario']);
 
 // Productos del carrito de ese cliente
-$sqlProd = "SELECT pr.nombre, pr.precio, c.cantidad
+$sqlProd = "SELECT pr.nombre, pr.descripcion, pr.precio, c.cantidad
             FROM carrito c
             JOIN productos pr ON pr.id = c.id_producto
             WHERE c.id_cliente = ?";
@@ -50,12 +50,34 @@ $total = 0;
 
 while ($row = $resProd->fetch_assoc()) {
     $nombreProd = htmlspecialchars($row['nombre']);
+    $descripcion = htmlspecialchars($row['descripcion']);
     $precio = floatval($row['precio']);
     $cantidad = intval($row['cantidad']);
     $subtotal = $precio * $cantidad;
     $total += $subtotal;
 
-    $lista_productos .= "<li>$nombreProd - $precio€ x $cantidad = " . number_format($subtotal, 2) . "€</li>";
+    $lista_productos .= "
+        <table style='width: 100%; border-collapse: collapse;'>
+            <thead>
+                <tr>
+                    <th style='border: 1px solid #ddd; padding: 8px; text-align: left;'>Producto</th>
+                    <th style='border: 1px solid #ddd; padding: 8px; text-align: left;'>Descipcion</th>
+                    <th style='border: 1px solid #ddd; padding: 8px; text-align: left;'>Precio</th>
+                    <th style='border: 1px solid #ddd; padding: 8px; text-align: left;'>Cantidad</th>
+                    <th style='border: 1px solid #ddd; padding: 8px; text-align: left;'>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style='border: 1px solid #ddd; padding: 8px;'>$nombreProd</td>
+                    <td style='border: 1px solid #ddd; padding: 8px;'>$descripcion</td>
+                    <td style='border: 1px solid #ddd; padding: 8px;'>$precio €</td>
+                    <td style='border: 1px solid #ddd; padding: 8px;'>$cantidad</td>
+                    <td style='border: 1px solid #ddd; padding: 8px;'>" . number_format($subtotal, 2) . "€</td>
+                </tr>
+            </tbody>
+        </table>
+    ";
 }
 
 //Create an instance; passing `true` enables exceptions
@@ -127,9 +149,10 @@ try {
     </html>";
 
     $mail->send();
-
     header("Location: pago_exito.php");
     exit();
+
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+?>

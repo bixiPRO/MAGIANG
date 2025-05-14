@@ -63,6 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: No hay un pedido registrado.");
     }
 
+    if (php_sapi_name() === 'cli' && isset($argv[1])) {
+        parse_str($argv[1], $_GET);
+    }
+
     $id_pedido = $_SESSION['id_pedido'];
     $telefono = $_POST['telefono'] ?? null;
 
@@ -89,8 +93,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Cerrar 
     $conn->close();
 
+    //ejecutar en segundo plano
+    exec("php /var/www/MAGIANG/WEB/mail.php \"id_pedido=$id_pedido\" > /dev/null 2>&1 &");
+
     // Redirigir a mail.php
-    header("Location: mail.php?id_pedido=$id_pedido");
+    //header("Location: mail.php?id_pedido=$id_pedido");
+
+    header("Location: pago_exito.php");
     exit();
 }
 ?>

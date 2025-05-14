@@ -26,9 +26,15 @@
         
         </div>
         <div class="login">
-                <a href="cesta.php"><img src="img/cesta.png"></a>
-                <a href="login.php"><img src="img/login_logo.png"></a>
-         </div>
+            <a href="cesta.php"><img src="img/cesta.png"></a>
+
+            <?php if (isset($_SESSION['nombre_usuario'])): ?>
+                <span class="bienvenida"><?= htmlspecialchars($_SESSION['nombre_usuario']) ?></span>
+                <a href="logout.php"><img src="img/logout.png"></a>
+            <?php else: ?>
+                <a href="login.php"><img src="img/login_logo.png" alt="Login"></a>
+            <?php endif; ?>
+        </div>
         
     </header>
 

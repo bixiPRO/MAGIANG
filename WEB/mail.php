@@ -9,8 +9,11 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 require 'connection.php';
+session_start();
 
 $id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
+
+$id_cliente = $_SESSION['id_cliente'];
 
 // Datos del cliente y pedido
 $sql = "SELECT p.*, c.nombre_usuario, c.email 
@@ -80,15 +83,7 @@ while ($row = $resProd->fetch_assoc()) {
     ";
 }
 
-$_SERVER["REQUEST_METHOD"] == "POST";
-$id_cliente = $_SESSION['id_cliente'];
 
-$eliminar_carrito = "DELETE
-            FROM carrito 
-            WHERE id_cliente = ?";
-$stmtEli = $conn->prepare($sqlProd);
-$stmtEli->bind_param("i", $carrito['id_cliente']);
-$stmtEli->execute();
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -158,7 +153,21 @@ try {
     </html>";
 
     $mail->send();
-    header("Location: ./pago_exito.php");
+
+
+    if (!empty($_SESSION['carrito'])) {
+        foreach ($_SESSION['carrito'] as $producto_id => $item) {
+            $cantidad = $item['cantidad'];
+    
+            // Obtener precio actual
+            $stmt = $conn->prepare("DELETE FROM carrito WHERE id_cliente = ?");
+            $stmt->bind_param("i", $id_cliente);
+            $stmt->execute();
+            $stmt->close();
+        }
+    }
+    
+    header("Location: home.php");
     exit();
 
 } catch (Exception $e) {

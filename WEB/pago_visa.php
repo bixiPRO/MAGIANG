@@ -80,6 +80,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$num_tarjeta || !$fecha_cad || !$cod_seg || !$nombre_titular) {
         die("Error: Todos los campos son obligatorios.");
     }
+
+    $stmtPago = $conn->prepare("INSERT INTO pago (id_pedido, metodo_pago) VALUES (?, ?)");
+    $stmtPago->bind_param("is", $id_pedido, $metodo);
+    $stmtPago->execute();
+    $id_pago = $stmtPago->insert_id;
+    $stmtPago->close();
+
+    $stmtVisa = $conn->prepare("INSERT INTO visa_mastercard (id_pago, num_tarjeta, fecha_cad, cod_seg, nombre_titular) VALUES (?, ?, ?, ?, ?)");
+    $stmtVisa->bind_param("issis", $id_pago, $num_tarjeta, $fecha_cad, $cod_seg, $nombre_titular);
+    $stmtVisa->execute();
+    $stmtVisa->close();
+
+    $conn->close();
+
+    // Redirigir a página mail.php
+    header("Location: mail.php");
+    exit();
 }
 
 ?>

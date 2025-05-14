@@ -49,6 +49,7 @@ session_start();
 require('connection.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verificamos que haya un pedido en curso
     if (!isset($_SESSION['id_pedido'])) {
         die("Error: No hay un pedido activo.");
     }
@@ -63,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $hash = password_hash($password1,PASSWORD_DEFAULT);
-
+    // Insertar en tabla pago
     $metodo = "PAYPAL";
     $stmtPago = $conn->prepare("INSERT INTO pago (id_pedido, metodo_pago) VALUES (?, ?)");
     $stmtPago->bind_param("is", $id_pedido, $metodo);
@@ -71,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id_pago = $stmtPago->insert_id;
     $stmtPago->close();
-
+    // Insertar en tabla paypal
     $stmtPaypal = $conn->prepare("INSERT INTO paypal (id_pago, email, contrasenya) VALUES (?, ?, ?)");
     $stmtPaypal->bind_param("iss", $id_pago, $email, $hash);
     $stmtPaypal->execute();

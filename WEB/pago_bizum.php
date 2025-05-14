@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtPago->bind_param("is", $id_pedido, $metodo);
     $stmtPago->execute();
 
-    // Obtener el ID de pago generado
+    // Obtener el id del pago
     $id_pago = $stmtPago->insert_id;
     $stmtPago->close();
 

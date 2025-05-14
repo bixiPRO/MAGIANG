@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo "Pago finalizado";
 
-    header("Location: mail.php");
+    header("Location: mail.php?id_pedido=$id_pedido");
     exit();
 }
 ?>

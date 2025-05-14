@@ -153,19 +153,6 @@ try {
     </html>";
 
     $mail->send();
-
-
-    if (!empty($_SESSION['carrito'])) {
-        foreach ($_SESSION['carrito'] as $producto_id => $item) {
-            $cantidad = $item['cantidad'];
-    
-            // Obtener precio actual
-            $stmt = $conn->prepare("DELETE FROM carrito WHERE id_cliente = ?");
-            $stmt->bind_param("i", $id_cliente);
-            $stmt->execute();
-            $stmt->close();
-        }
-    }
     
     header("Location: https://www.magiang.com/pago_exitoso.php");
     

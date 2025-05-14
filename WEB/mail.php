@@ -1,20 +1,4 @@
 <?php
-
-session_start();
-require('connection.php');
-
-$id_pedido = $_GET['id_pedido'];
-
-$sqlPedido = "SELECT p.*, c.email, c.nombre_usuario 
-              FROM pedidos p
-              JOIN clientes c ON p.id_cliente = c.id
-              WHERE p.id = ?";
-$stmt = $conn->prepare($sqlPedido);
-$stmt->bind_param("i", $id_pedido);
-$stmt->execute();
-$result = $stmt->get_result();
-
-
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -23,6 +7,56 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
+
+require 'connection.php';
+
+$id_pedido = isset($_GET['id_pedido']) ? intval($_GET['id_pedido']) : 0;
+
+// Datos del cliente y pedido
+$sql = "SELECT p.*, c.nombre_usuario, c.email 
+        FROM pedidos p
+        JOIN clientes c ON p.id_cliente = c.id
+        WHERE p.id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id_pedido);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    die("Pedido no encontrado.");
+}
+$pedido = $result->fetch_assoc();
+
+// Variables del pedido
+$nombre = htmlspecialchars($pedido['nombre']);
+$apellidos = htmlspecialchars($pedido['apellidos']);
+$telefono = $pedido['telefono'];
+$email = $pedido['email'];
+$direccion = htmlspecialchars($pedido['direccion'] . ', ' . $pedido['piso_puerta_otro'] . ', ' . $pedido['codigo_postal'] . ', ' . $pedido['ciudad'] . ', ' . $pedido['pais']);
+$usuario = htmlspecialchars($pedido['nombre_usuario']);
+
+// Productos del carrito de ese cliente
+$sqlProd = "SELECT pr.nombre, pr.precio, c.cantidad
+            FROM carrito c
+            JOIN productos pr ON pr.id = c.id_producto
+            WHERE c.id_cliente = ?";
+$stmtProd = $conn->prepare($sqlProd);
+$stmtProd->bind_param("i", $pedido['id_cliente']);
+$stmtProd->execute();
+$resProd = $stmtProd->get_result();
+
+$lista_productos = "";
+$total = 0;
+
+while ($row = $resProd->fetch_assoc()) {
+    $nombreProd = htmlspecialchars($row['nombre']);
+    $precio = floatval($row['precio']);
+    $cantidad = intval($row['cantidad']);
+    $subtotal = $precio * $cantidad;
+    $total += $subtotal;
+
+    $lista_productos .= "<li>$nombreProd - $precio€ x $cantidad = " . number_format($subtotal, 2) . "€</li>";
+}
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -40,63 +74,57 @@ try {
 
     //Recipients
     $mail->setFrom('soporte.magiang@gmail.com', 'MAGIANG');
-    $mail->addAddress('mbailo@institutmvm.cat', 'Sergi cerdo');     //Add a recipient
+    $mail->addAddress($email, $usuario);     //Add a recipient
 
 
     //Content
-  #  $mail->addEmbeddedImage('ruta/a/archivo_de_imajen.jpg', 'image_cid');
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'PROVA';
-    $mail->Body    = '<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mail Message | Magiang </title>
-        <style>
-    body {
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-    h1 {
-      color: #333;
-      text-align: center;
-    }
-    p {
-      color: #555;
-      font-size: 16px;
-    }
-  </style>
-    </head>
-    <body>
-        <main>
-            <h1 class="title">Magiang Shopping</h1>
-            <h1>Gracias!</h1>
-            <h2>Su compra se ha realizado correctamente</h2>
-            <h3>Su pedido es el siguiente:</h3>
-            <hr>
-            <div class="order-details">
-                <img src="cid:image_cid">
-                <p><a class="bold">Nombre:</a> {{name}}</p>
-                <p><a class="bold">Dirección:</a> {{address}}</p>
-                <p><a class="bold">Teléfono:</a> {{phone}}</p>
-                <p><a class="bold">Email:</a>{{email}}</p>
-                <p><a class="bold">Fecha de compra:</a> {{date}}</p>
-                <p><a class="bold">Total:</a> ${{total}}</p>
-                <p class="bold">Productos:</p>
-                <ul>
-                    {{#each products}}
-                        <li>{{this.name}} - ${{this.price}}</li>
-                    {{/each}}
-                </ul>
+    $mail->Subject = 'Confirmación de pedido - Magiang';
+    $mail->Body    = "
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Mail Message | Magiang</title>
+            <style>
+                body {
+                    background-color: #f4f4f4;
+                    font-family: Arial, sans-serif;
+                }
+                h1 {
+                    color: #333;
+                    text-align: center;
+                }
+                p {
+                    color: #555;
+                    font-size: 16px;
+                }
+            </style>
+        </head>
+        <body>
+            <main>
+                <h1 class='title'>Magiang Shopping</h1>
+                <h1>¡Gracias!</h1>
+                <h2>Su compra se ha realizado correctamente</h2>
+                <h3>Su pedido es el siguiente:</h3>
                 <hr>
-                <p>Gracias por confiar en nosotros, esperemos que vuelva a solicitar nuestros servicios</p>
-                <p>¿Hay algo mal?, no dude en contactarnos <a  class="mail" href="contacto.html">soporte.magiang@gmail.com</a></p>
-            </div>
-        </main>
-    </body>
+                <div class='order-details'>
+                    <p><strong>Nombre completo:</strong> $nombre $apellidos</p>
+                    <p><strong>Email:</strong> $email</p>
+                    <p><strong>Teléfono:</strong> $telefono</p>
+                    <p><strong>Dirección:</strong> $direccion</p>
 
-</html>';
+                    <h2>Productos comprados:</h2>
+                    <ul>$lista_productos</ul>
+                    <p><strong>Total:</strong> " . number_format($total, 2) . " €</p>
+                    <hr>
+                    <p>Gracias por confiar en nosotros, esperamos que vuelva a solicitar nuestros servicios.</p>
+                    <p>¿Hay algo mal? No dude en contactarnos: <a class='mail' href='mailto:soporte.magiang@gmail.com'>soporte.magiang@gmail.com</a></p>
+                </div>
+            </main>
+        </body>
+    </html>";
 
     $mail->send();
     echo 'Mensage enviado';

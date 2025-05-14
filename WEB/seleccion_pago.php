@@ -30,6 +30,12 @@
 
     $_SESSION['id_pedido'] = $stmt->insert_id; 
 
+    if (!empty($_SESSION['carrito'])) {
+        $sql = "INSERT INTO carrito (id_cliente, id_producto, cantidad, precio_total)
+                VALUES (?, ?, ?, ?)
+                ON DUPLICATE KEY UPDATE cantidad = VALUES(cantidad), precio_total = VALUES(precio_total)";
+        $stmt_carrito = $conn->prepare($sql);
+    }
   
     $stmt->close();
     $conn->close();

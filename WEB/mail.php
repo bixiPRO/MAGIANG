@@ -80,6 +80,15 @@ while ($row = $resProd->fetch_assoc()) {
     ";
 }
 
+$_SERVER["REQUEST_METHOD"] == "POST";
+$id_cliente = $_SESSION['id_cliente'];
+
+$eliminar_carrito = "DELETE
+            FROM carrito 
+            WHERE id_cliente = ?";
+$stmtEli = $conn->prepare($sqlProd);
+$stmtEli->bind_param("i", $carrito['id_cliente']);
+$stmtEli->execute();
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -149,7 +158,7 @@ try {
     </html>";
 
     $mail->send();
-    header("Location: pago_exito.php");
+    header("Location: ./pago_exito.php");
     exit();
 
 } catch (Exception $e) {

@@ -118,6 +118,8 @@ if($producto_id > 0) {
                         <h2>Descripción:</h2>
                         <hr>
                         <p><?= htmlspecialchars($producto['descripcion']) ?></p>
+                        <hr>
+                        <p><strong>Stock: </strong><?= htmlspecialchars($producto['stock']) ?></p>
                         
                         <!-- Mostrar el codi en cas que sigui digital (prova) -->
                         <?php if(!empty($codigo_digital)): ?>

@@ -127,7 +127,9 @@ try {
     </html>";
 
     $mail->send();
-    echo 'Mensage enviado';
+
+    header("Location: pago_exito.php");
+    exit;
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

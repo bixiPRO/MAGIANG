@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-$stmt = $conn->prepare('SELECT id, contrasenya FROM clientes WHERE email = ?;');
+$stmt = $conn->prepare('SELECT id, nombre_usuario, contrasenya FROM clientes WHERE email = ?;');
 $stmt->bind_param("s",$email);
 $stmt->execute();
 $resultado = $stmt->get_result();
@@ -29,6 +29,7 @@ if ($fila && password_verify($password1,$fila['contrasenya'])){
 	echo "login correcto";
 	$_SESSION['gmail']=$email;
 	$_SESSION['id_cliente'] = $fila['id'];
+	$_SESSION['nombre_usuario'] = $fila['nombre_usuario'];
 	header("Location: home.php");
 	exit();
 

@@ -28,7 +28,7 @@
     $stmt->bind_param("issssssss", $id_cliente, $nombre, $apellidos, $telefono, $pais, $direccion, $puerta, $codigo_postal, $ciudad);
     $stmt->execute();
 
-    /*$_SESSION['id_pedido'] = $stmt->insert_id; */
+    $_SESSION['id_pedido'] = $stmt->insert_id; 
 
   
     $stmt->close();

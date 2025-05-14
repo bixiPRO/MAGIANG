@@ -32,7 +32,7 @@
             
             <label>Pon tu numero de telefono:</label>
             <input type="number" id="telefono" name="telefono" required><br><br>
-            <a class="boton-pay" href="mail.php">Pagar</a>
+            <button class="boton-pay" type="submit">Pagar</button>
         </form>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
@@ -52,3 +52,45 @@
 
 </body>
 </html>
+
+<?php
+session_start();
+require('connection.php'); 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verificamos que haya un pedido en curso
+    if (!isset($_SESSION['id_pedido'])) {
+        die("Error: No hay un pedido registrado.");
+    }
+
+    $id_pedido = $_SESSION['id_pedido'];
+    $telefono = $_POST['telefono'] ?? null;
+
+    if (!$telefono) {
+        die("Error: Teléfono no válido.");
+    }
+
+    // Insertar en tabla pago
+    $metodo = "VIZUM";
+    $stmtPago = $conn->prepare("INSERT INTO pago (id_pedido, metodo_pago) VALUES (?, ?)");
+    $stmtPago->bind_param("is", $id_pedido, $metodo);
+    $stmtPago->execute();
+
+    // Obtener el ID de pago generado
+    $id_pago = $stmtPago->insert_id;
+    $stmtPago->close();
+
+    // Insertar en tabla bizum
+    $stmtBizum = $conn->prepare("INSERT INTO bizum (id_pago, telefono) VALUES (?, ?)");
+    $stmtBizum->bind_param("ii", $id_pago, $telefono);
+    $stmtBizum->execute();
+    $stmtBizum->close();
+
+    // Cerrar 
+    $conn->close();
+
+    // Redirigir a mail.php
+    header("Location: mail.php");
+    exit();
+}
+?>

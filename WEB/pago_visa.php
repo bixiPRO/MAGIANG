@@ -76,6 +76,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_cad = $_POST['fecha_cad'] ?? null;
     $cod_seg = $_POST['cod_seg'] ?? null;
     $nombre_titular = $_POST['nombre_titular'] ?? null;
+
+    if (!$num_tarjeta || !$fecha_cad || !$cod_seg || !$nombre_titular) {
+        die("Error: Todos los campos son obligatorios.");
+    }
 }
 
 ?>

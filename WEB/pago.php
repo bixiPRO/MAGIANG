@@ -78,14 +78,14 @@ $stmt->close();
      <header>
         <div class="header-content"><a href="home.php"><img class="icon"  src="img/logo_magiang.png"></a></div>
         <div>
-            <nav>
-                <ul>
-                    <li><a href="productos.php">Productos</a></li>
-                    <li><a href="contacto.html">Soporte</a></li>
-                    <li><a href="sede.html">Sede</a></li>
-                    <li><a href="nosotros.html">Sobre nosotros</a></li>
-                </ul>
-                </nav>
+        <nav>
+            <ul>
+                <li><a href="productos.php">Productos</a></li>
+                <li><a href="contacto.php">Soporte</a></li>
+                <li><a href="sede.php">Sede</a></li>
+                <li><a href="nosotros.php">Sobre nosotros</a></li>
+            </ul>
+        </nav>
         
         </div>
         <div class="login">

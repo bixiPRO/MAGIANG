@@ -21,11 +21,11 @@
             <nav>
                 <ul>
                     <li><a href="productos.php">Productos</a></li>
-                    <li><a href="contacto.html">Soporte</a></li>
-                    <li><a href="sede.html">Sede</a></li>
-                    <li><a href="nosotros.html">Sobre nosotros</a></li>
+                    <li><a href="contacto.php">Soporte</a></li>
+                    <li><a href="sede.php">Sede</a></li>
+                    <li><a href="nosotros.php">Sobre nosotros</a></li>
                 </ul>
-                </nav>
+            </nav>
         
         </div>
         <div class="login">

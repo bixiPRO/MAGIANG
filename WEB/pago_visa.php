@@ -60,3 +60,14 @@
 
 </body>
 </html>
+
+<?php
+session_start();
+require('connection.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_SESSION['id_pedido'])) {
+        die("Error: No hay un pedido activo.");
+    }
+}
+?>

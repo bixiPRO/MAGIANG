@@ -179,3 +179,11 @@ form .btn input[type="submit"]{
   font-weight: 500;
   cursor: pointer;
 }
+
+#signup:checked ~ .form-container .form-inner {
+  margin-left: -100%;
+}
+
+#login:checked ~ .form-container .form-inner {
+  margin-left: 0%;
+}

@@ -69,7 +69,7 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <title> Pago - Magiang </title>
-    <favicon href="img/favicon.">
+    <link rel="icon" type="image/jpg" href="img/favicon_magiang.png"/>
     <link rel="stylesheet" type="text/css" href="css/pago-styles.css">
     <encode utf-8>
 </head>

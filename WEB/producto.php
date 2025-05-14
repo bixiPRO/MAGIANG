@@ -65,7 +65,7 @@ if($producto_id > 0) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($producto['nombre'] ?? 'Producto') ?> - Magiang </title>
-    <favicon href="img/favicon.">
+    <link rel="icon" type="image/jpg" href="img/favicon_magiang.png"/>
     <link rel="stylesheet" type="text/css" href="css/productostyle.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 

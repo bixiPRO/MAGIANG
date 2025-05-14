@@ -1,0 +1,71 @@
+nombre,descripcion,tipo,precio,stock,categoria,plataforma,imagen
+Logitech MX Keys,Teclado inalámbrico retroiluminado para productividad,FISICO,99.99,76,Teclado,,/prod/logitech_mx_keys.png
+Razer DeathAdder V2,Ratón ergonómico con sensor óptico de 20K DPI,FISICO,69.99,13,Raton,,/prod/razer_deathadder_v2.png
+HyperX Cloud II,Auriculares con sonido envolvente 7.1,FISICO,89.99,64,Auriculares,,/prod/hyperx_cloud_ii.png
+SteelSeries QcK,Alfombrilla de ratón con superficie de microtejido,FISICO,14.99,84,Alfombrilla,,/prod/steelseries_qck.png
+Blue Yeti,Micrófono USB de calidad profesional para grabación,FISICO,129.99,100,Micrófonos,,/prod/blue_yeti.png
+iPhone 14,Smartphone de última generación con chip A15,FISICO,999.99,47,Mobil,,/prod/iphone_14.png
+iPad Air,Tableta Apple con chip M1 y pantalla Liquid Retina,FISICO,649.99,79,Tablet,,/prod/ipad_air.png
+Samsung Galaxy S23,Smartphone Android con cámara profesional,FISICO,849.99,79,Android,,/prod/samsung_galaxy_s23.png
+Dell XPS 13,Portátil ultraligero con pantalla InfinityEdge,FISICO,1099.99,95,Portátiles,,/prod/dell_xps_13.png
+LG UltraGear 27GL850,Monitor gaming 27'' con 144Hz y 1ms,FISICO,429.99,84,Monitores,,/prod/lg_ultragear_27gl850.png
+Corsair K95 RGB,Teclado mecánico con retroiluminación RGB,FISICO,199.99,60,Teclado,,/prod/corsair_k95_rgb.png
+Logitech G502 HERO,Ratón gaming con sensor de alta precisión,FISICO,59.99,68,Raton,,/prod/logitech_g502_hero.png
+Sennheiser HD 599,Auriculares abiertos con sonido natural,FISICO,149.99,80,Auriculares,,/prod/sennheiser_hd_599.png
+Razer Goliathus,Alfombrilla texturizada para control óptimo,FISICO,24.99,56,Alfombrilla,,/prod/razer_goliathus.png
+Elgato Wave:3,Micrófono digital con mezclador de audio,FISICO,159.99,33,Micrófonos,,/prod/elgato_wave_3.png
+Google Pixel 7,Teléfono Android con IA avanzada de cámara,FISICO,699.99,35,Android,,/prod/google_pixel_7.png
+MacBook Air M2,Portátil Apple con chip M2 y diseño silencioso,FISICO,1199.99,48,Apple,,/prod/macbook_air_m2.png
+Lenovo Legion 5,Portátil gaming con GPU NVIDIA RTX,FISICO,1299.99,10,Gaming,,/prod/lenovo_legion_5.png
+HP EliteBook 840,Portátil empresarial con seguridad avanzada,FISICO,1149.99,20,Oficina,,/prod/hp_elitebook_840.png
+AOC 24G2,Monitor económico de 144Hz para gamers,FISICO,199.99,41,Monitores,,/prod/aoc_24g2.png
+SteelSeries Apex Pro,Teclado mecánico con interruptores ajustables,FISICO,189.99,50,Teclado,,/prod/steelseries_apex_pro.png
+ASUS ROG Gladius II,Ratón RGB con diseño ergonómico,FISICO,79.99,14,Raton,,/prod/asus_rog_gladius_ii.png
+Bose QuietComfort 35 II,Auriculares con cancelación de ruido,FISICO,299.99,64,Auriculares,,/prod/bose_quietcomfort_35_ii.png
+MSI Optix MAG272CQR,Monitor curvo de 27'' WQHD 165Hz,FISICO,379.99,40,Monitores,,/prod/msi_optix_mag272cqr.png
+HyperX QuadCast,Micrófono con iluminación RGB y filtros antipop,FISICO,139.99,41,Micrófonos,,/prod/hyperx_quadcast.png
+iPad Mini,Tableta compacta con chip A15 Bionic,FISICO,549.99,86,Tablet,,/prod/ipad_mini.png
+Realme 11 Pro+,Móvil Android con cámara 200MP y carga rápida,FISICO,499.99,94,Android,,/prod/realme_11_pro.png
+Alienware Aurora R13,Ordenador gaming de alto rendimiento,FISICO,1899.99,40,Ordenadores,,/prod/alienware_aurora_r13.png
+HP Pavilion,Ordenador de sobremesa para oficina,FISICO,749.99,27,Ordenadores,,/prod/hp_pavilion.png
+Xiaomi Pad 6,Tableta con pantalla 2.8K y Dolby Vision,FISICO,389.99,53,Tablet,,/prod/xiaomi_pad_6.png
+Acer Predator Helios 300,Portátil gaming con pantalla 144Hz,FISICO,1399.99,62,Gaming,,/prod/acer_predator_helios_300.png
+Logitech MK540,Combo de teclado y ratón inalámbrico,FISICO,59.99,94,Oficina,,/prod/logitech_mk540.png
+BenQ EX2780Q,Monitor QHD con altavoces integrados,FISICO,329.99,84,Monitores,,/prod/benq_ex2780q.png
+Razer Blade 15,Portátil gaming con diseño de aluminio,FISICO,2199.99,14,Gaming,,/prod/razer_blade_15.png
+HP 24mh,Monitor económico IPS con altavoces,FISICO,129.99,19,Oficina,,/prod/hp_24mh.png
+Minecraft,Juego de construcción y aventura en mundo abierto,DIGITAL,61.02,2,,Xbox,/prod/minecraft.png
+Fortnite,Battle Royale multijugador gratuito,DIGITAL,16.13,7,,Apple,/prod/fortnite.png
+Among Us,Juego de deducción social multijugador,DIGITAL,15.6,23,,Google Play,/prod/among_us.png
+Stardew Valley,Simulador de granja y vida rural,DIGITAL,16.89,4,,PC,/prod/stardew_valley.png
+Celeste,Plataformas con narrativa emocional y desafiante,DIGITAL,28.41,4,,Apple,/prod/celeste.png
+The Witcher 3,Juego de rol épico con historia profunda,DIGITAL,12.52,65,,Xbox,/prod/the_witcher_3.png
+Cyberpunk 2077,Futurista RPG en mundo abierto,DIGITAL,64.87,32,,Switch,/prod/cyberpunk_2077.png
+Hollow Knight,Metroidvania con arte dibujado a mano,DIGITAL,49.58,23,,Switch,/prod/hollow_knight.png
+DOOM Eternal,Shooter en primera persona rápido y brutal,DIGITAL,49.77,54,,Playstation,/prod/doom_eternal.png
+Overwatch 2,Shooter por equipos basado en héroes,DIGITAL,27.7,34,,Google Play,/prod/overwatch_2.png
+Hades,Roguelike basado en la mitología griega,DIGITAL,24.87,23,,Playstation,/prod/hades.png
+Red Dead Redemption 2,Western de mundo abierto,DIGITAL,48.78,43,,Playstation,/prod/red_dead_redemption_2.png
+Cuphead,Juego de plataformas estilo años 30,DIGITAL,11.84,65,,Apple,/prod/cuphead.png
+God of War,Aventura de acción mitológica,DIGITAL,46.11,34,,Apple,/prod/god_of_war.png
+Resident Evil Village,Survival horror atmosférico,DIGITAL,40.45,45,,Playstation,/prod/resident_evil_village.png
+The Legend of Zelda: BOTW,Aventura en mundo abierto innovadora,DIGITAL,32.62,32,,Apple,/prod/the_legend_of_zelda_botw.png
+Mario Kart 8 Deluxe,Carreras con personajes de Nintendo,DIGITAL,59.7,7,,Playstation,/prod/mario_kart_8_deluxe.png
+Fire Emblem: Three Houses,RPG táctico con narrativa ramificada,DIGITAL,43.97,32,,PC,/prod/fire_emblem_three_houses.png
+Final Fantasy VII Remake,Remake del clásico RPG japonés,DIGITAL,33.41,45,,Apple,/prod/final_fantasy_vii_remake.png
+Persona 5 Royal,RPG japonés con combate por turnos,DIGITAL,20.41,5,,Switch,/prod/persona_5_royal.png
+Monster Hunter Rise,Caza de monstruos cooperativa,DIGITAL,14.4,43,,PC,/prod/monster_hunter_rise.png
+Splatoon 3,Shooter multijugador con tinta,DIGITAL,68.02,7,,Apple,/prod/splatoon_3.png
+Metroid Dread,Acción y exploración en 2D,DIGITAL,46.45,4,,Switch,/prod/metroid_dread.png
+Assassin's Creed Valhalla,Exploración vikinga en mundo abierto,DIGITAL,68.52,54,,Switch,/prod/assassin_s_creed_valhalla.png
+Genshin Impact,Aventura RPG con estilo anime,DIGITAL,44.49,3,,Apple,/prod/genshin_impact.png
+Rocket League,Fútbol con coches acrobáticos,DIGITAL,50.97,76,,Xbox,/prod/rocket_league.png
+Call of Duty: Warzone,Battle Royale de disparos realistas,DIGITAL,39.12,67,,Switch,/prod/call_of_duty_warzone.png
+FIFA 24,Simulación de fútbol con licencias oficiales,DIGITAL,42.14,54,,Xbox,/prod/fifa_24.png
+NBA 2K24,Simulación de baloncesto de última generación,DIGITAL,52.54,43,,PC,/prod/nba_2k24.png
+Apex Legends,Shooter de escuadrones gratuito,DIGITAL,15.17,13,,Xbox,/prod/apex_legends.png
+Baldur's Gate 3,RPG basado en D&D de gran profundidad,DIGITAL,44.11,65,,Apple,/prod/baldur_s_gate_3.png
+Diablo IV,Acción RPG con exploración y botín,DIGITAL,18.15,34,,Xbox,/prod/diablo_iv.png
+Valorant,Shooter táctico por equipos,DIGITAL,55.75,87,,Playstation,/prod/valorant.png
+Terraria,Sandbox de construcción y supervivencia,DIGITAL,35.27,54,,PC,/prod/terraria.png
+Dead Cells,Roguelike de acción rápida,DIGITAL,43.16,56,,Google Play,/prod/dead_cells.png

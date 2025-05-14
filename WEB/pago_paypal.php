@@ -53,11 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: No hay un pedido activo.");
     }
 
+    $id_pedido = $_SESSION['id_pedido'];
+    $email = $_POST['email'] ?? null;
+    $password1 = $_POST['contrasenya'] ?? null;
 
 
     if (strlen($password1) < 6) {
-        header("Location: pago_paypal.php");
-        exit();
+        die("Error: Datos inválidos.");
     }
 
     $hash = password_hash($password1,PASSWORD_DEFAULT);

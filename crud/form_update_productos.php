@@ -102,7 +102,7 @@ $res->close();
                 </option>
             <?php endforeach; ?>
         </select><br/>
-        <!-- forech para buscar en la lista de plataforma el que tiene la misma id que lo ponga y selected para los opciones -->
+        <!-- forech para buscar en la lista de categoria el que tiene la misma id que lo ponga y selected para los opciones -->
         <label>Categoría:</label>
         <select name="categoria" required>
             <option value="">Selecciona una categoría</option>

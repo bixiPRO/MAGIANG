@@ -78,9 +78,9 @@ $res->close();
 
         <label>Descripción:</label>
         <input type="text" name="descripcion" value="<?= htmlspecialchars($producto['descripcion']) ?>" required><br/>
-
+        <!-- step para poner decimales poner en php como monedas reales-->
         <label>Precio:</label>
-        <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" min="0" required><br/>
+        <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" step="0.01" min="0" required><br/>
 
         <label>Stock:</label>
         <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" min="0" required><br/>

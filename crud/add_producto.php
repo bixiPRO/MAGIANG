@@ -1,26 +1,3 @@
-<?php
-session_start();
-
-require('connection.php');
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $descripcion = $_POST['descripcion'];
-    $precio = $_POST['precio'];
-    $stock = $_POST['stock'];
-    $tipo = $_POST['tipo'];
-    $imagen = '';
-
-    //Insertamos los productos en la base de datos
-    $stmt = $conn->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, tipo, imagen) VALUES (?, ?, ?, ?, ?, ?d)");
-    $stmt->bind_param("ssdis",$nombre, $descripcion, $precio, $stock, $tipo, $imagen);
-    $stmt->execute();
-    $stmt->close();
-
-    header("Location: productos.php");
-
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Modificar Producto</h1>
     <!-- formulario de la modificacion del producto el selected para opciones en php-->
-    <form method="POST" action="modificar_productos.php">
+    <form method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
 
         <label>Nombre:</label>
@@ -59,5 +36,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </body>
 </html>
+
+<?php
+session_start();
+
+require('connection.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
+    $precio = $_POST['precio'];
+    $stock = $_POST['stock'];
+    $tipo = $_POST['tipo'];
+    $imagen = '';
+
+    //Insertamos los productos en la base de datos
+    $stmt = $conn->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, tipo, imagen) VALUES (?, ?, ?, ?, ?, ?d)");
+    $stmt->bind_param("ssdis",$nombre, $descripcion, $precio, $stock, $tipo, $imagen);
+    $stmt->execute();
+    $stmt->close();
+
+    header("Location: productos.php");
+
+}
+?>
 
 

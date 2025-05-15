@@ -52,22 +52,22 @@
                 <div class="faq-content">
                     <section class="faq-item">
                         <h3>¿Qué tipos de pagos están permitidos?</h3>
-                        <p>Aceptamos tarjetas de crédito/débito (Visa, Mastercard, Amex), PayPal y Bizum. Elige tu método preferido al finalizar la compra.</p>
+                        <p>Aceptamos <strong>tarjetas de crédito/débito (Visa, Mastercard, Amex), PayPal y Bizum</strong>. Elige tu método preferido al finalizar la compra.</p>
                     </section>
 
                     <section class="faq-item">
                         <h3>¿Cómo puedo aplicar un cupón de descuento?</h3>
-                        <p>En el carrito de compra, introduce el código en el campo “Cupón de descuento” y haz clic en aplicar.</p>
+                        <p>En el carrito de compra, introduce el código en el campo <strong>“Cupón de descuento”</strong> y haz clic en aplicar.</p>
                     </section>
 
                     <section class="faq-item">
                         <h3>¿Cuánto tarda un reembolso?</h3>
-                        <p>Los reembolsos se procesan entre 5 y 10 días hábiles desde su aprobación. Esto depende de tu banco o método de pago usado.</p>
+                        <p>Los reembolsos se procesan entre <strong>5 y 10 días</strong> hábiles desde su aprobación. Esto depende de tu banco o método de pago usado.</p>
                     </section>
 
                     <section class="faq-item">
                         <h3>¿Se puede pagar al recibir el producto?</h3>
-                        <p>No, por el momento solo aceptamos pagos online. No está habilitado el pago contra reembolso.</p>
+                        <p>No, por el momento solo aceptamos <strong>pagos online</strong>. No está habilitado el pago contra reembolso.</p>
                     </section>
                 </div>      
             </ul>

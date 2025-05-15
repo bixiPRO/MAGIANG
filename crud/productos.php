@@ -1,7 +1,12 @@
 <?php 
 // Conexión a la base de datos
 require('connection.php'); 
+session_start();
 
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php");
+    exit();
+}
 
 ?>                  
 <!DOCTYPE html>

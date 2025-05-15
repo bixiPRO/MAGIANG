@@ -13,8 +13,8 @@ CREATE TABLE temp_productos (
 /* Mover el arxivo sudo cp .csv a /tmp para poder hacer load data sino te pide permisos, si das los permisos se borra la relacion del fichero con el .git y no podras hacer commits /home/admimvm/Documents/MAGIANG/mysql/productos_informaticos.csv /tmp/ 
 dar permisos de fichero 
 
-sudo chmod 644 /tmp/productos_informaticos.csv
-sudo chown mysql:mysql /tmp/productos_informaticos.csv
+sudo chmod 644 /tmp/productos_con_imagen.csv
+sudo chown mysql:mysql /tmp/productos_con_imagen.csv
 */
 LOAD DATA INFILE '/tmp/productos_con_imagen.csv' 
 INTO TABLE temp_productos
@@ -25,7 +25,7 @@ IGNORE 1 LINES
 (nombre, descripcion, tipo, precio, stock, categoria, plataforma, imagen);
 
 INSERT INTO productos (nombre, descripcion, tipo, precio, stock, imagen)
-SELECT nombre, descripcion, TRIM(tipo), precio, stock
+SELECT nombre, descripcion, TRIM(tipo), precio, stock, imagen
 FROM temp_productos;
 
 INSERT INTO plataformas (nombre)

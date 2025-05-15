@@ -10,9 +10,9 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $id_usuario = $_SESSION['id_usuario'];
 
-// elimina la cuenta, cierra seccion y redirige a la pagina home.php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // elimina la cuenta, cierra seccion y redirige a la pagina home.php
     if (isset($_POST['eliminar']) && $_POST['eliminar'] == '1') {
         $stmt = $conn->prepare("DELETE FROM clientes WHERE id = ?");
         $stmt->bind_param("i", $id_usuario);
@@ -23,7 +23,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: home.php"); 
         exit();
     }
+
+    //modifica el nombre de l'usuario y accede a la seccion con el nombre del usuario modificado
+    if (!empty($_POST['nuevo_nombre'])) {
+        $nuevo_nombre = trim($_POST['nuevo_nombre']);
+        $stmt = $conn->prepare("UPDATE clientes SET nombre_usuario = ? WHERE id = ?");
+        $stmt->bind_param("si", $nuevo_nombre, $id_usuario);
+        $stmt->execute();
+        $stmt->close();
+        $_SESSION['nombre_usuario'] = $nuevo_nombre;
+    }
 }   
+// Obtener nombre actual
+$stmt = $conn->prepare("SELECT nombre_usuario FROM clientes WHERE id = ?");
+$stmt->bind_param("i", $id_usuario);
+$stmt->execute();
+$stmt->bind_result($nombre_actual);
+$stmt->fetch();
+$stmt->close();
 
 ?>
 

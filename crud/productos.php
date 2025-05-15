@@ -23,7 +23,7 @@ if (!isset($_SESSION['id'])) {
     <main>
         <h1> Productos</h1>
             <?php
-                echo "<form action='add_producto.php' method='POST' style='display:inline-block;'>
+                echo "<form action='form_add_producto.php' method='POST' style='display:inline-block;'>
                     <input type='hidden' name='id' value='" . $row['id'] . "'>
                     <input type='submit' name='submit' value='Añadir'>
                 </form>"

@@ -91,7 +91,7 @@ if($producto_id > 0) {
             <a href="cesta.php"><img src="img/cesta.png"></a>
 
             <?php if (isset($_SESSION['nombre_usuario'])): ?>
-                <span class="bienvenida"><?= htmlspecialchars($_SESSION['nombre_usuario']) ?></span>
+                <a class="bienvenida" href="modificar_usuario.php"><?= htmlspecialchars($_SESSION['nombre_usuario']) ?></a>
                 <a href="logout.php"><img src="img/logout.png"></a>
             <?php else: ?>
                 <a href="login.php"><img src="img/login_logo.png" alt="Login"></a>

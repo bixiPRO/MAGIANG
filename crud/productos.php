@@ -3,13 +3,6 @@
 require('connection.php'); 
 
 ?>                  
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,8 +68,8 @@ require('connection.php');
                 <option value="">Selecciona...</option> 
                 <option value="Nombre">Nombre</option>
                 <option value="Precio">Precio</option>
-                <option value="Valoracion">Valoracion</option>
             </select>
+            <input name="buscar" type="text" placeholder="Buscar">
             <input type="submit" value="Filtrar" />
             <input type="reset" value="Reset" />
       </form>
@@ -89,16 +82,6 @@ require('connection.php');
                 if (!empty($_POST['tipo'])) {
                     $tipo = $conn->real_escape_string($_POST['tipo']);
                     $query .= " AND tipo='$tipo'";
-                }
-                if (!empty($_POST['ordenar'])) {
-                    $ordenar = $conn->real_escape_string($_POST['ordenar']);
-                    $query .= " ORDER BY $ordenar";
-                }
-                if (!empty($_POST['precio'])) {
-                    $precio = explode('-', $_POST['precio']);
-                    $min_price = (int)$precio[0];
-                    $max_price = (int)$precio[1];
-                    $query .= " AND precio BETWEEN $min_price AND $max_price";
                 }
                 if (!empty($_POST['plataforma'])) {
                     $plataforma = $conn->real_escape_string($_POST['plataforma']);
@@ -114,15 +97,31 @@ require('connection.php');
                                   WHERE pro_cat.id = productos.id 
                                   AND categorias.nombre = '$categoria')";
                 }
+                if (!empty($_POST['precio'])) {
+                    $precio = explode('-', $_POST['precio']);
+                    $min_price = (int)$precio[0];
+                    $max_price = (int)$precio[1];
+                    $query .= " AND precio BETWEEN $min_price AND $max_price";
+                }
+
+                if (!empty($_POST['buscar'])) {
+                    $buscar = $conn->real_escape_string($_POST['buscar']);
+                    $query .= " AND (nombre LIKE '%$buscar%' OR descripcion LIKE '%$buscar%')";
+                }
+
+                if (!empty($_POST['ordenar'])) {
+                    $ordenar = $conn->real_escape_string($_POST['ordenar']);
+                    $query .= " ORDER BY $ordenar";
+                }
+                
             }
 
             $result = $conn->query($query);
 
+
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="S_content-item">';
-                echo '<a href="producto.php?id=' . $row['id'] . '">';
-                echo '<p>' . htmlspecialchars($row['nombre']) . '</p>';
-                echo '<p>$' . htmlspecialchars($row['precio']) . '</p>';
+                echo '<li>' . htmlspecialchars($row['nombre']) . " - " . htmlspecialchars($row['descripcion']) . " - " . htmlspecialchars($row['stock']) . " - " . htmlspecialchars($row['precio']) . " - " . htmlspecialchars($row['tipo']) . " - " . htmlspecialchars($row['imagen']) . " - " . htmlspecialchars($row['data_introduccio']) . " - " . htmlspecialchars($row['ultima_data']) . '</li>';
                 echo '</a>';
                 echo '</div>';
             }

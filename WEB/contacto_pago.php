@@ -42,7 +42,7 @@
     
 
     <main>
-        <h1><a href="contacto.html">Soporte Magiang</a>>Pagos</h1>
+        <h1><a href="contacto.php">Soporte Magiang</a>>Pagos</h1>
         <div class="contacta-txt">
             <h3>Pagos</h3>
             <p>¿No sabes que opciones de pago tenemos?¿Tienes problemas con tu pago?</p>
@@ -87,7 +87,7 @@
         <p>Todos los derechos reservados. </p>
         <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
         <p>Da el salto a nuevos mundos con Magiang</p>
-        <p>¡Contáctanos en desde el apartado de <a href="contacto.html">Contacto</a> en nuestra web!</p>
+        <p>¡Contáctanos en desde el apartado de <a href="contacto.php">Contacto</a> en nuestra web!</p>
     </footer>
 </body>
 </html>

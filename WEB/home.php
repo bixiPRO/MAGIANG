@@ -108,7 +108,7 @@
         <p>©2025 - Todos los derechos reservados.</p>
         <p>Descubre las mejores ofertas y compra al mejor precio con nuestra plataforma.</p>
         <p>Da el salto a nuevos mundos con Magiang.</p>
-        <p>¡Contáctanos en el apartado de <a href="contacto.html">Contacto</a>!</p>
+        <p>¡Contáctanos en el apartado de <a href="contacto.php">Contacto</a>!</p>
     </footer>
 
     

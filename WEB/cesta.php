@@ -114,7 +114,7 @@ foreach($carrito_productos as $productos) {
                 <ul>
                     <?php foreach($carrito_productos as $productos): ?>
                         <li>
-                            <a href="contacto_pyp.html"><?= htmlspecialchars($productos['nombre']) ?></a>
+                            <a href="contacto_pyp.php"><?= htmlspecialchars($productos['nombre']) ?></a>
                             - <?= number_format($productos['precio'], 2) ?>€ 
                             - Cantidad: <?= $_SESSION['carrito'][$productos['id']]['cantidad'] ?>
                             <a href="cesta.php?accion=eliminar&id=<?= $productos['id'] ?>">Eliminar</a>
@@ -145,7 +145,7 @@ foreach($carrito_productos as $productos) {
         <p>Todos los derechos reservados. </p>
         <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
         <p>Da el salto a nuevos mundos con Magiang</p>
-        <p>¡Contáctanos en desde el apartado de <a href="contacto.html">Contacto</a> en nuestra web!</p>
+        <p>¡Contáctanos en desde el apartado de <a href="contacto.php">Contacto</a> en nuestra web!</p>
     </footer>
 </body>
 </html>

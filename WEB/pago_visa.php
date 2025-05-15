@@ -61,7 +61,7 @@
         <p>Todos los derechos reservados. </p>
         <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
         <p>Da el salto a nuevos mundos con Magiang</p>
-        <p>¡Contáctanos en desde el apartado de <a href="contacto.html">Contacto</a> en nuestra web!</p>
+        <p>¡Contáctanos en desde el apartado de <a href="contacto.php">Contacto</a> en nuestra web!</p>
     </footer>
 
 </body>

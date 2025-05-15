@@ -42,7 +42,7 @@
     
 
     <main>
-        <h1> <a href="contacto.html">Soporte Magiang</a>>Cuenta/Seguridad</h1>
+        <h1> <a href="contacto.php">Soporte Magiang</a>>Cuenta/Seguridad</h1>
         <div class="contacta-txt">
             <h3>Cuenta y seguridad</h3>
             <p>¿Problemas con tu cuenta?</p>
@@ -89,7 +89,7 @@
         <p>Todos los derechos reservados. </p>
         <p>Descubre las mejores ofertas i compra al mejor precio con nuestra plataforma.</p>
         <p>Da el salto a nuevos mundos con Magiang</p>
-        <p>¡Contáctanos en desde el apartado de <a href="contacto.html">Contacto</a> en nuestra web!</p>
+        <p>¡Contáctanos en desde el apartado de <a href="contacto.php">Contacto</a> en nuestra web!</p>
     </footer>
 </body>
 </html>

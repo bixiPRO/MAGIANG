@@ -5,14 +5,14 @@ USE MAGIANG;
 
 CREATE TABLE clientes(
    id INT PRIMARY KEY AUTO_INCREMENT,
-   email VARCHAR(255) UNIQUE,
+   email VARCHAR(255) UNIQUE NOT NULL,
    nombre_usuario VARCHAR(50),
    contrasenya VARCHAR(255)
 )ENGINE = InnoDB;
 
 CREATE TABLE administradores(
    id INT PRIMARY KEY AUTO_INCREMENT,
-   email VARCHAR(255) UNIQUE,
+   email VARCHAR(255) UNIQUE NOT NULL,
    contrasenya VARCHAR(255)
 );
 

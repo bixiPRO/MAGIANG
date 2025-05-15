@@ -20,10 +20,11 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 $fila = $resultado->fetch_assoc();
 
-if ($fila && $password1=$fila['contrasenya']){
+
+if ($fila && $password1===$fila['contrasenya']){
 	echo "login correcto";
 	$_SESSION['gmail']=$email;
-	$_SESSION['nombre_usuario'] = $fila['nombre_usuario'];
+    $_SESSION['id'] = $fila['id'];
 	header("Location: productos.php");
 	exit();
 

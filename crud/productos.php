@@ -2,6 +2,7 @@
 // Conexión a la base de datos
 require('connection.php'); 
 
+
 ?>                  
 <!DOCTYPE html>
 <html lang="en">

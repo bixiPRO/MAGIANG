@@ -69,6 +69,7 @@ $res->close();
 </head>
 <body>
     <h1>Modificar Producto</h1>
+    <!-- formulario de la modificacion del producto -->
     <form action="update_producto.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
 
@@ -91,8 +92,16 @@ $res->close();
             <option value="FISICO" <?= $producto['tipo'] == 'FISICO' ? 'selected' : '' ?>>Físico</option>
             <option value="DIGITAL" <?= $producto['tipo'] == 'DIGITAL' ? 'selected' : '' ?>>Digital</option>
         </select><br/>
-
-
+        <!-- forech para buscar en la lista de plataforma el que tiene la misma id que lo ponga -->
+        <label>Plataforma:</label>
+        <select name="plataforma" required>
+            <option value="">Selecciona una plataforma: </option>
+            <?php foreach ($plataformas as $plataforma): ?>
+                <option value="<?= $plataforma['id'] ?>" <?= $plataforma['id'] == $plataforma_id ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($plataforma['nombre']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select><br/>
 
         <input type="submit" value="Modificar Producto">
     </form>

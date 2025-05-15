@@ -105,6 +105,7 @@ nav ul li a:hover {
     background: #4c94a6;
 }
 
+
 /* END_BARRA DE BÚSQUEDA */
 /* ZONA CONTENIDO PRINCIPAL */
 main {
@@ -180,7 +181,7 @@ h4 {
 }
 
 .boton-ac:hover {
-    background-color: #298dff;
+    background-color: #175092;
     color: aliceblue;
 }
 

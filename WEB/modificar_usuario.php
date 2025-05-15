@@ -10,6 +10,20 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $id_usuario = $_SESSION['id_usuario'];
 
+// elimina la cuenta, cierra seccion y redirige a la pagina home.php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    if (isset($_POST['eliminar']) && $_POST['eliminar'] == '1') {
+        $stmt = $conn->prepare("DELETE FROM clientes WHERE id = ?");
+        $stmt->bind_param("i", $id_usuario);
+        $stmt->execute();
+        $stmt->close();
+
+        session_destroy(); 
+        header("Location: home.php"); 
+        exit();
+    }
+}   
 
 ?>
 

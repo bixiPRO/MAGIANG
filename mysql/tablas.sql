@@ -18,7 +18,7 @@ CREATE TABLE administradores(
 
 CREATE TABLE productos(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(255) UNIQUE,
+    nombre VARCHAR(255) UNIQUE NOT NULL,
     descripcion VARCHAR(255),
     stock INT DEFAULT 0,
     precio DECIMAL(10,2),

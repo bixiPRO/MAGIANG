@@ -55,6 +55,9 @@ while ($row = $res->fetch_assoc()) {
     <form action="update_producto.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
 
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required><br/>
+
         <select name="tipo" required>
             <option value="Fisico" <?= $producto['tipo'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
             <option value="Digital" <?= $producto['tipo'] == 'Digital' ? 'selected' : '' ?>>Digital</option>

@@ -58,6 +58,22 @@ while ($row = $res->fetch_assoc()) {
         <label>Nombre:</label>
         <input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required><br/>
 
+        <label>Descripción:</label>
+        <input type="text" name="descripcion" value="<?= htmlspecialchars($producto['descripcion']) ?>" required><br/>
+
+        <label>Precio:</label>
+        <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" min="0" required><br/>
+
+        <label>Stock:</label>
+        <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" min="0" required><br/>
+
+        <label>Directorio Imagen:</label>
+        <input type="number" name="stock" value="<?= htmlspecialchars($producto['imagen']) ?>"><br/>
+
+
+
+
+
         <select name="tipo" required>
             <option value="Fisico" <?= $producto['tipo'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
             <option value="Digital" <?= $producto['tipo'] == 'Digital' ? 'selected' : '' ?>>Digital</option>

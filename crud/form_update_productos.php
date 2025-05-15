@@ -102,6 +102,16 @@ $res->close();
                 </option>
             <?php endforeach; ?>
         </select><br/>
+        <!-- forech para buscar en la lista de plataforma el que tiene la misma id que lo ponga y selected para los opciones -->
+        <label>Categoría:</label>
+        <select name="categoria" required>
+            <option value="">Selecciona una categoría</option>
+            <?php foreach ($categorias as $categoria): ?>
+                <option value="<?= $categoria['id'] ?>" <?= $categoria['id'] == $categoria_id ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($categoria['nombre']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select><br/>
 
         <input type="submit" value="Modificar Producto">
     </form>

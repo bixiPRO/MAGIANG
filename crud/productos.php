@@ -136,16 +136,16 @@ require('connection.php');
                 echo '<td>' . htmlspecialchars($row['imagen']) . '</td>';
                 echo '<td>' . htmlspecialchars($row['data_introduccio']) . '</td>';
                 echo '<td>' . htmlspecialchars($row['ultima_data']) . '</td>';
-                    echo "<td>
-                            <form action='del_producto.php' method='POST' style='display:inline-block;'>
-                                <input type='hidden' name='id' value='" . $row['id'] . "'>
-                                <input type='submit' name='submit' value='Eliminar'>
-                            </form>
-                            <form action='form_update_productos.php' method='POST' style='display:inline-block;'>
-                                <input type='hidden' name='id' value='" . $row['id'] . "'>
-                                <input type='submit' name='submit' value='Modificar'>
-                            </form>
-                          </td>";
+                echo "<td>
+                        <form action='del_producto.php' method='POST' style='display:inline-block;'>
+                            <input type='hidden' name='id' value='" . $row['id'] . "'>
+                            <input type='submit' name='submit' value='Eliminar'>
+                        </form>
+                        <form action='form_update_productos.php' method='POST' style='display:inline-block;'>
+                            <input type='hidden' name='id' value='" . $row['id'] . "'>
+                            <input type='submit' name='submit' value='Modificar'>
+                        </form>
+                      </td>";
                 echo "</tr>";
                 echo '</div>';
             }

@@ -203,7 +203,8 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="number"],
-form input[type="tel"],select {
+form input[type="tel"],
+form input[type="password"],select {
     display: inline;
     width: 50%;
     padding: 1%;
@@ -216,7 +217,8 @@ form input[type="tel"],select {
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form input[type="number"]:focus,
-form input[type="tel"]:focus {
+form input[type="tel"]:focus,
+form input[type="password"] {
     border-color: #298dff;
     outline: none;
 }

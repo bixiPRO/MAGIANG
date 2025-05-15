@@ -53,22 +53,22 @@
                 <div class="faq-content">
                     <section class="faq-item">
                         <h3>¿Cómo puedo cambiar mi contraseña?</h3>
-                        <p>Ve a la configuración de tu cuenta y selecciona “Cambiar contraseña”.</p>
+                        <p>Ve a la configuración de tu cuenta y selecciona <strong>“Cambiar contraseña”.</strong></p>
                     </section>
 
                     <section class="faq-item">
                         <h3>¿Me he olvidado mi contraseña?</h3>
-                        <p>Haz clic en “¿Olvidaste tu contraseña?” en la página de inicio de sesión y sigue los pasos.</p>
+                        <p>Haz clic en <strong>“¿Olvidaste tu contraseña?”</strong> en la página de inicio de sesión y sigue los pasos.</p>
                     </section>
 
                     <section class="faq-item">
                         <h3>¿Me han robado la cuenta?</h3>
-                        <p>Contacta de inmediato con soporte: soporte.magiang@gmail.com para recuperar el acceso.</p>
+                        <p>Contacta de inmediato con <strong>soporte: soporte.magiang@gmail.com</strong> para recuperar el acceso.</p>
                     </section>
 
                     <section class="faq-item">
                         <h3>¿Cómo puedo aumentar la seguridad de mi cuenta?</h3>
-                        <p>Usa una contraseña fuerte, no la compartas, y activa la verificación en dos pasos si está disponible.</p>
+                        <p>Usa una contraseña fuerte, no la compartas, y activa la <strong>verificación en dos pasos</strong> si está disponible.</p>
                     </section>
                 </div>      
             </ul>

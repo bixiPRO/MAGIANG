@@ -142,7 +142,7 @@ if($producto_id > 0) {
                             <br>
                             <br>
                             <br>
-                            <input type="submit" name="anadir" value="Añadir a la cesta">
+                            <input class="boton-ac" type="submit" name="anadir" value="Añadir a la cesta">
                         </form>
                     </div>
                 

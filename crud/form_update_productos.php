@@ -36,12 +36,29 @@ while ($row = $res->fetch_assoc()) {
 }
 
 // Obtener todas las categorias de la base de datos 
-$plataformas = [];
 $categorias = [];
 $res = $conn->query("SELECT * FROM categorias");
 while ($row = $res->fetch_assoc()) {
     $categorias[] = $row;
 }
+
+// Obtener plataforma amb el id producto de la tabla pro_pla
+$plataforma_id = null;
+$res = $conn->prepare("SELECT id_plataforma FROM pro_pla WHERE id = ?");
+$res->bind_param("i", $id);
+$res->execute();
+$res->bind_result($plataforma_id);
+$res->fetch();
+$res->close();
+
+// Obtener categoria amb el id producto de la tabla pro_cat
+$categoria_id = null;
+$res = $conn->prepare("SELECT id_categoria FROM pro_cat WHERE id = ?");
+$res->bind_param("i", $id);
+$res->execute();
+$res->bind_result($categoria_id);
+$res->fetch();
+$res->close();
 
 ?>
 <!DOCTYPE html>
@@ -74,6 +91,9 @@ while ($row = $res->fetch_assoc()) {
             <option value="FISICO" <?= $producto['tipo'] == 'FISICO' ? 'selected' : '' ?>>Físico</option>
             <option value="DIGITAL" <?= $producto['tipo'] == 'DIGITAL' ? 'selected' : '' ?>>Digital</option>
         </select><br/>
+
+
+
         <input type="submit" value="Modificar Producto">
     </form>
 </body>

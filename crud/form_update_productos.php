@@ -129,6 +129,8 @@ $precio = $_POST['precio'];
 $stock = $_POST['stock'];
 $imagen = $_POST['imagen'];
 $tipo = $_POST['tipo'];
+$plataforma = !empty($_POST['plataforma']) ? (int) $_POST['plataforma'] : null;
+$categoria = !empty($_POST['categoria']) ? (int) $_POST['categoria'] : null;
 
 // Actualizar tabla productes
 $stmt = $conn->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, imagen = ?, tipo = ? WHERE id = ?");
@@ -137,4 +139,18 @@ $stmt->execute();
 $stmt->close();
 
 
+if ($plataforma !== null) {
+    $stmt = $conn->prepare("UPDATE pro_pla SET id_plataforma = ? WHERE id = ?");
+    $stmt->bind_param("ii", $plataforma, $id);
+    $stmt->execute();
+    $stmt->close();
+}
+
+if ($categoria !== null) {
+    $stmt = $conn->prepare("UPDATE pro_cat SET id_categoria = ? WHERE id = ?");
+    $stmt->bind_param("ii", $categoria, $id);
+    $stmt->execute();
+    $stmt->close();
+}
+$conn->close();
 ?>

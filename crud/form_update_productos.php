@@ -68,15 +68,11 @@ while ($row = $res->fetch_assoc()) {
         <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" min="0" required><br/>
 
         <label>Directorio Imagen:</label>
-        <input type="number" name="imagen" value="<?= htmlspecialchars($producto['imagen']) ?>"><br/>
-
-
-
-
+        <input type="text" name="imagen" value="<?= htmlspecialchars($producto['imagen']) ?>"><br/>
 
         <select name="tipo" required>
-            <option value="Fisico" <?= $producto['tipo'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
-            <option value="Digital" <?= $producto['tipo'] == 'Digital' ? 'selected' : '' ?>>Digital</option>
+            <option value="FISICO" <?= $producto['tipo'] == 'FISICO' ? 'selected' : '' ?>>Físico</option>
+            <option value="DIGITAL" <?= $producto['tipo'] == 'DIGITAL' ? 'selected' : '' ?>>Digital</option>
         </select><br/>
         <input type="submit" value="Modificar Producto">
     </form>

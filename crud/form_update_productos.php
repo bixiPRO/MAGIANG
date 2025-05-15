@@ -17,6 +17,18 @@ if (isset($_POST['id'])) {
     header("Location: productos.php");
     exit();
 }
+
+$id = (int) $_POST['id'];
+
+// Obtener datos del producto
+$stmt = $conn->prepare("SELECT * FROM productos WHERE id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$producto = $result->fetch_assoc();
+$stmt->close();
+
+
 ?>
 <!DOCTYPE html>
 <html>

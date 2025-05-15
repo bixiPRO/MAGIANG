@@ -70,7 +70,7 @@ $res->close();
 <body>
     <h1>Modificar Producto</h1>
     <!-- formulario de la modificacion del producto el selected para opciones en php-->
-    <form action="update_producto.php" method="POST">
+    <form  method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
 
         <label>Nombre:</label>
@@ -94,8 +94,8 @@ $res->close();
         </select><br/>
         <!-- forech para buscar en la lista de plataforma el que tiene la misma id que lo ponga y selected para los opciones -->
         <label>Plataforma:</label>
-        <select name="plataforma" required>
-            <option value="">Selecciona una plataforma: </option>
+        <select name="plataforma">
+            <option value=""> </option>
             <?php foreach ($plataformas as $plataforma): ?>
                 <option value="<?= $plataforma['id'] ?>" <?= $plataforma['id'] == $plataforma_id ? 'selected' : '' ?>>
                     <?= htmlspecialchars($plataforma['nombre']) ?>
@@ -104,8 +104,8 @@ $res->close();
         </select><br/>
         <!-- forech para buscar en la lista de categoria el que tiene la misma id que lo ponga y selected para los opciones -->
         <label>Categoría:</label>
-        <select name="categoria" required>
-            <option value="">Selecciona una categoría</option>
+        <select name="categoria">
+            <option value=""> </option>
             <?php foreach ($categorias as $categoria): ?>
                 <option value="<?= $categoria['id'] ?>" <?= $categoria['id'] == $categoria_id ? 'selected' : '' ?>>
                     <?= htmlspecialchars($categoria['nombre']) ?>
@@ -114,8 +114,27 @@ $res->close();
         </select><br/>
 
         <input type="submit" value="Modificar Producto">
+
     </form>
 </body>
 </html>
 
-    
+<?php
+
+// coger datos del post
+$id = (int) $_POST['id'];
+$nombre = $_POST['nombre'];
+$descripcion = $_POST['descripcion'];
+$precio = $_POST['precio'];
+$stock = $_POST['stock'];
+$imagen = $_POST['imagen'];
+$tipo = $_POST['tipo'];
+
+// Actualizar tabla productes
+$stmt = $conn->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, imagen = ?, tipo = ? WHERE id = ?");
+$stmt->bind_param("ssdisss", $nombre, $descripcion, $precio, $stock, $imagen, $tipo, $id);
+$stmt->execute();
+$stmt->close();
+
+
+?>

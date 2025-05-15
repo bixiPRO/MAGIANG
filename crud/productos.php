@@ -121,8 +121,16 @@ require('connection.php');
 
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="S_content-item">';
-                echo '<li>' . htmlspecialchars($row['nombre']) . " - " . htmlspecialchars($row['descripcion']) . " - " . htmlspecialchars($row['stock']) . " - " . htmlspecialchars($row['precio']) . " - " . htmlspecialchars($row['tipo']) . " - " . htmlspecialchars($row['imagen']) . " - " . htmlspecialchars($row['data_introduccio']) . " - " . htmlspecialchars($row['ultima_data']) . '</li>';
-                echo '</a>';
+                echo '<tr>';
+                echo '<td>' . htmlspecialchars($row['nombre']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['descripcion']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['stock']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['precio']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['tipo']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['imagen']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['data_introduccio']) . '</td>';
+                echo '<td>' . htmlspecialchars($row['ultima_data']) . '</td>';
+                echo "</tr>";
                 echo '</div>';
             }
 

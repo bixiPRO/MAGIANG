@@ -2,14 +2,13 @@
 session_start();
 require('connection.php');
 
-// Asegurarse de que el usuario esté iniciado 
-if (!isset($_SESSION['id_usuario'])) {
+
+$id_usuario = $_SESSION['id_cliente'];
+
+if (!isset($_SESSION['id_cliente'])) {
     header("Location: login.php");
     exit();
 }
-
-$id_usuario = $_SESSION['id_usuario'];
-
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // elimina la cuenta, cierra seccion y redirige a la pagina home.php
@@ -32,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->execute();
         $stmt->close();
         $_SESSION['nombre_usuario'] = $nuevo_nombre;
+        header("Location: home.php"); 
     }
 }   
 // Obtener nombre actual

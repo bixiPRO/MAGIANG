@@ -28,6 +28,20 @@ $result = $stmt->get_result();
 $producto = $result->fetch_assoc();
 $stmt->close();
 
+// Obtener todas las plataformas de la base de datos 
+$plataformas = [];
+$res = $conn->query("SELECT * FROM plataformas");
+while ($row = $res->fetch_assoc()) {
+    $plataformas[] = $row;
+}
+
+// Obtener todas las categorias de la base de datos 
+$plataformas = [];
+$categorias = [];
+$res = $conn->query("SELECT * FROM categorias");
+while ($row = $res->fetch_assoc()) {
+    $categorias[] = $row;
+}
 
 ?>
 <!DOCTYPE html>
@@ -40,19 +54,7 @@ $stmt->close();
     <h1>Modificar Producto</h1>
     <form action="update_producto.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>"/>
-        Nombre: <input type="text" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required><br/>
-        Categoria: 
-        <select name="descripcion" required>
-            <option value="Ratones" <?= $producto['descripcion'] == 'Ratones' ? 'selected' : '' ?>>Ratones</option>
-            <option value="Teclados" <?= $producto['descripcion'] == 'Teclados' ? 'selected' : '' ?>>Teclados</option>
-            <option value="Ordenadores" <?= $producto['descripcion'] == 'Ordenadores' ? 'selected' : '' ?>>Ordenadores</option>
-            <option value="Microfonos" <?= $producto['descripcion'] == 'Microfonos' ? 'selected' : '' ?>>Microfonos</option>
-            <option value="Portatiles" <?= $producto['descripcion'] == 'Portatiles' ? 'selected' : '' ?>>Portatiles</option>
-            <option value="Monitores" <?= $producto['descripcion'] == 'Monitores' ? 'selected' : '' ?>>Monitores</option>
-        </select><br/>
-        Precio: <input type="number" name="precio" value="<?= htmlspecialchars($producto['precio']) ?>" step="0.01" min="0" max="100000" required><br/>
-        Stock: <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" required><br/>
-        Formato: 
+
         <select name="tipo" required>
             <option value="Fisico" <?= $producto['tipo'] == 'Fisico' ? 'selected' : '' ?>>Físico</option>
             <option value="Digital" <?= $producto['tipo'] == 'Digital' ? 'selected' : '' ?>>Digital</option>

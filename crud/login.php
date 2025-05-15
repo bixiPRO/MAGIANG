@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <title>Login - Magiang</title>
-      <link rel="stylesheet" href="css/login-style.css">
+      <link rel="stylesheet" href="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
@@ -20,19 +20,17 @@
                <div class="slider-tab"></div> 
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="do_login.php" method="POST" class="login">
                   <div class="field">
-                     <input type="text" placeholder="Usuario" required>
+                     <input type="text" placeholder="Correo Electrónico" name="gmail" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Contraseña" required>
+                     <input type="password" placeholder="Contraseña" name="pwd" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Iniciar Session">
+                     <input type="submit" name="submit" value="Iniciar Sesión">
                   </div>
-               </form>
-                  <div class="signup-link"><a href="index.html"> Volver al inicio</a></div>
                </form>
             </div>
          </div>

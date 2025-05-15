@@ -68,7 +68,7 @@ while ($row = $res->fetch_assoc()) {
         <input type="number" name="stock" value="<?= htmlspecialchars($producto['stock']) ?>" min="0" required><br/>
 
         <label>Directorio Imagen:</label>
-        <input type="number" name="stock" value="<?= htmlspecialchars($producto['imagen']) ?>"><br/>
+        <input type="number" name="imagen" value="<?= htmlspecialchars($producto['imagen']) ?>"><br/>
 
 
 

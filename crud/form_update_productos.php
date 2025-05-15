@@ -28,37 +28,6 @@ $result = $stmt->get_result();
 $producto = $result->fetch_assoc();
 $stmt->close();
 
-// Obtener todas las plataformas de la base de datos 
-$plataformas = [];
-$res = $conn->query("SELECT * FROM plataformas");
-while ($row = $res->fetch_assoc()) {
-    $plataformas[] = $row;
-}
-
-// Obtener todas las categorias de la base de datos 
-$categorias = [];
-$res = $conn->query("SELECT * FROM categorias");
-while ($row = $res->fetch_assoc()) {
-    $categorias[] = $row;
-}
-
-// Obtener plataforma amb el id producto de la tabla pro_pla
-$plataforma_id = null;
-$res = $conn->prepare("SELECT id_plataforma FROM pro_pla WHERE id = ?");
-$res->bind_param("i", $id);
-$res->execute();
-$res->bind_result($plataforma_id);
-$res->fetch();
-$res->close();
-
-// Obtener categoria amb el id producto de la tabla pro_cat
-$categoria_id = null;
-$res = $conn->prepare("SELECT id_categoria FROM pro_cat WHERE id = ?");
-$res->bind_param("i", $id);
-$res->execute();
-$res->bind_result($categoria_id);
-$res->fetch();
-$res->close();
 
 ?>
 <!DOCTYPE html>
@@ -70,7 +39,7 @@ $res->close();
 <body>
     <h1>Modificar Producto</h1>
     <!-- formulario de la modificacion del producto el selected para opciones en php-->
-    <form  method="POST">
+    <form method="POST" action="modificar_productos.php">
         <input type="hidden" name="id" value="<?= $id ?>"/>
 
         <label>Nombre:</label>
@@ -92,65 +61,9 @@ $res->close();
             <option value="FISICO" <?= $producto['tipo'] == 'FISICO' ? 'selected' : '' ?>>Físico</option>
             <option value="DIGITAL" <?= $producto['tipo'] == 'DIGITAL' ? 'selected' : '' ?>>Digital</option>
         </select><br/>
-        <!-- forech para buscar en la lista de plataforma el que tiene la misma id que lo ponga y selected para los opciones -->
-        <label>Plataforma:</label>
-        <select name="plataforma">
-            <option value=""> </option>
-            <?php foreach ($plataformas as $plataforma): ?>
-                <option value="<?= $plataforma['id'] ?>" <?= $plataforma['id'] == $plataforma_id ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($plataforma['nombre']) ?>
-                </option>
-            <?php endforeach; ?>
-        </select><br/>
-        <!-- forech para buscar en la lista de categoria el que tiene la misma id que lo ponga y selected para los opciones -->
-        <label>Categoría:</label>
-        <select name="categoria">
-            <option value=""> </option>
-            <?php foreach ($categorias as $categoria): ?>
-                <option value="<?= $categoria['id'] ?>" <?= $categoria['id'] == $categoria_id ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($categoria['nombre']) ?>
-                </option>
-            <?php endforeach; ?>
-        </select><br/>
 
         <input type="submit" value="Modificar Producto">
 
     </form>
 </body>
 </html>
-
-<?php
-
-// coger datos del post
-$id = (int) $_POST['id'];
-$nombre = $_POST['nombre'];
-$descripcion = $_POST['descripcion'];
-$precio = $_POST['precio'];
-$stock = $_POST['stock'];
-$imagen = $_POST['imagen'];
-$tipo = $_POST['tipo'];
-$plataforma = !empty($_POST['plataforma']) ? (int) $_POST['plataforma'] : null;
-$categoria = !empty($_POST['categoria']) ? (int) $_POST['categoria'] : null;
-
-// Actualizar tabla productes
-$stmt = $conn->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, imagen = ?, tipo = ? WHERE id = ?");
-$stmt->bind_param("ssdisss", $nombre, $descripcion, $precio, $stock, $imagen, $tipo, $id);
-$stmt->execute();
-$stmt->close();
-
-
-if ($plataforma !== null) {
-    $stmt = $conn->prepare("UPDATE pro_pla SET id_plataforma = ? WHERE id = ?");
-    $stmt->bind_param("ii", $plataforma, $id);
-    $stmt->execute();
-    $stmt->close();
-}
-
-if ($categoria !== null) {
-    $stmt = $conn->prepare("UPDATE pro_cat SET id_categoria = ? WHERE id = ?");
-    $stmt->bind_param("ii", $categoria, $id);
-    $stmt->execute();
-    $stmt->close();
-}
-$conn->close();
-?>

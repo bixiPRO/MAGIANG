@@ -11,17 +11,6 @@ if (!isset($_SESSION['id_cliente'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // elimina la cuenta, cierra seccion y redirige a la pagina home.php
-    if (isset($_POST['eliminar']) && $_POST['eliminar'] == '1') {
-        $stmt = $conn->prepare("DELETE FROM clientes WHERE id = ?");
-        $stmt->bind_param("i", $id_usuario);
-        $stmt->execute();
-        $stmt->close();
-
-        session_destroy(); 
-        header("Location: home.php"); 
-        exit();
-    }
 
     //modifica el nombre de l'usuario y accede a la seccion con el nombre del usuario modificado
     if (!empty($_POST['nuevo_nombre'])) {
@@ -60,12 +49,6 @@ $stmt->close();
             <label for="nuevo_nombre">Nuevo nombre de usuario:</label>
             <input type="text" name="nuevo_nombre" id="nuevo_nombre" value="<?= htmlspecialchars($nombre_actual) ?>" required>
             <button type="submit">Actualizar</button>
-        </form>
-        <hr>
-        <form method="POST">
-            <p>Estas seguro de eliminar esta cuenta?</p>
-            <input type="hidden" name="eliminar" value="1">
-            <button type="submit" style="background-color: red; color: white;">Eliminar cuenta</button>
         </form>
     </main>
 </body>

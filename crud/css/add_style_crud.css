@@ -1,0 +1,216 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    text-align: center;
+    position:inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ESTILOS MAIN */
+main {
+    margin-top: 80px; 
+    padding: 20px 10%;
+}
+
+h4 {
+    color: #298dff;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+main ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+}
+main li{
+    background-color: #b2e6f5;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #555;
+    border-radius: 15px;
+    padding: 2%;
+}
+main li a{
+    text-decoration: none;
+    color: black;
+}
+main li:hover {
+    transform: scale(1.05);
+    background-color: #298dff;
+}
+main li:hover a{
+    color: white;
+}
+
+div{
+    display: flex;
+    
+}
+/* END_ESTILOS LISTA PRODUCTOS */
+
+/* ESTILOS FORMULARIO */
+
+form {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 1%;
+}
+form h2 {
+    color: #298dff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"],
+form input[type="password"],select {
+    display: inline;
+    width: 50%;
+    padding: 1%;
+    border-radius: 20px;
+    border: 2px solid #298dff;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form input[type="tel"]:focus,
+form input[type="password"] {
+    border-color: #298dff;
+    outline: none;
+}
+/* ESTILO AÑADIR */
+.boton-ac {
+    background-color: #298dff;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 15px 25px;
+    display: inline-block;
+    margin-top: 15px;
+
+}
+
+.boton-ac:hover {
+    background-color: #175092;
+    color: aliceblue;
+}
+
+/* END_ESTILO BOTON AÑADIR */
+
+/* ESTILOS FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 15px 15px 0 0;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer .icon2 {
+    width: 50px;
+}
+/* END_ ESTILOS FOOTER */
+
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    main {
+        padding: 20px 5%;
+    }
+
+    main ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main li {
+        width: 90%;
+        text-align: center;
+    }
+
+    form {
+        width: 90%;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="number"],
+    form input[type="tel"] {
+        width: 100%;
+    }
+    form label {
+        width: 100%;
+        text-align: left;
+    }
+    form input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }    
+
+}
+
+

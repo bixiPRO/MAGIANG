@@ -31,6 +31,13 @@ if (!isset($_SESSION['id'])) {
         </header>
         <main>
             <h1> Ventas Realizadas </h1>
+            <table>
+                <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio producto</th>
+                <th>Total</th>
+                </tr>
                 <?php
                     $query = "SELECT p.nombre AS producto, 
                             v.numeros AS cantidad,
@@ -42,17 +49,18 @@ if (!isset($_SESSION['id'])) {
 
                     if ($resultat && $resultat->num_rows > 0) {
                         while ($row = $resultat->fetch_assoc()) {
-                            echo '<div class="S_content-item">';
-                            echo '<p><strong>Producto:</strong> ' . htmlspecialchars($row['producto']) . '</p>';
-                            echo '<p><strong>Cantidad:</strong> ' . htmlspecialchars($row['cantidad']) . '</p>';
-                            echo '<p><strong>Precio Unitario:</strong> ' . htmlspecialchars($row['precio']) . ' €</p>';
-                            echo '<p><strong>Total:</strong> ' . htmlspecialchars($row['precio_total']) . ' €</p>';
-                            echo '</div>';
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['producto']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['cantidad']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['precio']) . " €</td>";
+                            echo "<td>" . htmlspecialchars($row['precio_total']) . " €</td>";
+                            echo "</tr>";
                         }
                     }else {
                         echo "<p>No hay ventas en registro.</p>";
                     }
                 ?>
+            </table>
         </main>
     </body>
 </html">

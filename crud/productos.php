@@ -21,7 +21,13 @@ if (!isset($_SESSION['id'])) {
     <header>
         <div class="login">
             <?php if (isset($_SESSION['id'])): ?>
-                <a href="logout.php"><img src="logout.png"></a>
+                <nav>
+                    <ul>
+                        <li><a href="productos.php">Productos</a></li>
+                        <li><a href="ventas.php">Ventas</a></li>
+                        <li><a href="logout.php"><img src="logout.png"></a></li>
+                    </ul>
+                </nav>
             <?php else: ?>
                 <a href="login.php"><img src="login_logo.png" alt="Login"></a>
             <?php endif; ?>

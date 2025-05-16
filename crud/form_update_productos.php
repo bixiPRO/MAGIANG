@@ -41,7 +41,7 @@ $stmt->close();
         <div class="login">
             <?php if (isset($_SESSION['id'])): ?>
                 <nav>
-                    <ul>
+                    <ul><a href="productos.php"><img class="icon"  src="img/logo_magiang.png"></a>
                         <li><a href="productos.php">Productos</a></li>
                         <li><a href="ventas.php">Ventas</a></li>
                         <li><a href="logout.php"><img src="logout.png"></a></li>

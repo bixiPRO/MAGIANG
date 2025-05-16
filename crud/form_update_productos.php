@@ -37,6 +37,15 @@ $stmt->close();
     
 </head>
 <body>
+    <header>
+        <div class="login">
+            <?php if (isset($_SESSION['id'])): ?>
+                <a href="logout.php"><img src="logout.png"></a>
+            <?php else: ?>
+                <a href="login.php"><img src="login_logo.png" alt="Login"></a>
+            <?php endif; ?>
+        </div>
+    </header>
     <h1>Modificar Producto</h1>
     <!-- formulario de la modificacion del producto el selected para opciones en php-->
     <form method="POST" action="modificar_productos.php">

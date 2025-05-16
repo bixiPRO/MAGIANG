@@ -6,6 +6,15 @@
     
 </head>
 <body>
+    <header>
+        <div class="login">
+            <?php if (isset($_SESSION['id'])): ?>
+                <a href="logout.php"><img src="logout.png"></a>
+            <?php else: ?>
+                <a href="login.php"><img src="login_logo.png" alt="Login"></a>
+            <?php endif; ?>
+        </div>
+    </header>
     <h1>Modificar Producto</h1>
     <!-- formulario para anadir-->
     <form method="POST" action="add_producto.php">

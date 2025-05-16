@@ -144,32 +144,47 @@ if (!isset($_SESSION['id'])) {
 
             $result = $conn->query($query);
 
-
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="S_content-item">';
-                echo '<tr>';
-                echo '<td>' . htmlspecialchars($row['nombre']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['descripcion']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['stock']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['precio']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['tipo']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['imagen']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['data_introduccio']) . '</td>';
-                echo '<td>' . htmlspecialchars($row['ultima_data']) . '</td>';
-                echo "<td>
-                        <form action='del_producto.php' method='POST' style='display:inline-block;'>
-                            <input type='hidden' name='id' value='" . $row['id'] . "'>
-                            <input class='boton-ac' type='submit' name='submit' value='Eliminar'>
-                        </form>
-                        <form action='form_update_productos.php' method='POST' style='display:inline-block;'>
-                            <input type='hidden' name='id' value='" . $row['id'] . "'>
-                            <input class='boton-ac' type='submit' name='submit' value='Modificar'>
-                        </form>
-                      </td>";
-                echo "</tr>";
-                echo '</div>';
-            }
-
+            echo '<table>';
+                echo '<thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Tipo</th>
+                            <th>Imagen</th>
+                            <th>Fecha de Alta</th>
+                            <th>Última Modificación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>';
+                echo '<tbody>';
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="S_content-item">';
+                        echo '<tr>';
+                        echo '<td>' . htmlspecialchars($row['nombre']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['descripcion']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['stock']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['precio']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['tipo']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['imagen']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['data_introduccio']) . '</td>';
+                        echo '<td>' . htmlspecialchars($row['ultima_data']) . '</td>';
+                        echo "<td>
+                                <form action='del_producto.php' method='POST' style='display:inline-block;'>
+                                    <input type='hidden' name='id' value='" . $row['id'] . "'>
+                                    <input class='boton-ac' type='submit' name='submit' value='Eliminar'>
+                                </form>
+                                <form action='form_update_productos.php' method='POST' style='display:inline-block;'>
+                                    <input type='hidden' name='id' value='" . $row['id'] . "'>
+                                    <input class='boton-ac' type='submit' name='submit' value='Modificar'>
+                                </form>
+                            </td>";
+                        echo "</tr>";
+                        echo '</div>';
+                    }
+                echo '</tbody>';
+            echo '</table>';
             $result->close();
             $conn->close();
         ?>

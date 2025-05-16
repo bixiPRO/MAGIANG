@@ -78,8 +78,7 @@ nav ul li a:hover {
 /* END_ESTILOS HEADER NAV */
 
 /* ESTILOS MAIN */
-main {
-    margin-top: 80px; 
+main { 
     padding: 20px 10%;
 }
 
@@ -97,7 +96,7 @@ main ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 9%;
 }
 main li{
     background-color: #b2e6f5;
@@ -140,7 +139,7 @@ form {
     display: flex;
     flex-direction:column;
     align-items: center;
-    margin-top: 1%;
+    margin-top: 5%;
 }
 form h2 {
     color: #298dff;

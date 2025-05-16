@@ -77,7 +77,7 @@ $stmt->close();
             <option value="DIGITAL" <?= $producto['tipo'] == 'DIGITAL' ? 'selected' : '' ?>>Digital</option>
         </select><br/>
 
-        <input type="submit" value="Modificar Producto">
+        <input class="boton-ac" type="submit" value="Modificar Producto">
 
     </form>
 </body>

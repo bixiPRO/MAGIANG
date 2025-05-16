@@ -16,6 +16,14 @@ if (!isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD de productos</title>
     <meta charset="UTF-8">
+
+    <div class="login">
+        <?php if (isset($_SESSION['id'])): ?>
+            <a href="logout.php"><img src="logout.png"></a>
+        <?php else: ?>
+            <a href="login.php"><img src="login_logo.png" alt="Login"></a>
+        <?php endif; ?>
+    </div>
 </head>
 <body>
 

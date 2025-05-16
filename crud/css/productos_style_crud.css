@@ -138,12 +138,13 @@ main li:hover a{
     color: #fff;
     border-radius: 15px;
 }
-
+/*ESTILOS FILTRO */
 .filter  {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 2%;
     background-color: #298dff;
     border-radius: 15px;
     padding-top: 2%;

@@ -39,7 +39,7 @@ if (!isset($_SESSION['id'])) {
             <?php
                 echo "<form action='form_add_producto.php' method='POST' style='display:inline-block;'>
                     <input type='hidden' name='id' value='" . $row['id'] . "'>
-                    <input type='submit' name='submit' value='Añadir'>
+                    <input class='boton-ac' type='submit' name='submit' value='Añadir'>
                 </form>"
             ?>
         <!-- FILTRE -->
@@ -159,11 +159,11 @@ if (!isset($_SESSION['id'])) {
                 echo "<td>
                         <form action='del_producto.php' method='POST' style='display:inline-block;'>
                             <input type='hidden' name='id' value='" . $row['id'] . "'>
-                            <input type='submit' name='submit' value='Eliminar'>
+                            <input class='boton-ac' type='submit' name='submit' value='Eliminar'>
                         </form>
                         <form action='form_update_productos.php' method='POST' style='display:inline-block;'>
                             <input type='hidden' name='id' value='" . $row['id'] . "'>
-                            <input type='submit' name='submit' value='Modificar'>
+                            <input class='boton-ac' type='submit' name='submit' value='Modificar'>
                         </form>
                       </td>";
                 echo "</tr>";

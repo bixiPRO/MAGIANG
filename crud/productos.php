@@ -43,7 +43,7 @@ if (!isset($_SESSION['id'])) {
                 </form>"
             ?>
         <!-- FILTRE -->
-        <form method="POST">
+        <form class="filter" method="POST">
             <label for="tipo">Tipo:</label>
             <select name="tipo" >
                 <option value="">Selecciona...</option>  

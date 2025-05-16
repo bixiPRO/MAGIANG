@@ -34,8 +34,8 @@ if (!isset($_SESSION['id'])) {
                 <?php
                     $query = "SELECT p.nombre AS producto, 
                             v.numeros AS cantidad,
-                            p.precio AS precio_unitario,
-                            (v.numeros * p.precio) AS total
+                            p.precio AS precio,
+                            (v.numeros * p.precio) AS precio_total
                         FROM ventas v
                         JOIN productos p ON v.id_producto = p.id;";
                     $resultat= mysqli_query($conn, $query);
@@ -44,7 +44,13 @@ if (!isset($_SESSION['id'])) {
                         while ($row = $resultat->fetch_assoc()) {
                             echo '<div class="S_content-item">';
                             echo '<p><strong>Producto:</strong> ' . htmlspecialchars($row['producto']) . '</p>';
+                            echo '<p><strong>Cantidad:</strong> ' . htmlspecialchars($row['cantidad']) . '</p>';
+                            echo '<p><strong>Precio Unitario:</strong> ' . htmlspecialchars($row['precio']) . ' €</p>';
+                            echo '<p><strong>Total:</strong> ' . htmlspecialchars($row['precio_total']) . ' €</p>';
+                            echo '</div>';
                         }
+                    }else {
+                        echo "<p>No hay ventas en registro.</p>";
                     }
                 ?>
         </main>

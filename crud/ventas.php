@@ -32,10 +32,20 @@ if (!isset($_SESSION['id'])) {
         <main>
             <h1> Ventas Realizadas </h1>
                 <?php
-                    echo "<form action='form_add_producto.php' method='POST' style='display:inline-block;'>
-                        <input type='hidden' name='id' value='" . $row['id'] . "'>
-                        <input type='submit' name='submit' value='Añadir'>
-                    </form>"
+                    $query = "SELECT p.nombre AS producto, 
+                            v.numeros AS cantidad,
+                            p.precio AS precio_unitario,
+                            (v.numeros * p.precio) AS total
+                        FROM ventas v
+                        JOIN productos p ON v.id_producto = p.id;";
+                    $resultat= mysqli_query($conn, $query);
+
+                    if ($resultat && $resultat->num_rows > 0) {
+                        while ($row = $resultat->fetch_assoc()) {
+                            echo '<div class="S_content-item">';
+                            echo '<p><strong>Producto:</strong> ' . htmlspecialchars($row['producto']) . '</p>';
+                        }
+                    }
                 ?>
         </main>
     </body>

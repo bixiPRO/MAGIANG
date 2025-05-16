@@ -34,7 +34,7 @@ $stmt->close();
 <html>
 <head>
     <title>Modificar Producto</title>
-    
+    <link rel="stylesheet" type="text/css" href="css/add_style_crud.css">
 </head>
 <body>
     <header>

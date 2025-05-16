@@ -16,7 +16,7 @@ if (!isset($_SESSION['id'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CRUD de productos</title>
+        <title>Ventas Realizadas</title>
         <meta charset="UTF-8">
     </head>
     <body>
@@ -30,7 +30,7 @@ if (!isset($_SESSION['id'])) {
             </div>
         </header>
         <main>
-            <h1> Productos</h1>
+            <h1> Ventas Realizadas </h1>
                 <?php
                     echo "<form action='form_add_producto.php' method='POST' style='display:inline-block;'>
                         <input type='hidden' name='id' value='" . $row['id'] . "'>

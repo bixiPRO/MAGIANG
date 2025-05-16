@@ -45,6 +45,7 @@ if (!isset($_SESSION['id'])) {
                 <th>Total</th>
                 </tr>
                 <?php
+                    // query para obtener datos necesssarios para saber cuantos productos han comprado
                     $query = "SELECT p.nombre AS producto, 
                             v.numeros AS cantidad,
                             p.precio AS precio,
@@ -52,7 +53,7 @@ if (!isset($_SESSION['id'])) {
                         FROM ventas v
                         JOIN productos p ON v.id_producto = p.id;";
                     $resultat= mysqli_query($conn, $query);
-
+                    // mostrar los resultados
                     if ($resultat && $resultat->num_rows > 0) {
                         while ($row = $resultat->fetch_assoc()) {
                             echo "<tr>";

@@ -5,7 +5,8 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modificar Producto</title>
+    <title>Añadir Producto</title>
+    <link rel="stylesheet" type="text/css" href="css/add_style_crud.css">
     
 </head>
 <body>
@@ -48,7 +49,7 @@ session_start();
             <option value="DIGITAL">Digital</option>
         </select><br/>
 
-        <input type="submit" value="Anadir Producto">
+        <input class="boton-ac" type="submit" value="Anadir Producto">
 
     </form>
 </body>

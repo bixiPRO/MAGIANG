@@ -10,15 +10,13 @@
       <div class="wrapper">
          <div class="title-text"> 
             <div class="title login">
-                Iniciar Sesión
+               <h3>Iniciar Sesión</h3>
+               <h6>MAGIANG ADMIN [CRUD]</h6>
+                
             </div>
          </div>
          <div class="form-container">
-            <div class="slide-controls">
-               <input type="radio" name="slide" id="login" checked>
-               <label for="login" class="slide login">Accede</label>
-               <div class="slider-tab"></div> 
-            </div>
+            <br>
             <div class="form-inner">
                <form action="do_login.php" method="POST" class="login">
                   <div class="field">
@@ -27,6 +25,7 @@
                   <div class="field">
                      <input type="password" placeholder="Contraseña" name="pwd" required>
                   </div>
+                  <br>
                   <div class="field btn">
                      <div class="btn-layer"></div>
                      <input type="submit" name="submit" value="Iniciar Sesión">
